@@ -1,4 +1,4 @@
-# 八戒机场官网 - yangfancloudjic.sbs
+# 扬帆云机场官网 - yangfancloudjic.sbs
 
 专业稳定的科学上网服务平台
 
@@ -49,7 +49,7 @@
 - ✅ 页面加载速度优化
 
 ### 关键词策略
-- 主关键词：八戒机场、科学上网、VPN、机场推荐
+- 主关键词：扬帆云机场、科学上网、VPN、机场推荐
 - 长尾关键词：ChatGPT访问、Netflix解锁、Windows配置教程等
 - 每篇文章2000字左右，密度适中
 
@@ -166,7 +166,7 @@ node indexnow-submit.js
 
 ## 版权声明
 
-© 2024 八戒机场. All rights reserved.
+© 2024 扬帆云机场. All rights reserved.
 
 ---
 
