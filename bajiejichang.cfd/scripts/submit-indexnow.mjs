@@ -44,3 +44,4 @@ if (response.status === 200 || response.status === 202) {
   const text = await response.text();
   console.log(`IndexNow details: ${text}`);
 }
+
