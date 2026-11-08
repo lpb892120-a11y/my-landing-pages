@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>零基础科学上网全平台新手指南：Clash、Sing-box、Shadowrocket超详细配置教程 - 八戒机场官网</title>
+  <meta name="description" content="2026零基础科学上网保姆级新手教程。手把手教您在Windows、Mac、iPhone(iOS)与安卓Android设备上安装Clash Verge、Sing-box、小火箭Shadowrocket客户端，并导入八戒机场订阅实现全天候极速翻墙。">
+  <meta name="keywords" content="科学上网指南, 科学上网教程, 怎么科学上网, Clash教程, 小火箭教程, 订阅链接导入, 八戒机场教程, 翻墙配置">
+  <link rel="canonical" href="https://bajiejichang.lat/posts/beginner-scientific-internet-guide.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "零基础科学上网全平台新手指南：Clash、Sing-box、Shadowrocket超详细配置教程",
+    "description": "2026零基础科学上网保姆级新手教程。手把手教您在Windows、Mac、iPhone(iOS)与安卓Android设备上安装Clash Verge、Sing-box、小火箭Shadowrocket客户端，并导入八戒机场订阅实现全天候极速翻墙。",
+    "author": {
+      "@type": "Organization",
+      "name": "八戒机场技术团队"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "八戒机场",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bajiejichang.lat/assets/logo.svg"
+      }
+    },
+    "datePublished": "2026-11-08",
+    "dateModified": "2026-11-08"
+  }
+  </script>
+</head>
+<body>
+  <div class="dynamic-background">
+    <div class="bg-grid-overlay"></div>
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <div class="logo-badge">🐷</div>
+        <span class="brand-name">八戒机场</span>
+        <span class="brand-tag">官网</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">官网首页</a></li>
+        <li><a href="../index.html#features" class="nav-link">核心优势</a></li>
+        <li><a href="../index.html#pricing" class="nav-link">套餐价格</a></li>
+        <li><a href="../index.html#testimonials" class="nav-link">用户评价</a></li>
+        <li><a href="../index.html#articles" class="nav-link active">知识库与教程</a></li>
+        <li><a href="../index.html#faq" class="nav-link">常见问题</a></li>
+      </ul>
+      <div class="header-actions">
+        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn btn-primary" target="_blank" rel="noopener noreferrer">立即开通 / 登录</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="post-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html">首页</a> &gt; 
+        <a href="../index.html#articles">知识库与教程</a> &gt; 
+        <span>科学上网新手指南</span>
+      </div>
+      <h1 class="post-title">零基础科学上网全平台新手指南：Clash、Sing-box、Shadowrocket超详细配置教程</h1>
+      <div class="post-meta-bar">
+        <span>📅 发布日期：2026-11-08</span>
+        <span>⏱️ 阅读时长：约 10 分钟</span>
+        <span>🏷️ 分类：新手入门 / 客户端教程</span>
+        <span>👁️ 浏览热度：24,310 次</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container post-layout">
+    <article class="post-article">
+      <div class="post-callout-box">
+        <h4>💡 新手须知</h4>
+        <p>科学上网（俗称“翻墙”）由两部分组成：<strong>【机场节点服务（提供境外网络通道）】</strong> + <strong>【客户端软件（在电脑/手机上运行解析流量）】</strong>。很多人误以为只要下载了软件就能翻墙，实际上客户端必须导入专属的“订阅链接”才能正常使用。本文将教您如何在 3 分钟内配置好全套环境。</p>
+      </div>
+
+      <h2>第一步：获取优质专线机场订阅链接</h2>
+      <p>在开始配置软件之前，我们需要先在机场后台获取自己的专属订阅地址：</p>
+      <ol>
+        <li>首先点击访问 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener noreferrer"><strong>八戒机场官网注册入口</strong></a>，使用邮箱完成账号注册并登录。</li>
+        <li>在用户中心选择适合自己的服务计划（可根据需要参考 <a href="../index.html#pricing">八戒机场套餐价格表</a>，初次体验推荐月付轻量或畅享套餐）。</li>
+        <li>开通成功后，在用户中心控制面板找到<strong>【便捷导入 / 一键订阅】</strong>按钮，点击复制您的专属订阅链接（或点击“一键导入到对应客户端”）。</li>
+      </ol>
+
+      <h2>第二步：Windows 电脑端配置（推荐 Clash Verge Rev）</h2>
+      <p>Clash Verge Rev 是当前 Windows 平台最主流、开源且维护活跃的图形界面客户端，界面美观现代，内核采用高效的 Clash Meta（Mihomo）：</p>
+      <ul>
+        <li><strong>下载安装：</strong>从八戒机场后台软件下载区或 GitHub 下载最新版的 <code>Clash.Verge.Setup.exe</code>，根据提示完成安装并启动。</li>
+        <li><strong>添加订阅：</strong>在左侧菜单栏点击进入<strong>【订阅 (Profiles)】</strong>页面，在顶部的输入框中粘贴刚才在八戒机场复制的订阅链接，点击右侧的【导入 (Import)】按钮。</li>
+        <li><strong>激活配置：</strong>等待订阅解析成功后，右键点击刚刚生成的八戒机场配置卡片，选择【使用】；也可以左键点击高亮选中。</li>
+        <li><strong>开启系统代理：</strong>点击左侧<strong>【设置 (Settings)】</strong>，将【系统代理 (System Proxy)】开关拨至开启状态（此时右下角托盘图标会亮起）。</li>
+        <li><strong>选择节点：</strong>进入左侧<strong>【代理 (Proxies)】</strong>面板，建议选择“规则 (Rule)”分流模式，展开节点列表，点击选择香港、日本或新加坡等低延迟专线节点。打开浏览器输入 <code>google.com</code>，即可畅享秒开体验！</li>
+      </ul>
+
+      <h2>第三步：苹果 iPhone / iPad (iOS) 配置（推荐 Shadowrocket 小火箭）</h2>
+      <p>由于国区 App Store 政策原因，Shadowrocket（小火箭）需要通过非中国大陆地区的 Apple ID（如美区、港区账号）在 App Store 搜索购买下载：</p>
+      <ul>
+        <li><strong>安装小火箭：</strong>在 App Store 登录海外 Apple ID，搜索并下载 <strong>Shadowrocket</strong>（图标为黑色背景下的白色小飞机，开发者为 Pan Software）。</li>
+        <li><strong>一键导入：</strong>使用 iPhone 自带的 Safari 浏览器登录 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener noreferrer">八戒机场用户面板</a>，在【一键导入】下拉菜单中直接点击【一键导入 Shadowrocket】，系统会自动唤起小火箭并导入全部专线节点。</li>
+        <li><strong>手动添加（备用）：</strong>若点击无反应，可先复制订阅链接，打开 Shadowrocket，点击右上角加号 <code>+</code>，类型选择 <code>Subscribe</code>，在 URL 处粘贴订阅链接，备注填写“八戒机场”，点击右上角【完成】即可。</li>
+        <li><strong>连接启用：</strong>返回首页，全局路由选择<strong>【配置 (Config)】</strong>（此模式下国内网站直连不耗流量，国外网站自动走代理），点击最上方的连接开关，首次使用允许系统添加 VPN 配置，验证 Face ID 或密码后即可成功翻墙。</li>
+      </ul>
+
+      <h2>第四步：安卓 Android 手机端配置（推荐 Sing-box 或 Clash Meta for Android）</h2>
+      <p>安卓设备开源自由，配置十分简便：</p>
+      <ul>
+        <li><strong>下载客户端：</strong>在八戒机场后台的客户端下载板块下载 <code>Clash Meta for Android.apk</code> 安装包并安装。</li>
+        <li><strong>导入订阅：</strong>打开软件，点击<strong>【配置】</strong> -&gt; 点击右上角<strong>【新配置】</strong> -&gt; 选择<strong>【URL】</strong>，名称填入“八戒机场”，URL 粘贴订阅链接，自动更新间隔建议设置为 1440 分钟（24小时），点击右上角保存图标。</li>
+        <li><strong>启动与测试：</strong>在配置列表中选中刚才保存的配置，返回首页点击灰色的【已停止】大按钮变成绿色的【运行中】。点击【代理】标签页可实时对各节点进行延迟测速并手动切换。</li>
+      </ul>
+
+      <h2>第五步：Mac 电脑端配置（推荐 Clash Verge Mac 版）</h2>
+      <p>Mac 用户的操作逻辑与 Windows 几乎一致：</p>
+      <p>下载对应芯片架构（Intel x64 或 Apple Silicon M1/M2/M3/M4）的 <code>.dmg</code> 安装包，拖拽至“应用程序”中打开。导入订阅后勾选【系统代理】，若需针对终端命令行或游戏进行加速，可开启【TUN 虚拟网卡模式】（需要授予管理员辅助权限）。</p>
+
+      <h2>六、新手常见避坑与日常使用心得</h2>
+      <blockquote>
+        <p><strong>规则模式（Rule）vs 全局模式（Global）：</strong>新手强烈建议始终使用“规则模式”。在该模式下，访问微信、淘宝、爱奇艺等国内服务直接连接本地网络，速度飞快且不消耗机场流量；只有访问 YouTube、Google、ChatGPT、Twitter 等境外网站时才会智能分流走八戒机场专线，实现无感科学上网。</p>
+      </blockquote>
+      <p>如果您在配置过程中遇到了“节点超时”、“系统时间不同步”或“订阅更新失败”等细节问题，欢迎查阅我们知识库专门编写的排查手册：<a href="troubleshooting-proxy-connection-issues.html">《机场节点常见故障排查：超时、DNS错误、速度慢一键修复》</a>，或者直接返回 <a href="../index.html#faq">官网常见问题板块</a> 获取解答。</p>
+
+      <h2>七、总结</h2>
+      <p>掌握了上述客户端配置方法后，您便可以在任何设备上一键畅游真正的互联网世界。选择一条稳定、高速、晚高峰不卡顿的内网专线是提升生产力与影音体验的核心基石。立即前往 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener noreferrer"><strong>八戒机场官网</strong></a> 开启您的专属高速网络服务吧！</p>
+    </article>
+
+    <aside class="post-sidebar">
+      <div class="sidebar-widget">
+        <h3 class="sidebar-widget-title">🚀 快捷注册通道</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:16px;">一键导入Clash / 小火箭 / Sing-box，全平台通用</p>
+        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn btn-primary" style="width:100%; text-align:center;" target="_blank" rel="noopener noreferrer">进入八戒机场</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="sidebar-widget-title">📌 快速回到官网各区</h3>
+        <ul class="toc-list">
+          <li><a href="../index.html#features">✨ 查看核心优势与技术实力</a></li>
+          <li><a href="../index.html#pricing">💰 套餐资费与灵活选购</a></li>
+          <li><a href="../index.html#testimonials">💬 用户真实口碑体验</a></li>
+          <li><a href="../index.html#faq">❓ 新手高频问题解答</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="sidebar-widget-title">📖 更多精选教程</h3>
+        <ul class="toc-list">
+          <li><a href="ladder-recommendation.html">🏆 2026好用的梯子深度推荐</a></li>
+          <li><a href="ai-tools-access-guide.html">🤖 ChatGPT与Claude免封号指南</a></li>
+          <li><a href="mobile-setup-ios-shadowrocket-android.html">📱 手机端翻墙专题技巧</a></li>
+          <li><a href="pc-setup-windows-v2rayn-mac-clash.html">💻 电脑端全流程进阶攻略</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© 2026 八戒机场官网 (bajiejichang.lat). 保留所有权利。</p>
+      <div>
+        <a href="../index.html" style="color:inherit; text-decoration:none; margin-right:15px;">首页</a>
+        <a href="../sitemap.xml" style="color:inherit; text-decoration:none;">网站地图 (Sitemap)</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
+

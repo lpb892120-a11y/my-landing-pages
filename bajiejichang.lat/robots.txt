@@ -1,0 +1,14 @@
+# robots.txt for https://bajiejichang.lat/
+User-agent: *
+Allow: /
+Allow: /posts/
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Sitemap Index
+Sitemap: https://bajiejichang.lat/sitemap.xml
+

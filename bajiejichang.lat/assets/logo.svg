@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <!-- 背景圆角矩形 -->
+  <rect width="100" height="100" rx="24" fill="url(#primaryGrad)"/>
+  
+  <!-- 科技光环微线 -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- 八戒可爱鼻吻造型 + 科技飞机元素融合 -->
+  <g transform="translate(15, 20)">
+    <!-- 祥云/高速气流底托 -->
+    <path d="M10 50 Q25 40 38 48 Q55 35 65 52 Z" fill="rgba(255,255,255,0.25)"/>
+    
+    <!-- 纸飞机高速穿梭剪影 -->
+    <path d="M5 25 L60 5 L40 55 L32 35 Z" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.15))"/>
+    <path d="M32 35 L60 5 L40 38 Z" fill="#cbd5e1"/>
+    
+    <!-- 标志性八戒金箍/小猪鼻科技微章 -->
+    <ellipse cx="48" cy="40" rx="8" ry="6" fill="#fbcfe8" opacity="0.9"/>
+    <circle cx="45.5" cy="40" r="1.5" fill="#db2777"/>
+    <circle cx="50.5" cy="40" r="1.5" fill="#db2777"/>
+  </g>
+</svg>
+
