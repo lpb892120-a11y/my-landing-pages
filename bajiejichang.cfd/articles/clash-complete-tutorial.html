@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clash完整使用教程，Windows、Mac、Android、iOS全平台配置指南，从下载安装到规则分流，详细图文教程">
+    <meta name="keywords" content="Clash教程,Clash配置,科学上网教程,代理配置,八戒机场">
+    <title>Clash完整使用教程 - 全平台配置指南 | 八戒机场</title>
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="canonical" href="https://bajiejichang.cfd/articles/clash-complete-tutorial">
+    <link rel="alternate" hreflang="zh-CN" href="https://bajiejichang.cfd/articles/clash-complete-tutorial">
+    <link rel="alternate" hreflang="x-default" href="https://bajiejichang.cfd/articles/clash-complete-tutorial">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">八戒机场</a>
+            <a href="../index.html" class="back-link">← 返回首页</a>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <header class="article-header">
+            <h1>Clash完整使用教程：全平台配置指南</h1>
+            <div class="article-meta">
+                <span>📅 2024-11-08</span>
+                <span>👁️ 5247</span>
+                <span>⏱️ 15分钟</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <h2>一、Clash简介</h2>
+            <p>Clash是一款开源的跨平台代理工具，支持Shadowsocks、V2Ray、Trojan等多种协议。以其强大的规则分流功能和友好的图形界面，成为最受欢迎的科学上网客户端之一。</p>
+
+            <p><strong>Clash的核心优势：</strong></p>
+            <ul>
+                <li>支持多种代理协议</li>
+                <li>强大的规则分流功能</li>
+                <li>图形化界面，易于使用</li>
+                <li>开源免费，社区活跃</li>
+                <li>跨平台支持</li>
+                <li>支持订阅链接自动更新</li>
+            </ul>
+
+            <h2>二、Windows平台 - Clash for Windows</h2>
+
+            <h3>2.1 下载与安装</h3>
+            <p><strong>下载地址：</strong></p>
+            <ul>
+                <li>官方GitHub：github.com/Fndroid/clash_for_windows_pkg/releases</li>
+                <li>选择最新版本的 <code>Clash.for.Windows.Setup.exe</code></li>
+            </ul>
+
+            <p><strong>安装步骤：</strong></p>
+            <ol>
+                <li>双击安装程序</li>
+                <li>选择安装路径（默认即可）</li>
+                <li>等待安装完成</li>
+                <li>首次运行可能需要授予管理员权限</li>
+            </ol>
+
+            <h3>2.2 导入订阅</h3>
+            <ol>
+                <li>打开Clash for Windows</li>
+                <li>点击左侧"Profiles"（配置）</li>
+                <li>在顶部输入框粘贴订阅链接（从<a href="https://bajiejichang.cfd" target="_blank" rel="noopener">八戒机场</a>获取）</li>
+                <li>点击"Download"下载配置</li>
+                <li>配置下载成功后会显示在列表中</li>
+                <li>点击配置使其生效（变为绿色高亮）</li>
+            </ol>
+
+            <h3>2.3 启用代理</h3>
+            <ol>
+                <li>点击左侧"General"（常规）</li>
+                <li>打开"System Proxy"（系统代理）开关</li>
+                <li>此时系统流量将通过Clash代理</li>
+            </ol>
+
+            <h3>2.4 选择节点</h3>
+            <ol>
+                <li>点击左侧"Proxies"（代理）</li>
+                <li>可以看到所有可用节点</li>
+                <li>点击节点名称右侧的图标进行测速</li>
+                <li>选择延迟最低的节点使用</li>
+            </ol>
+
+            <h3>2.5 规则模式</h3>
+            <p>Clash提供三种代理模式：</p>
+            <ul>
+                <li><strong>Rule（规则模式）：</strong>根据规则自动分流，推荐</li>
+                <li><strong>Global（全局模式）：</strong>所有流量走代理</li>
+                <li><strong>Direct（直连模式）：</strong>所有流量直连，不走代理</li>
+            </ul>
+
+            <h2>三、macOS平台 - ClashX</h2>
+
+            <h3>3.1 下载与安装</h3>
+            <p><strong>下载地址：</strong></p>
+            <ul>
+                <li>GitHub：github.com/yichengchen/clashX/releases</li>
+                <li>下载 <code>ClashX.dmg</code></li>
+            </ul>
+
+            <p><strong>安装步骤：</strong></p>
+            <ol>
+                <li>打开下载的dmg文件</li>
+                <li>将ClashX拖到Applications文件夹</li>
+                <li>首次运行需要在"系统偏好设置 - 安全性与隐私"中允许</li>
+                <li>授予网络权限</li>
+            </ol>
+
+            <h3>3.2 配置订阅</h3>
+            <ol>
+                <li>点击菜单栏的ClashX图标</li>
+                <li>选择"配置" - "托管配置" - "管理"</li>
+                <li>点击"添加"</li>
+                <li>粘贴订阅链接，输入名称</li>
+                <li>点击"确定"</li>
+                <li>等待配置下载完成</li>
+            </ol>
+
+            <h3>3.3 启用代理</h3>
+            <ol>
+                <li>点击菜单栏ClashX图标</li>
+                <li>选择"设置为系统代理"</li>
+                <li>代理模式选择"规则判断"</li>
+                <li>选择合适的节点</li>
+            </ol>
+
+            <h2>四、Android平台 - Clash for Android</h2>
+
+            <h3>4.1 下载与安装</h3>
+            <p><strong>下载方式：</strong></p>
+            <ul>
+                <li>GitHub：github.com/Kr328/ClashForAndroid/releases</li>
+                <li>下载 <code>cfa-xxx-universal-release.apk</code></li>
+                <li>或从Google Play下载（需要科学上网）</li>
+            </ul>
+
+            <p><strong>安装：</strong></p>
+            <ol>
+                <li>允许安装未知来源应用</li>
+                <li>点击apk文件安装</li>
+                <li>授予必要权限</li>
+            </ol>
+
+            <h3>4.2 导入配置</h3>
+            <ol>
+                <li>打开Clash for Android</li>
+                <li>点击"配置"</li>
+                <li>点击右上角"+"号</li>
+                <li>选择"URL"</li>
+                <li>粘贴订阅链接，输入名称</li>
+                <li>点击右上角保存图标</li>
+                <li>等待配置下载</li>
+            </ol>
+
+            <h3>4.3 启动服务</h3>
+            <ol>
+                <li>返回主页</li>
+                <li>点击中间的开关按钮</li>
+                <li>首次使用需要允许VPN连接请求</li>
+                <li>连接成功后状态栏会显示钥匙图标</li>
+            </ol>
+
+            <h3>4.4 节点选择</h3>
+            <ol>
+                <li>点击"代理"标签</li>
+                <li>可以看到代理组和节点列表</li>
+                <li>长按节点可以测速</li>
+                <li>点击选择要使用的节点</li>
+            </ol>
+
+            <h2>五、iOS平台替代方案</h2>
+            <p>注意：iOS没有Clash官方客户端，需要使用替代方案。</p>
+
+            <h3>5.1 Shadowrocket（小火箭）</h3>
+            <p><strong>获取方式：</strong></p>
+            <ul>
+                <li>需要美区Apple ID</li>
+                <li>App Store售价$2.99</li>
+                <li>支持导入Clash订阅</li>
+            </ul>
+
+            <p><strong>使用步骤：</strong></p>
+            <ol>
+                <li>打开Shadowrocket</li>
+                <li>点击右上角"+"</li>
+                <li>类型选择"Subscribe"</li>
+                <li>粘贴订阅链接</li>
+                <li>点击右上角"完成"</li>
+                <li>返回首页，点击右上角刷新图标更新节点</li>
+                <li>选择节点，打开连接开关</li>
+            </ol>
+
+            <h3>5.2 Quantumult X</h3>
+            <p>功能更强大的高级客户端：</p>
+            <ul>
+                <li>App Store售价$7.99</li>
+                <li>支持更复杂的规则和脚本</li>
+                <li>适合进阶用户</li>
+            </ul>
+
+            <h2>六、规则分流详解</h2>
+
+            <h3>6.1 什么是规则分流？</h3>
+            <p>规则分流可以让不同的流量走不同的线路：</p>
+            <ul>
+                <li>国内网站直接访问（速度快）</li>
+                <li>国外网站走代理</li>
+                <li>广告域名拦截</li>
+                <li>特定应用使用特定节点</li>
+            </ul>
+
+            <h3>6.2 常用规则类型</h3>
+            <ul>
+                <li><strong>DOMAIN：</strong>完整域名匹配</li>
+                <li><strong>DOMAIN-SUFFIX：</strong>域名后缀匹配</li>
+                <li><strong>DOMAIN-KEYWORD：</strong>域名关键字匹配</li>
+                <li><strong>IP-CIDR：</strong>IP地址段匹配</li>
+                <li><strong>GEOIP：</strong>地理位置匹配</li>
+                <li><strong>PROCESS-NAME：</strong>进程名称匹配</li>
+            </ul>
+
+            <h3>6.3 代理组类型</h3>
+            <ul>
+                <li><strong>select：</strong>手动选择节点</li>
+                <li><strong>url-test：</strong>自动选择延迟最低的节点</li>
+                <li><strong>fallback：</strong>故障转移，主节点失效时切换</li>
+                <li><strong>load-balance：</strong>负载均衡</li>
+            </ul>
+
+            <h2>七、进阶功能</h2>
+
+            <h3>7.1 自定义规则</h3>
+            <p>在Clash for Windows中添加自定义规则：</p>
+            <ol>
+                <li>点击"Profiles"</li>
+                <li>右键点击配置文件</li>
+                <li>选择"Edit in Text Editor"</li>
+                <li>在rules部分添加自定义规则</li>
+                <li>保存文件</li>
+            </ol>
+
+            <h3>7.2 TUN模式</h3>
+            <p>TUN模式可以接管所有流量，包括不支持代理的应用：</p>
+            <ul>
+                <li>在"General"中启用"TUN Mode"</li>
+                <li>需要管理员权限</li>
+                <li>可以代理所有UDP流量</li>
+            </ul>
+
+            <h3>7.3 规则集订阅</h3>
+            <p>使用在线规则集保持规则最新：</p>
+            <ul>
+                <li>在配置文件中添加rule-providers</li>
+                <li>规则自动从远程更新</li>
+                <li>无需手动维护规则</li>
+            </ul>
+
+            <h2>八、常见问题解决</h2>
+
+            <h3>8.1 无法启动/闪退</h3>
+            <p><strong>解决方案：</strong></p>
+            <ul>
+                <li>检查是否授予了必要权限</li>
+                <li>关闭杀毒软件的拦截</li>
+                <li>以管理员身份运行</li>
+                <li>重新安装最新版本</li>
+            </ul>
+
+            <h3>8.2 无法连接网络</h3>
+            <p><strong>排查步骤：</strong></p>
+            <ol>
+                <li>检查订阅是否过期</li>
+                <li>尝试更换节点</li>
+                <li>更新订阅配置</li>
+                <li>检查系统代理设置</li>
+                <li>重启Clash</li>
+            </ol>
+
+            <h3>8.3 速度慢</h3>
+            <p><strong>优化建议：</strong></p>
+            <ul>
+                <li>使用测速功能选择最快节点</li>
+                <li>避开使用高峰期</li>
+                <li>检查本地网络状况</li>
+                <li>尝试不同的节点</li>
+                <li>考虑升级套餐使用高级线路</li>
+            </ul>
+
+            <h3>8.4 部分网站无法访问</h3>
+            <p><strong>可能原因：</strong></p>
+            <ul>
+                <li>规则配置问题，网站被直连</li>
+                <li>节点不支持该网站</li>
+                <li>DNS污染</li>
+            </ul>
+
+            <p><strong>解决方法：</strong></p>
+            <ul>
+                <li>切换到全局模式测试</li>
+                <li>更换其他节点</li>
+                <li>清除浏览器缓存</li>
+                <li>使用规则模式并检查规则配置</li>
+            </ul>
+
+            <h2>九、使用技巧</h2>
+
+            <h3>9.1 订阅管理</h3>
+            <ul>
+                <li>定期更新订阅（建议每周一次）</li>
+                <li>保存多个备用订阅</li>
+                <li>注意订阅有效期</li>
+            </ul>
+
+            <h3>9.2 节点选择策略</h3>
+            <ul>
+                <li><strong>日常浏览：</strong>香港、台湾节点</li>
+                <li><strong>看视频：</strong>根据内容选择对应地区</li>
+                <li><strong>ChatGPT：</strong>美国节点</li>
+                <li><strong>游戏：</strong>低延迟专线节点</li>
+            </ul>
+
+            <h3>9.3 性能优化</h3>
+            <ul>
+                <li>关闭不需要的高级功能</li>
+                <li>合理配置规则，避免过多匹配</li>
+                <li>定期清理日志文件</li>
+                <li>使用SSD提升配置加载速度</li>
+            </ul>
+
+            <h2>十、八戒机场专属优化</h2>
+            <p><strong>八戒机场</strong>为Clash用户提供优化的配置：</p>
+            <ul>
+                <li>预配置的规则分流</li>
+                <li>自动节点选择</li>
+                <li>流媒体解锁分组</li>
+                <li>广告拦截规则</li>
+                <li>定期更新维护</li>
+            </ul>
+
+            <h2>十一、安全建议</h2>
+
+            <h3>11.1 保护订阅链接</h3>
+            <ul>
+                <li>不要分享给他人</li>
+                <li>定期更换订阅链接</li>
+                <li>避免在公共场合展示</li>
+            </ul>
+
+            <h3>11.2 软件来源</h3>
+            <ul>
+                <li>只从官方渠道下载</li>
+                <li>验证文件哈希值</li>
+                <li>警惕修改版和破解版</li>
+            </ul>
+
+            <h3>11.3 使用规范</h3>
+            <ul>
+                <li>遵守当地法律法规</li>
+                <li>不用于非法用途</li>
+                <li>尊重版权和知识产权</li>
+            </ul>
+
+            <div class="cta-box">
+                <h3>获取优质Clash订阅</h3>
+                <p>八戒机场提供稳定的Clash订阅服务</p>
+                <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="cta-button" target="_blank" rel="noopener">立即注册</a>
+            </div>
+        </div>
+
+        <aside class="article-sidebar">
+            <div class="related-articles">
+                <h3>相关文章</h3>
+                <ul>
+                    <li><a href="scientific-internet-complete-guide.html">科学上网完全指南</a></li>
+                    <li><a href="best-airport-recommendation-2024.html">2024年最佳机场推荐</a></li>
+                    <li><a href="vpn-proxy-knowledge.html">VPN与代理科普</a></li>
+                </ul>
+            </div>
+        </aside>
+    </article>
+
+    <footer class="footer">
+        <p>&copy; 2024 八戒机场 | <a href="../index.html">返回首页</a></p>
+    </footer>
+</body>
+</html>

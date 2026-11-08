@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="grad_4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="overlay_4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
+    </linearGradient>
+    <pattern id="grid_4" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#grad_4)"/>
+  <rect width="800" height="450" fill="url(#grid_4)"/>
+  <rect width="800" height="450" fill="url(#overlay_4)"/>
+  
+  <circle cx="700" cy="90" r="150" fill="#ffffff" fill-opacity="0.06"/>
+  <circle cx="100" cy="380" r="120" fill="#ffffff" fill-opacity="0.04"/>
+  
+  <rect x="60" y="60" width="130" height="34" rx="17" fill="#ffffff" fill-opacity="0.2"/>
+  <text x="75" y="82" fill="#ffffff" font-size="14" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">科学上网</text>
+  <text x="740" y="82" fill="#e2e8f0" font-size="14" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" text-anchor="end">八戒机场 (bajiejichang.cfd)</text>
+
+  <circle cx="690" cy="220" r="55" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="690" y="235" fill="#ffffff" font-size="38" text-anchor="middle">⚡</text>
+
+  <text x="60" y="190" fill="#ffffff" font-size="32" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    科学上网与网络加速完全指南
+  </text>
+  
+  <text x="60" y="245" fill="#e2e8f0" font-size="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    协议解析、网络拓扑与专线原理全景科普
+  </text>
+
+  <g transform="translate(60, 350)">
+    <rect x="0" y="0" width="680" height="48" rx="10" fill="#0f172a" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.1"/>
+    <circle cx="25" cy="24" r="4" fill="#10b981"/>
+    <text x="38" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="-apple-system, sans-serif">高速BGP专线</text>
+    
+    <circle cx="165" cy="24" r="4" fill="#38bdf8"/>
+    <text x="178" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="-apple-system, sans-serif">严格零日志</text>
+
+    <circle cx="305" cy="24" r="4" fill="#a855f7"/>
+    <text x="318" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="-apple-system, sans-serif">Clash / Shadowrocket</text>
+
+    <text x="660" y="29" fill="#fbbf24" font-size="13" font-weight="700" font-family="-apple-system, sans-serif" text-anchor="end">4K秒开 ★★★★★</text>
+  </g>
+</svg>
