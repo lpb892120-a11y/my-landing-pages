@@ -1,26 +1,20 @@
 User-agent: *
 Allow: /
+Disallow: /js/
+Disallow: /css/
 
-# 禁止抓取的目录
-Disallow: /admin/
-Disallow: /api/
-Disallow: /temp/
+# Sitemap
+Sitemap: https://yangfancloudjic.sbs/sitemap.xml
 
-# 站点地图
-Sitemap: https://bajiejichang.cc/sitemap.xml
-
-# 爬虫延迟（秒）
-Crawl-delay: 1
-
-# 特定搜索引擎规则
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0.5
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Crawl-delay for better server performance
 Crawl-delay: 1
