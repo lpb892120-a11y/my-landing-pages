@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# 禁止抓取的目录
+Disallow: /admin/
+Disallow: /api/
+Disallow: /temp/
+
+# 站点地图
+Sitemap: https://bajiejichang.cc/sitemap.xml
+
+# 爬虫延迟（秒）
+Crawl-delay: 1
+
+# 特定搜索引擎规则
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

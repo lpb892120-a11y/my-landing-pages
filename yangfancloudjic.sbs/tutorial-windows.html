@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Clash教程：Clash for Windows完整配置指南 | 八戒机场</title>
+    <meta name="description" content="详细的Windows平台Clash使用教程，包括Clash for Windows下载、安装、订阅配置、节点选择等完整步骤，适合新手快速上手。">
+    <meta name="keywords" content="Windows Clash教程,Clash for Windows,Windows翻墙教程,Clash配置,Windows科学上网">
+    <link rel="canonical" href="https://yangfancloudjic.sbs/tutorial-windows.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Windows Clash使用教程",
+      "description": "Clash for Windows完整配置指南",
+      "step": [{
+        "@type": "HowToStep",
+        "name": "下载Clash for Windows",
+        "text": "访问GitHub下载最新版Clash for Windows安装包"
+      }, {
+        "@type": "HowToStep",
+        "name": "安装客户端",
+        "text": "双击安装包，按提示完成安装"
+      }, {
+        "@type": "HowToStep",
+        "name": "导入订阅",
+        "text": "在Profiles页面粘贴订阅链接并下载"
+      }, {
+        "@type": "HowToStep",
+        "name": "选择节点",
+        "text": "在Proxies页面选择合适的节点"
+      }, {
+        "@type": "HowToStep",
+        "name": "开启代理",
+        "text": "在General页面开启System Proxy"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://yangfancloudjic.sbs/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Windows教程"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="八戒机场Logo" class="logo">
+                <span class="brand-name">八戒机场</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#features">核心优势</a></li>
+                <li><a href="index.html#pricing">套餐价格</a></li>
+                <li><a href="index.html#tutorials">使用教程</a></li>
+                <li><a href="articles.html">文章中心</a></li>
+                <li><a href="faq.html">常见问题</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary">立即使用</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-page">
+        <div class="container">
+            <div class="article-header">
+                <div class="article-breadcrumb">
+                    <a href="index.html">首页</a> / Windows使用教程
+                </div>
+                <h1>Windows Clash完整使用教程</h1>
+                <div class="article-meta">
+                    <span class="article-date">📅 2024年11月8日</span>
+                    <span class="article-category">🏷️ Windows教程</span>
+                    <span class="article-read-time">⏱️ 阅读时间：8分钟</span>
+                </div>
+                <div class="article-featured-image">
+                    <img src="images/tutorial-windows.jpg" alt="Windows Clash教程">
+                </div>
+            </div>
+
+            <div class="article-body">
+                <p class="lead">本教程将详细讲解如何在Windows系统上使用Clash for Windows客户端，包括下载、安装、配置、使用等全流程，适合Windows 7/8/10/11所有版本。</p>
+
+                <h2>准备工作</h2>
+
+                <p>开始之前，请确保：</p>
+                <ul>
+                    <li>Windows 7或更高版本系统</li>
+                    <li>已购买Clash机场服务（推荐<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4">八戒机场</a>）</li>
+                    <li>获取了订阅链接</li>
+                    <li>关闭可能冲突的VPN或代理软件</li>
+                </ul>
+
+                <h2>第一步：下载Clash for Windows</h2>
+
+                <h3>官方下载地址</h3>
+                <p>Clash for Windows是Windows平台最流行的Clash客户端，完全免费开源。</p>
+
+                <p><strong>下载步骤：</strong></p>
+                <ol>
+                    <li>访问GitHub发布页：<code>https://github.com/Fndroid/clash_for_windows_pkg/releases</code></li>
+                    <li>找到最新版本（Latest release）</li>
+                    <li>在Assets下找到Windows安装包：
+                        <ul>
+                            <li><code>Clash.for.Windows.Setup.x.x.x.exe</code> - 安装版（推荐）</li>
+                            <li><code>Clash.for.Windows-x.x.x-win.7z</code> - 便携版</li>
+                        </ul>
+                    </li>
+                    <li>点击下载对应的文件</li>
+                </ol>
+
+                <p><strong>提示：</strong>如果GitHub访问困难，可以使用镜像站或联系<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4">八戒机场客服</a>获取下载链接。</p>
+
+                <h3>版本选择建议</h3>
+                <ul>
+                    <li><strong>安装版：</strong>适合大多数用户，会自动关联配置文件</li>
+                    <li><strong>便携版：</strong>适合需要U盘携带或多台电脑使用的用户</li>
+                </ul>
+
+                <h2>第二步：安装Clash for Windows</h2>
+
+                <h3>安装版安装步骤</h3>
+                <ol>
+                    <li>双击下载的<code>.exe</code>文件</li>
+                    <li>选择安装路径（默认即可）</li>
+                    <li>点击"Install"开始安装</li>
+                    <li>等待安装完成，点击"Finish"</li>
+                    <li>桌面会出现Clash for Windows图标</li>
+                </ol>
+
+                <h3>便携版使用方法</h3>
+                <ol>
+                    <li>解压下载的<code>.7z</code>文件</li>
+                    <li>进入解压后的文件夹</li>
+                    <li>双击<code>Clash for Windows.exe</code>运行</li>
+                </ol>
+
+                <h3>首次运行注意事项</h3>
+                <p>首次运行时，Windows防火墙可能会弹出警告：</p>
+                <ol>
+                    <li>勾选"专用网络"和"公用网络"</li>
+                    <li>点击"允许访问"</li>
+                    <li>这是必要的步骤，否则Clash无法正常工作</li>
+                </ol>
+
+                <h2>第三步：获取订阅链接</h2>
+
+                <p>如果您还没有订阅链接，需要先注册机场服务。</p>
+
+                <h3>以八戒机场为例：</h3>
+                <ol>
+                    <li>访问<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4">八戒机场官网</a></li>
+                    <li>注册账号并登录</li>
+                    <li>选择合适的套餐并支付</li>
+                    <li>进入用户中心</li>
+                    <li>找到"订阅中心"或"我的订阅"</li>
+                    <li>找到Clash订阅链接，点击"复制"</li>
+                </ol>
+
+                <p><strong>重要提示：</strong></p>
+                <ul>
+                    <li>订阅链接是私密信息，不要泄露给他人</li>
+                    <li>订阅链接通常以<code>http://</code>或<code>https://</code>开头</li>
+                    <li>每个机场的界面略有不同，但订阅链接都在明显位置</li>
+                </ul>
+
+                <h2>第四步：导入订阅配置</h2>
+
+                <p>这是最关键的一步，将订阅链接导入Clash for Windows。</p>
+
+                <h3>详细步骤：</h3>
+                <ol>
+                    <li>打开Clash for Windows</li>
+                    <li>点击左侧导航栏的<strong>"Profiles"</strong>（配置文件）</li>
+                    <li>在顶部找到输入框，显示"URL"</li>
+                    <li>粘贴刚才复制的订阅链接</li>
+                    <li>点击右侧的<strong>"Download"</strong>（下载）按钮</li>
+                    <li>等待下载完成（通常几秒钟）</li>
+                    <li>下载成功后，配置文件会出现在下方列表中</li>
+                    <li>点击配置文件使其变成绿色（表示已激活）</li>
+                </ol>
+
+                <h3>常见问题</h3>
+                <ul>
+                    <li><strong>下载失败：</strong>检查订阅链接是否正确，网络是否正常</li>
+                    <li><strong>链接无效：</strong>确认订阅未过期，联系机场客服</li>
+                    <li><strong>配置无节点：</strong>尝试更新订阅或重新下载</li>
+                </ul>
+
+                <h2>第五步：选择代理模式</h2>
+
+                <p>Clash提供三种代理模式，适用于不同场景。</p>
+
+                <h3>代理模式说明</h3>
+
+                <ol>
+                    <li>点击左侧<strong>"General"</strong>（常规设置）</li>
+                    <li>找到<strong>"Mode"</strong>（模式）选项</li>
+                    <li>选择合适的模式：</li>
+                </ol>
+
+                <table style="width:100%; border-collapse: collapse; margin: 20px 0;">
+                    <thead>
+                        <tr style="background: var(--bg-light);">
+                            <th style="padding: 12px; border: 1px solid var(--border-color);">模式</th>
+                            <th style="padding: 12px; border: 1px solid var(--border-color);">说明</th>
+                            <th style="padding: 12px; border: 1px solid var(--border-color);">适用场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);"><strong>Rule（规则）</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">根据规则自动分流</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">日常使用（推荐）</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);"><strong>Global（全局）</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">所有流量走代理</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">特殊需求</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);"><strong>Direct（直连）</strong></td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">所有流量不走代理</td>
+                            <td style="padding: 12px; border: 1px solid var(--border-color);">暂停使用</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>推荐设置：</strong>选择<strong>Rule模式</strong>，它会：</p>
+                <ul>
+                    <li>国内网站直接连接（快速，不消耗流量）</li>
+                    <li>国外网站走代理（科学上网）</li>
+                    <li>智能分流，体验最佳</li>
+                </ul>
+
+                <h2>第六步：选择节点</h2>
+
+                <p>订阅导入后，会有很多节点可供选择。</p>
+
+                <h3>选择节点步骤</h3>
+                <ol>
+                    <li>点击左侧<strong>"Proxies"</strong>（代理）</li>
+                    <li>在页面中可以看到节点分组（如PROXY、Auto等）</li>
+                    <li>点击节点组名称展开节点列表</li>
+                    <li>每个节点右侧显示延迟（ms数值）</li>
+                    <li>点击节点名称即可切换</li>
+                </ol>
+
+                <h3>节点选择建议</h3>
+                <ul>
+                    <li><strong>延迟优先：</strong>选择延迟最低的节点（20-80ms最佳）</li>
+                    <li><strong>地区选择：</strong>
+                        <ul>
+                            <li>日常浏览：香港、台湾、日本（延迟低）</li>
+                            <li>看Netflix：流媒体专用节点</li>
+                            <li>玩游戏：游戏加速节点</li>
+                            <li>用ChatGPT：美国、英国节点</li>
+                        </ul>
+                    </li>
+                    <li><strong>测速功能：</strong>点击节点组右上角的闪电图标可批量测速</li>
+                </ul>
+
+                <h3>自动选择节点</h3>
+                <p>如果不想手动选择，可以使用"自动选择"功能：</p>
+                <ol>
+                    <li>在节点组中选择<strong>"Auto"</strong>或<strong>"自动选择"</strong></li>
+                    <li>Clash会自动测速并选择最快节点</li>
+                    <li>节点故障时会自动切换</li>
+                </ol>
+
+                <h2>第七步：开启系统代理</h2>
+
+                <p>完成前面步骤后，最后一步是开启系统代理。</p>
+
+                <h3>开启步骤</h3>
+                <ol>
+                    <li>点击左侧<strong>"General"</strong></li>
+                    <li>找到<strong>"System Proxy"</strong>（系统代理）</li>
+                    <li>点击右侧开关，变成<span style="color: green;">绿色</span>表示已开启</li>
+                    <li>任务栏的Clash图标会变色（通常变为彩色）</li>
+                    <li>窗口底部会显示实时上传/下载速度</li>
+                </ol>
+
+                <h3>验证是否成功</h3>
+                <p>测试代理是否正常工作：</p>
+                <ol>
+                    <li>打开浏览器</li>
+                    <li>访问<code>google.com</code>或<code>youtube.com</code></li>
+                    <li>如果能正常打开，说明配置成功</li>
+                    <li>访问<code>ip.sb</code>查看当前IP，应显示代理服务器的IP</li>
+                </ol>
+
+                <h2>第八步：更新订阅</h2>
+
+                <p>机场会定期更新节点，建议每周更新订阅。</p>
+
+                <h3>更新方法</h3>
+                <ol>
+                    <li>点击左侧<strong>"Profiles"</strong></li>
+                    <li>找到您的配置文件</li>
+                    <li>点击右侧的<strong>刷新图标</strong></li>
+                    <li>等待更新完成</li>
+                </ol>
+
+                <h3>自动更新设置</h3>
+                <ol>
+                    <li>在Profiles页面，鼠标悬停在配置文件上</li>
+                    <li>点击右侧的<strong>设置图标</strong></li>
+                    <li>设置更新间隔（建议24小时）</li>
+                    <li>保存设置</li>
+                </ol>
+
+                <h2>常用功能说明</h2>
+
+                <h3>1. 开机自启</h3>
+                <ol>
+                    <li>点击<strong>"General"</strong></li>
+                    <li>开启<strong>"Start with Windows"</strong></li>
+                    <li>Windows启动时自动运行Clash</li>
+                </ol>
+
+                <h3>2. TUN模式</h3>
+                <p>TUN模式可以代理所有应用程序，包括不支持系统代理的软件：</p>
+                <ol>
+                    <li>点击<strong>"General"</strong></li>
+                    <li>开启<strong>"TUN Mode"</strong></li>
+                    <li>首次使用需要安装虚拟网卡</li>
+                </ol>
+
+                <h3>3. 端口设置</h3>
+                <p>查看或修改代理端口：</p>
+                <ul>
+                    <li><strong>HTTP Port：</strong>通常是7890</li>
+                    <li><strong>SOCKS5 Port：</strong>通常是7891</li>
+                    <li>一般不需要修改</li>
+                </ul>
+
+                <h2>常见问题解决</h2>
+
+                <h3>问题1：开启代理后无法上网</h3>
+                <p><strong>解决方法：</strong></p>
+                <ol>
+                    <li>检查节点是否正常，尝试更换节点</li>
+                    <li>更新订阅，获取新节点</li>
+                    <li>检查防火墙是否允许Clash</li>
+                    <li>重启Clash客户端</li>
+                    <li>检查系统代理设置是否正确</li>
+                </ol>
+
+                <h3>问题2：部分软件无法使用代理</h3>
+                <p><strong>解决方法：</strong></p>
+                <ul>
+                    <li>尝试开启TUN模式</li>
+                    <li>在软件中手动配置代理：
+                        <ul>
+                            <li>代理地址：127.0.0.1</li>
+                            <li>端口：7890（HTTP）或7891（SOCKS5）</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>问题3：速度很慢</h3>
+                <p><strong>解决方法：</strong></p>
+                <ul>
+                    <li>进行节点测速，选择延迟低的节点</li>
+                    <li>更换节点，避开拥堵节点</li>
+                    <li>选择专线节点（IPLC）</li>
+                    <li>检查本地网络速度</li>
+                </ul>
+
+                <h3>问题4：Clash启动失败</h3>
+                <p><strong>解决方法：</strong></p>
+                <ul>
+                    <li>以管理员身份运行</li>
+                    <li>关闭其他代理软件</li>
+                    <li>检查端口是否被占用</li>
+                    <li>重新安装Clash</li>
+                </ul>
+
+                <h2>使用技巧</h2>
+
+                <ul>
+                    <li><strong>快捷键：</strong>
+                        <ul>
+                            <li>Ctrl + Shift + R：快速切换代理模式</li>
+                            <li>Ctrl + R：更新订阅</li>
+                        </ul>
+                    </li>
+                    <li><strong>托盘菜单：</strong>右键任务栏图标可快速访问常用功能</li>
+                    <li><strong>日志查看：</strong>点击"Logs"可查看连接日志，排查问题</li>
+                    <li><strong>规则管理：</strong>点击"Rules"可查看当前分流规则</li>
+                </ul>
+
+                <div class="article-cta">
+                    <h3>立即开始使用Clash</h3>
+                    <p>注册八戒机场，获取优质订阅服务</p>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary">立即注册</a>
+                </div>
+
+                <h2>总结</h2>
+
+                <p>通过本教程，您应该已经掌握了在Windows系统上使用Clash for Windows的完整流程：</p>
+                <ol>
+                    <li>下载并安装Clash for Windows</li>
+                    <li>获取机场订阅链接</li>
+                    <li>导入订阅配置</li>
+                    <li>选择合适的代理模式和节点</li>
+                    <li>开启系统代理</li>
+                    <li>定期更新订阅</li>
+                </ol>
+
+                <p>记住以下要点：</p>
+                <ul>
+                    <li>日常使用选择<strong>Rule模式</strong></li>
+                    <li>选择<strong>延迟低</strong>的节点</li>
+                    <li>定期<strong>更新订阅</strong></li>
+                    <li>遇到问题先尝试<strong>更换节点</strong></li>
+                </ul>
+
+                <p>如有任何问题，欢迎访问<a href="faq.html">FAQ页面</a>或联系<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4">八戒机场客服</a>获取帮助。</p>
+
+                <!-- FAQ -->
+                <div class="article-faq">
+                    <h2>Windows Clash常见问题</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Clash for Windows支持哪些Windows版本？</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Clash for Windows支持Windows 7及以上所有版本，包括Windows 7、8、8.1、10、11。推荐使用Windows 10或11以获得最佳体验。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Clash for Windows是免费的吗？</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>是的，Clash for Windows客户端完全免费且开源。您只需要付费购买机场订阅服务（如八戒机场）来获取节点。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Rule模式和Global模式有什么区别？</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Rule模式会根据规则智能分流，国内网站直连，国外网站代理，速度快且节省流量。Global模式所有流量都走代理，访问国内网站也会绕路，速度慢且浪费流量。日常使用强烈推荐Rule模式。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Tutorials -->
+                <div class="related-articles">
+                    <h2>其他平台教程</h2>
+                    <div class="related-grid">
+                        <a href="tutorial-mac.html" class="related-card">
+                            <div class="related-image">
+                                <img src="images/tutorial-mac.jpg" alt="macOS教程">
+                            </div>
+                            <h3>macOS Clash使用教程</h3>
+                            <p>ClashX和Clash Verge完整配置指南</p>
+                        </a>
+                        <a href="tutorial-android.html" class="related-card">
+                            <div class="related-image">
+                                <img src="images/tutorial-android.jpg" alt="Android教程">
+                            </div>
+                            <h3>Android Clash使用教程</h3>
+                            <p>Clash for Android详细配置步骤</p>
+                        </a>
+                        <a href="tutorial-ios.html" class="related-card">
+                            <div class="related-image">
+                                <img src="images/tutorial-ios.jpg" alt="iOS教程">
+                            </div>
+                            <h3>iOS Clash使用教程</h3>
+                            <p>Shadowrocket和Stash配置指南</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>八戒机场（扬帆云机场、ssrdog机场）是专业的Clash机场服务提供商。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>平台教程</h4>
+                    <ul>
+                        <li><a href="tutorial-windows.html">Windows教程</a></li>
+                        <li><a href="tutorial-mac.html">macOS教程</a></li>
+                        <li><a href="tutorial-ios.html">iOS教程</a></li>
+                        <li><a href="tutorial-android.html">Android教程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html#features">核心优势</a></li>
+                        <li><a href="index.html#pricing">套餐价格</a></li>
+                        <li><a href="faq.html">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律条款</h4>
+                    <ul>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">服务条款</a></li>
+                        <li><a href="disclaimer.html">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 八戒机场. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Clash for Windows支持哪些Windows版本？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clash for Windows支持Windows 7及以上所有版本，包括Windows 7、8、8.1、10、11。推荐使用Windows 10或11以获得最佳体验。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "Clash for Windows是免费的吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "是的，Clash for Windows客户端完全免费且开源。您只需要付费购买机场订阅服务来获取节点。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "Rule模式和Global模式有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rule模式会根据规则智能分流，国内网站直连，国外网站代理。Global模式所有流量都走代理，速度慢且浪费流量。日常使用强烈推荐Rule模式。"
+        }
+      }]
+    }
+    </script>
+</body>
+</html>
