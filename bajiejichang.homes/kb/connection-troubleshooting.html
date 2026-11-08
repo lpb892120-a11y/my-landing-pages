@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4faf7">
+  <title>代理连接不上怎么办？从本地网络到订阅逐层排查｜八戒机场知识库</title>
+  <meta name="description" content="按本地网络、账号订阅、客户端代理、DNS和服务公告的顺序排查连接问题，并保护订阅链接及个人信息。 ">
+  <meta name="keywords" content="代理连接不上,机场节点故障排查,八戒机场教程,网络工具指南">
+  <link rel="canonical" href="https://bajiejichang.homes/kb/connection-troubleshooting.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="代理连接不上怎么办？从本地网络到订阅逐层排查">
+  <meta property="og:description" content="按本地网络、账号订阅、客户端代理、DNS和服务公告的顺序排查连接问题，并保护订阅链接及个人信息。 ">
+  <meta property="og:url" content="https://bajiejichang.homes/kb/connection-troubleshooting.html">
+  <meta property="article:published_time" content="2026-11-08">
+  <link rel="stylesheet" href="../css/kb.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "代理连接不上怎么办？从本地网络到订阅逐层排查",
+  "description": "按本地网络、账号订阅、客户端代理、DNS和服务公告的顺序排查连接问题，并保护订阅链接及个人信息。 ",
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "wordCount": 1933,
+  "mainEntityOfPage": "https://bajiejichang.homes/kb/connection-troubleshooting.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "八戒机场知识库",
+    "url": "https://bajiejichang.homes"
+  }
+}</script>
+</head>
+<body class="kb-article-page">
+  <header class="kb-header">
+    <a class="kb-brand" href="../index.html"><span class="kb-brand-mark" aria-hidden="true">八</span><span>八戒机场 <small>知识库</small></span></a>
+    <nav aria-label="文章导航"><a href="../index.html#knowledge">知识库首页</a><a href="../index.html#pricing">官方套餐入口 <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main class="kb-main">
+    <nav class="kb-breadcrumb" aria-label="面包屑"><a href="../index.html">首页</a><span aria-hidden="true">/</span><a href="../knowledge-base.html">知识库与教程</a><span aria-hidden="true">/</span><span>代理连接不上</span></nav>
+    <header class="kb-article-head">
+      <p class="kb-kicker">代理连接不上 · 使用指南</p>
+      <h1>代理连接不上怎么办？从本地网络到订阅逐层排查</h1>
+      <p class="kb-intro">客户端显示已连接却打不开网页，或者所有节点突然失败，原因可能来自多个环节。有效的排错方式是先确认故障范围，再一次只改一个条件。本文提供一套从本地网络到服务状态的检查顺序，帮助你用最少的设置变更定位问题。 </p>
+      <div class="kb-meta"><time datetime="2026-11-08">2026-11-08</time><span>约 1,933 字</span><span>八戒机场知识库</span></div>
+    </header>
+    <div class="kb-content-layout">
+      <article class="kb-prose">
+        <div class="kb-toc"><h2>本文目录</h2><ol><li><a href="#section-1">第一步：确认本地网络正常</a></li>
+<li><a href="#section-2">第二步：检查账号与订阅更新</a></li>
+<li><a href="#section-3">第三步：检查客户端模式和系统代理</a></li>
+<li><a href="#section-4">第四步：把 DNS、证书和规则问题分开</a></li>
+<li><a href="#section-5">第五步：比较节点和时间段</a></li>
+<li><a href="#section-6">整理有效信息并保护隐私</a></li>
+<li><a href="#section-7">何时停止自行排查</a></li>
+<li><a href="#section-8">实践建议</a></li></ol></div>
+<section id="section-1" class="prose-section">
+<h2>第一步：确认本地网络正常</h2>
+<p>先完全退出或暂时关闭代理客户端，尝试访问几个平时可用的网站，并检查 Wi-Fi、网线或移动网络是否保持连接。如果关闭客户端后依然无法上网，问题可能在路由器、运营商、网络门户、设备日期或 DNS，而不是订阅节点。重启路由器前记下指示灯状态，避免把原本的设置问题变复杂。</p>
+<p>公共 Wi-Fi 可能需要先打开登录门户或接受使用条款；在此之前代理软件可能会阻止认证页面访问。办公网络也可能要求使用组织批准的客户端。不要尝试绕过企业网络管理策略，先联系网络管理员确认允许的连接方式。</p>
+</section>
+<section id="section-2" class="prose-section">
+<h2>第二步：检查账号与订阅更新</h2>
+<p>登录官方用户中心检查套餐是否仍有效、流量是否用尽、设备数量是否超限，并查看服务公告是否有维护或配置调整。确认复制的是订阅地址而非账户首页地址，再通过客户端的更新功能同步配置。订阅链接如果过期、损坏或被重置，客户端可能仍显示旧节点列表，但无法建立有效连接。</p>
+<p>如果订阅更新失败，记录客户端提示的错误代码、发生时间和当前网络类型，再确认用户中心页面是否能正常打开。不要频繁连续刷新，服务端可能对请求限流。提交工单时仅提供必要的账号标识或订单号，切勿把完整订阅令牌、密码或付款验证码贴进公开社区。</p>
+</section>
+<section id="section-3" class="prose-section">
+<h2>第三步：检查客户端模式和系统代理</h2>
+<p>确认客户端正在运行，并查看系统代理开关、当前选择的节点或策略组、规则模式和日志状态。若你刚安装或更新了客户端，系统权限提示可能尚未完成；若同时运行多个 VPN、代理或网络过滤程序，也可能出现系统代理被覆盖、虚拟网卡冲突或路由循环。关闭其他不必要的工具后重新验证。</p>
+<p>若浏览器无法访问而其他应用正常，检查浏览器是否启用了单独代理、扩展程序或安全 DNS 设置。若只有某一款桌面应用故障，确认该应用是否读取系统代理，或是否需要在应用偏好设置里单独选择代理。一次只改一个选项并记录改动，出现新问题时可以恢复原配置。</p>
+</section>
+<section id="section-4" class="prose-section">
+<h2>第四步：把 DNS、证书和规则问题分开</h2>
+<p>域名无法解析、网页证书告警和连接超时并不是同一种错误。DNS 故障常表现为域名找不到但直接 IP 仍可能响应；证书错误可能来自设备时间错误、网站配置或网络中间环节；规则误匹配则可能让某个域名走错路径。先记下具体提示，不要直接忽略浏览器证书警告或关闭安全 DNS。</p>
+<p>客户端规则通常按域名或地址决定流量走向。最近添加的规则集、广告过滤或自定义 DNS 可能误拦正常服务。可暂时恢复客户端默认规则并清理目标应用缓存后测试；若问题消失，再逐项重新启用自定义配置，找出具体冲突规则。配置来源应可信，不要导入陌生人分享的完整规则文件。</p>
+</section>
+<section id="section-5" class="prose-section">
+<h2>第五步：比较节点和时间段</h2>
+<p>如果本地网络和账号订阅都正常，尝试同一服务商提供的其他节点，优先比较相近区域或官方建议的备用线路。多次重复连接并记录成功与失败，不要只根据节点列表的排序做判断。不同地区、运营商和时段的路由差异会影响结果，因此一台设备的某次测试不能代表全体用户。</p>
+<p>节点状态页面应说明检测时间、测试地点和数据来源。若看到的是“未知”“暂无数据”或数据更新时间较旧，不要把它理解成在线或离线的确定证据。本站节点表未接入实时探测，当前所有延迟显示为空值；需要确认服务端状态时，应查看官方公告或用户中心。</p>
+</section>
+<section id="section-6" class="prose-section">
+<h2>整理有效信息并保护隐私</h2>
+<p>联系服务支持前整理：问题开始时间、设备与操作系统、客户端版本、网络类型、订阅是否更新成功、已尝试的步骤和完整错误文字。尽量提供最小复现流程，说明是全部网站、单个网站还是某款应用异常。清晰记录比“不能用、很慢”更能帮助定位问题。</p>
+<p>分享日志和截图前删除订阅链接、账号令牌、个人 IP、邮箱、订单地址和私人内容。不要安装陌生人提供的远程控制程序，也不要交出密码或多因素验证码。修复后记录有效步骤，并移除临时修改。若涉及组织设备、敏感资料或疑似账号泄露，优先遵循单位安全流程并联系官方支持。</p>
+</section>
+<section id="section-7" class="prose-section">
+<h2>何时停止自行排查</h2>
+<p>如果本地网络正常、账号有效、配置更新无误但多个节点持续失败，而且官方公告没有解释，可提交正式工单等待核查。若设备出现异常网络请求、未知证书或账号被异地登录，停止使用可疑客户端，重置凭据并进行设备安全检查。反复安装不同版本、关闭防护或运行管理员脚本通常会增加风险，并不能保证修复问题。</p>
+<p>也要把网络故障与目标网站维护、账号限制、地区政策和平台服务条款区分开。代理连通不意味着目标网站一定允许访问。有关客户端基础配置可看<a href="clash-client-setup-guide.html">Clash 类客户端入门</a>；订阅凭据保护方法见<a href="subscription-security-guide.html">订阅安全指南</a>。</p>
+</section>
+<section id="section-8" class="prose-section">
+<h2>实践建议</h2>
+<p>向官方支持提交问题时，标题写明现象和时间，例如“某系统更新后订阅可刷新但无法连接”。正文列出设备、系统与客户端版本、网络类型、服务套餐状态、错误原文和已尝试步骤，并附上脱敏日志。不要一次发送大量无关截图，也不要公开发布账号凭据。服务恢复后回报结果，便于区分临时网络波动与仍需处理的配置问题。</p>
+</section>
+        <aside class="kb-note"><strong>信息说明</strong><p>本文为通用知识与配置思路，不构成服务性能承诺。价格、节点、设备限制及服务规则请以官方用户中心当前说明为准，并遵守所在地法律法规和相关平台条款。</p></aside>
+      </article>
+      <aside class="kb-side">
+        <div class="kb-side-block"><span class="kb-side-label">继续了解</span><a href="../index.html#nodes">节点状态与实时探测说明 <span>↗</span></a><a href="../index.html#pricing">套餐查询入口 <span>↗</span></a><a href="../faq.html">常见问题 <span>↗</span></a></div>
+        <div class="kb-side-block"><span class="kb-side-label">相关文章</span><a href="multi-device-network-guide.html">多设备与家庭网络配置指南：账号、路由器和日常维护<span aria-hidden="true">↗</span></a>
+<a href="ladder-recommendation-guide.html">梯子推荐怎么选？从需求出发的服务评估指南<span aria-hidden="true">↗</span></a>
+<a href="scientific-internet-guide.html">科学上网指南：工具选择、客户端配置与安全习惯<span aria-hidden="true">↗</span></a></div>
+      </aside>
+    </div>
+    <nav class="kb-bottom-nav" aria-label="返回知识库"><a href="../knowledge-base.html">← 返回知识库目录</a><a href="../index.html">八戒机场首页 →</a></nav>
+  </main>
+  <footer class="kb-footer"><span>© 2026 八戒机场官网</span><a href="../sitemap.xml">XML Sitemap</a><a href="../privacy.html">隐私政策</a></footer>
+</body>
+</html>

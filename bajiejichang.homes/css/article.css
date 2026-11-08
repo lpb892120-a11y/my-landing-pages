@@ -1,0 +1,257 @@
+/* 文章页面专用样式 */
+
+.article-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background: var(--bg-light);
+}
+
+.article-header {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-md);
+}
+
+.article-breadcrumb {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.article-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.article-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.article-featured-image {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.article-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-body {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    line-height: 1.9;
+}
+
+.article-body .lead {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(99, 102, 241, 0.05);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.article-body h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.article-body h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.article-body p {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.article-body ul, .article-body ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.article-body li {
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.article-body strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.article-body a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.article-body a:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.article-cta {
+    background: var(--gradient-1);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.article-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.article-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.article-cta .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.article-faq {
+    margin: 60px 0;
+    padding: 40px;
+    background: var(--bg-light);
+    border-radius: 15px;
+}
+
+.article-faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 0;
+    border-bottom: none;
+}
+
+.related-articles {
+    margin-top: 60px;
+    padding-top: 60px;
+    border-top: 2px solid var(--border-color);
+}
+
+.related-articles h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.related-card {
+    background: var(--bg-light);
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.related-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-card:hover .related-image img {
+    transform: scale(1.1);
+}
+
+.related-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 20px 20px 10px;
+}
+
+.related-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin: 0 20px 20px;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .article-header {
+        padding: 30px 20px;
+    }
+
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .article-featured-image {
+        height: 250px;
+    }
+
+    .article-body {
+        padding: 30px 20px;
+    }
+
+    .article-body h2 {
+        font-size: 1.6rem;
+        margin-top: 35px;
+    }
+
+    .article-body h3 {
+        font-size: 1.3rem;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
