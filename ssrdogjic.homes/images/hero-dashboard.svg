@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#6366f1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Window Frame -->
+  <rect x="20" y="20" width="760" height="480" rx="16" fill="url(#bgGrad)" stroke="#334155" stroke-width="2" filter="url(#softGlow)"/>
+  
+  <!-- Window Header -->
+  <rect x="20" y="20" width="760" height="46" rx="16" fill="#1e293b"/>
+  <rect x="20" y="50" width="760" height="16" fill="#1e293b"/>
+  <circle cx="50" cy="43" r="6" fill="#ef4444"/>
+  <circle cx="70" cy="43" r="6" fill="#f59e0b"/>
+  <circle cx="90" cy="43" r="6" fill="#10b981"/>
+  <text x="400" y="48" fill="#94a3b8" font-size="13" font-family="system-ui, sans-serif" text-anchor="middle" font-weight="600">ssrdog Client - 智能规则分流 (Rule Mode)</text>
+
+  <!-- Left Sidebar -->
+  <rect x="20" y="66" width="180" height="434" fill="#0f172a" opacity="0.7"/>
+  <rect x="35" y="90" width="150" height="36" rx="8" fill="#312e81"/>
+  <text x="60" y="113" fill="#ffffff" font-size="13" font-weight="600" font-family="system-ui">🚀 节点代理</text>
+  <text x="60" y="155" fill="#94a3b8" font-size="13" font-family="system-ui">📋 订阅配置</text>
+  <text x="60" y="195" fill="#94a3b8" font-size="13" font-family="system-ui">🌐 规则分流</text>
+  <text x="60" y="235" fill="#94a3b8" font-size="13" font-family="system-ui">📊 实时测速</text>
+  <text x="60" y="275" fill="#94a3b8" font-size="13" font-family="system-ui">⚙️ 系统设置</text>
+
+  <!-- Main Content Dashboard -->
+  <!-- Top Stat Cards -->
+  <g transform="translate(220, 85)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="160" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+    <text x="16" y="28" fill="#94a3b8" font-size="11" font-family="system-ui">当前实时下载</text>
+    <text x="16" y="58" fill="#38bdf8" font-size="20" font-weight="700" font-family="system-ui">48.6 MB/s</text>
+
+    <!-- Card 2 -->
+    <rect x="180" y="0" width="160" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+    <text x="196" y="28" fill="#94a3b8" font-size="11" font-family="system-ui">专线平均延迟</text>
+    <text x="196" y="58" fill="#4ade80" font-size="20" font-weight="700" font-family="system-ui">16 ms</text>
+
+    <!-- Card 3 -->
+    <rect x="360" y="0" width="170" height="80" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+    <text x="376" y="28" fill="#94a3b8" font-size="11" font-family="system-ui">流媒体解锁状态</text>
+    <text x="376" y="58" fill="#c084fc" font-size="16" font-weight="700" font-family="system-ui">4K HDR 全部解锁</text>
+  </g>
+
+  <!-- Middle Nodes List -->
+  <g transform="translate(220, 185)">
+    <text x="0" y="20" fill="#f8fafc" font-size="14" font-weight="700" font-family="system-ui">专线优质节点 (IPLC / IEPL 全球专线)</text>
+
+    <!-- Node 1 -->
+    <rect x="0" y="35" width="530" height="50" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="25" cy="60" r="5" fill="#22c55e"/>
+    <text x="45" y="65" fill="#ffffff" font-size="13" font-weight="600" font-family="system-ui">🇭🇰 香港 01 [IPLC 高速专线] - 8K YouTube/ChatGPT</text>
+    <rect x="445" y="48" width="65" height="24" rx="12" fill="#065f46"/>
+    <text x="477" y="64" fill="#6ee7b7" font-size="12" font-weight="700" font-family="system-ui" text-anchor="middle">14 ms</text>
+
+    <!-- Node 2 -->
+    <rect x="0" y="95" width="530" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <circle cx="25" cy="120" r="5" fill="#22c55e"/>
+    <text x="45" y="125" fill="#e2e8f0" font-size="13" font-family="system-ui">🇯🇵 日本 02 [原生IP/低延迟] - Netflix / Disney+ / Claude</text>
+    <rect x="445" y="108" width="65" height="24" rx="12" fill="#065f46"/>
+    <text x="477" y="124" fill="#6ee7b7" font-size="12" font-weight="700" font-family="system-ui" text-anchor="middle">32 ms</text>
+
+    <!-- Node 3 -->
+    <rect x="0" y="155" width="530" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <circle cx="25" cy="180" r="5" fill="#22c55e"/>
+    <text x="45" y="185" fill="#e2e8f0" font-size="13" font-family="system-ui">🇸🇬 新加坡 01 [跨境电商/Shopee/TikTok] - 极速专线</text>
+    <rect x="445" y="168" width="65" height="24" rx="12" fill="#065f46"/>
+    <text x="477" y="184" fill="#6ee7b7" font-size="12" font-weight="700" font-family="system-ui" text-anchor="middle">38 ms</text>
+
+    <!-- Node 4 -->
+    <rect x="0" y="215" width="530" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <circle cx="25" cy="240" r="5" fill="#22c55e"/>
+    <text x="45" y="245" fill="#e2e8f0" font-size="13" font-family="system-ui">🇺🇸 美国 01 [ChatGPT/Sora/Midjourney 原生专线]</text>
+    <rect x="445" y="228" width="65" height="24" rx="12" fill="#1e3a5f"/>
+    <text x="477" y="244" fill="#38bdf8" font-size="12" font-weight="700" font-family="system-ui" text-anchor="middle">115 ms</text>
+  </g>
+</svg>

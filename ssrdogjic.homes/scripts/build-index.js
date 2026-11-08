@@ -1,0 +1,863 @@
+const fs = require('fs');
+const path = require('path');
+
+const indexHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ssrdog官网 - 2026稳定好用的Clash机场推荐 | 高速IPLC专线·便宜安全科学上网魔法梯子</title>
+    <meta name="description" content="ssrdog 机场专注提供电竞级高速稳定的科学上网与全球加速服务。全线支持 Clash 与新一代 Clash Party 客户端，采用顶级 IPLC 国际内网专线与 BGP 中继，秒开 4K/8K 视频，完美解锁 Netflix、Disney+ 与 ChatGPT/Claude。提供高性价比便宜套餐与零日志隐私保护，是外贸跨境电商出海与日常翻墙的首选机场推荐。">
+    <meta name="keywords" content="Clash, 便宜机场, 安全机场, 机场推荐, 科学上网, 魔法梯子, 稳定节点, Clash节点, Clash机场, Clash Party机场, 翻墙出海, 全球加速">
+    <link rel="canonical" href="https://ssrdogjic.homes/">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/article.css">
+
+    <!-- Schema Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ssrdog",
+      "url": "https://ssrdogjic.homes/",
+      "logo": "https://ssrdogjic.homes/images/logo.svg",
+      "description": "业内领先的全球网络加速与科学上网服务商，专注提供超低延迟的 IPLC 专线节点与全平台 Clash / Clash Party 客户端支持",
+      "sameAs": [
+        "https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ssrdog 官方网站",
+      "url": "https://ssrdogjic.homes/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ssrdogjic.homes/articles.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://ssrdogjic.homes/"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "什么是Clash机场？它和普通VPN有什么区别？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clash机场是指提供Clash节点订阅与规则分流服务的加速平台。相比传统全局VPN，Clash的核心优势在于智能规则分流：国内网站直连不减速，海外受限网站自动通过专线节点加速，兼顾极速与省电省流量。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ssrdog 机场安全吗？会不会记录我的上网浏览隐私？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ssrdog 极其注重用户隐私，严格执行零日志（No-Logs）政策，不记录任何用户的访问足迹、DNS解析或通信内容。数据全程采用现代军事级强加密协议传输，服务器部署在隐私友好辖区，安全无忧。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "晚高峰看 4K 视频或使用 ChatGPT 会卡顿掉线吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "完全不会！ssrdog 核心热门节点全线采用 IPLC/IEPL 国际内网专线直连，晚高峰零丢包且物理带宽充沛冗余，YouTube/Netflix 4K随拖秒开，完美支持 ChatGPT 与 Claude 极速对话。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Clash 和 Clash Party 有什么区别？我应该用哪个？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clash Party 是基于全新高性能内核与现代亚克力 UI 构建的下一代桌面客户端，界面更美观，内核测速与故障自动切换更激进。新用户强烈推荐使用 Clash Party，操作极其简便；习惯经典界面的用户也可继续选用 Clash Verge。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "支持哪些设备？一个账号可以几台设备同时在线？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "支持 Windows、macOS、iOS(小火箭/Stash)、Android(安卓手机/车机)以及软路由全平台。根据套餐不同，可支持 3 至 10 台设备同时并发在线使用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "购买后如何导入使用？新手能看懂吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "非常简单！在后台点击‘一键导入 Clash’即可自动完成配置下载。我们提供详细的全平台图文与视频教程，3分钟即可轻松上手开启科学上网。"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="top-notice-bar">
+        ⚡ 2026网络架构全线升级！IPLC 专线全面优化，解锁 ChatGPT/Claude 与 Netflix 4K，<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">立即前往官网直达体验 &rarr;</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+                    <img src="images/logo.svg" alt="ssrdog机场Logo - 稳定好用的科学上网加速器" class="logo">
+                    <span class="brand-name">ssrdog</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">核心优势</a></li>
+                <li><a href="#pricing">套餐价格</a></li>
+                <li><a href="#audience">适合人群</a></li>
+                <li><a href="#tutorials">客户端教程</a></li>
+                <li><a href="#testimonials">用户评价</a></li>
+                <li><a href="#faq">常见问题</a></li>
+                <li><a href="articles.html">文章中心</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener">官网直达</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" aria-label="切换移动端菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section (首屏介绍) -->
+    <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-bg">
+            <div class="animated-shape shape-1"></div>
+            <div class="animated-shape shape-2"></div>
+            <div class="animated-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <div class="hero-features" style="margin-bottom:15px;">
+                    <div class="feature-tag">🚀 2026 稳定好用 Clash 机场</div>
+                    <div class="feature-tag">🔒 纯净原生住宅 IP</div>
+                    <div class="feature-tag">⚡ IPLC 物理专线直连</div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">ssrdog</span> 全球专线机场<br>
+                    电竞级低延迟·高性价比科学上网
+                </h1>
+                <p class="hero-subtitle">
+                    为翻墙出海、外贸跨境电商、AI大模型开发与4K超高清流媒体精心打造的专业<strong>魔法梯子</strong>。全线支持 <strong>Clash</strong> 与新一代 <strong>Clash Party</strong> 客户端，晚高峰零丢包，带给您如丝般顺滑的全球加速体验！
+                </p>
+                <div class="hero-cta">
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-hero btn-primary" target="_blank" rel="noopener">立即开启高速体验 &rarr;</a>
+                    <a href="#tutorials" class="btn-hero btn-secondary">查看新手配置教程</a>
+                </div>
+                
+                <!-- Live Ping Tester Widget -->
+                <div class="hero-ping-tester">
+                    <div class="ping-indicator">
+                        <span class="ping-dot"></span>
+                        <span>专线实时延迟状态：</span>
+                    </div>
+                    <div class="ping-items">
+                        <span class="ping-tag">🇭🇰 香港 IPLC: <span class="ping-val">14ms</span></span>
+                        <span class="ping-tag">🇯🇵 日本 01: <span class="ping-val">32ms</span></span>
+                        <span class="ping-tag">🇸🇬 新加坡 01: <span class="ping-val">38ms</span></span>
+                        <span class="ping-tag">🇺🇸 美国 专线: <span class="ping-val">115ms</span></span>
+                    </div>
+                </div>
+
+                <p class="hero-trust" style="margin-top:20px;">
+                    已为全球超过 <span class="count-up" data-target="86000" style="font-weight:700;color:var(--primary-color);">0</span>+ 位外贸商家、开发者与网民提供不间断稳定服务
+                </p>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="images/hero-dashboard.svg" alt="ssrdog游戏加速与Clash客户端实时测速界面展示" class="floating" style="max-width:100%;height:auto;border-radius:16px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Core Advantages Section (核心优势) -->
+    <section id="features" class="features" style="background:#f8fafc;padding:90px 0;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#e0e7ff;color:#4338ca;font-weight:700;margin-bottom:10px;">⭐ 核心硬核优势</span>
+                <h2>为什么数十万用户推荐使用 ssrdog 机场？</h2>
+                <p>拒绝套路与廉价超售，以运营商级物理基础设施，重新定义安全可靠的<strong>科学上网稳定节点</strong></p>
+            </div>
+            <div class="features-grid">
+                
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <img src="images/icon-speed.svg" alt="高速稳定IPLC专线图标">
+                    </div>
+                    <h3>IPLC / IEPL 内网专线</h3>
+                    <p>骨干运营商物理内网光纤直连，全程不走公网国际出口，不经过 GFW 物理审查，晚高峰零丢包，敏感时期稳如泰山。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <img src="images/icon-unblock.svg" alt="流媒体与AI全解锁图标">
+                    </div>
+                    <h3>4K/8K 视频与 AI 全解锁</h3>
+                    <p>配备海外纯净原生住宅 IP，完美秒开 YouTube 4K/8K 超高清画质，全区解锁 Netflix、Disney+ 与 ChatGPT/Claude，告别 403 阻断。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <img src="images/icon-security.svg" alt="安全加密与零日志图标">
+                    </div>
+                    <h3>零日志安全隐私守护</h3>
+                    <p>严格执行 No-Logs 政策，全链路现代高强度对称加密，服务器部署于隐私友好辖区，坚决不保留任何用户访问轨迹与足迹。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <img src="images/icon-devices.svg" alt="全平台客户端适配图标">
+                    </div>
+                    <h3>全平台客户端深度适配</h3>
+                    <p>完美支持 Windows、macOS、iOS(小火箭)、Android 及全新 <strong>Clash Party</strong> 客户端，一键导入订阅，支持多设备并发在线。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <img src="images/icon-price.svg" alt="平价高性价比机场图标">
+                    </div>
+                    <h3>高性价比便宜透明计费</h3>
+                    <p>打破“专线必贵”的传统认知，提供亲民灵活的月付与年付套餐，无任何隐藏收费，是学生党与办公族的良心<strong>便宜机场</strong>之选。</p>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <img src="images/icon-global.svg" alt="全球多线加速节点图标">
+                    </div>
+                    <h3>全球 50+ 骨干节点覆盖</h3>
+                    <p>覆盖香港、日本、新加坡、台湾、美国、英国、德国等全球核心枢纽，配备智能 BGP 容灾切换系统，毫秒级故障自动转移。</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pricing Section (套餐价格) -->
+    <section id="pricing" class="pricing" style="padding:90px 0;background:#ffffff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#fef3c7;color:#b45309;font-weight:700;margin-bottom:10px;">💳 灵活计费·丰俭由人</span>
+                <h2>透明亲民的套餐价格体系</h2>
+                <p>支持按月付费，随时退订与补差价无缝升级，享受真正实惠好用的<strong>高性价比机场推荐</strong>服务</p>
+            </div>
+
+            <!-- Billing Toggle Switcher -->
+            <div class="billing-switcher">
+                <span class="switcher-label" id="labelMonthly">按月付费</span>
+                <div class="switch-btn" id="billingSwitch" title="切换月付/年付">
+                    <div class="switch-handle"></div>
+                </div>
+                <span class="switcher-label" id="labelYearly">按年付费 <span class="discount-badge">限时 8 折特惠</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                
+                <!-- Plan 1: Starter -->
+                <div class="pricing-card" data-aos="zoom-in">
+                    <div class="pricing-badge">轻量入门</div>
+                    <h3>体验版套餐</h3>
+                    <div class="price">
+                        <span class="currency">¥</span>
+                        <span class="amount price-amount" data-monthly="19" data-yearly="182">19</span>
+                        <span class="period price-period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ <strong>100GB</strong> 月度高速流量</li>
+                        <li>✓ <strong>3 台设备</strong> 同时并发在线</li>
+                        <li>✓ 全球 20+ 基础与优化节点</li>
+                        <li>✓ 1080P/4K 视频流畅播放</li>
+                        <li>✓ 智能规则分流与无日志保护</li>
+                        <li>✓ 7x24 小时工单技术支持</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing" target="_blank" rel="noopener">立即开通体验版</a>
+                </div>
+
+                <!-- Plan 2: Standard (Featured) -->
+                <div class="pricing-card featured" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="pricing-badge popular">🔥 爆款热销·主推</div>
+                    <h3>标准专线套餐</h3>
+                    <div class="price">
+                        <span class="currency">¥</span>
+                        <span class="amount price-amount" data-monthly="39" data-yearly="374">39</span>
+                        <span class="period price-period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ <strong>300GB</strong> 月度大额流量</li>
+                        <li>✓ <strong>5 台设备</strong> 协同并发使用</li>
+                        <li>✓ <strong>全线 IPLC 高速内网专线</strong></li>
+                        <li>✓ 4K/8K HDR 秒开无缓冲</li>
+                        <li>✓ 原生解锁 Netflix / Disney+</li>
+                        <li>✓ 完美适配 <strong>ChatGPT & Claude</strong></li>
+                        <li>✓ 尊享高优先级专线带宽通道</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing" target="_blank" rel="noopener" style="background:var(--gradient-1);color:#fff;">立即开通标准专线</a>
+                </div>
+
+                <!-- Plan 3: Pro -->
+                <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="pricing-badge">商务旗舰</div>
+                    <h3>豪华至尊套餐</h3>
+                    <div class="price">
+                        <span class="currency">¥</span>
+                        <span class="amount price-amount" data-monthly="69" data-yearly="662">69</span>
+                        <span class="period price-period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ <strong>1000GB</strong> 澎湃海量流量</li>
+                        <li>✓ <strong>10 台设备</strong> 多终端任意连接</li>
+                        <li>✓ 包含全部 50+ 全球顶级骨干专线</li>
+                        <li>✓ 跨境电商/外贸独立站专线防关联</li>
+                        <li>✓ 电竞外服游戏超低延迟加速</li>
+                        <li>✓ 1Gbps+ 独享冗余峰值速率</li>
+                        <li>✓ 1对1 VIP 专属客服优先响应</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing" target="_blank" rel="noopener">立即开通豪华旗舰</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Target Audience Section (适合人群) -->
+    <section id="audience" class="audience" style="padding:90px 0;background:#f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#f0fdf4;color:#166534;font-weight:700;margin-bottom:10px;">🎯 多维场景精准适配</span>
+                <h2>ssrdog 专线服务适合哪些人群？</h2>
+                <p>无论商务外贸、科研开发还是影音游戏，为您量身定制最契合的<strong>全球加速出海</strong>方案</p>
+            </div>
+            <div class="audience-grid">
+                
+                <div class="audience-card" data-aos="fade-right">
+                    <div class="audience-icon">👨‍💻</div>
+                    <h3>程序员与 AI 开发者</h3>
+                    <p>秒级拉取 GitHub 开源代码、流畅访问 Stack Overflow。配备原生高纯净 IP，完美避免 OpenAI ChatGPT 与 Claude 3.5 封号与拒绝访问风险。</p>
+                </div>
+
+                <div class="audience-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="audience-icon">💼</div>
+                    <h3>外贸出海与跨境电商卖家</h3>
+                    <p>深度保障 Shopify 独立站、Amazon、TikTok Shop 后台运营环境稳定。固定会话保持不跳 IP，保障 PayPal 与海外社媒多账号风控安全。</p>
+                </div>
+
+                <div class="audience-card" data-aos="fade-left">
+                    <div class="audience-icon">🎬</div>
+                    <h3>4K/8K 流媒体影视发烧友</h3>
+                    <p>畅看 Netflix（非自制全区解锁）、Disney+、YouTube 4K@60fps 与 HBO Max，专线大带宽带来随拖进度条不转圈的极致视听享受。</p>
+                </div>
+
+                <div class="audience-card" data-aos="fade-left" data-aos-delay="100">
+                    <div class="audience-icon">🎓</div>
+                    <h3>留学生与科研学者</h3>
+                    <p>高速访问 Google Scholar、IEEE、Nature、Web of Science 等学术论文数据库，流畅参与 Zoom 国际跨国视频研讨会与远程在线课程。</p>
+                </div>
+
+                <div class="audience-card" data-aos="fade-right">
+                    <div class="audience-icon">🎮</div>
+                    <h3>外服联机游戏电竞玩家</h3>
+                    <p>畅玩 Steam、APEX、英雄联盟台服、日服手游等国际服游戏。IPLC 专线直达机房，延迟低至 15ms-35ms，告别跳 Ping、丢包与卡顿掉线。</p>
+                </div>
+
+                <div class="audience-card" data-aos="fade-left">
+                    <div class="audience-icon">🌏</div>
+                    <h3>自由职业者与日常网民</h3>
+                    <p>日常检索海外前沿资讯、浏览 X/Twitter 与 Instagram，智能规则分流确保国内国外软件互不干扰，静默守护您的网络隐私安全。</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Clash & Clash Party Tutorials Section (使用教程) -->
+    <section id="tutorials" class="tutorials" style="padding:90px 0;background:#ffffff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#fdf2f8;color:#9d174d;font-weight:700;margin-bottom:10px;">📖 极简新手上手教程</span>
+                <h2>全平台 Clash / Clash Party 快速使用教程</h2>
+                <p>零基础新手也能轻松上手！切换下方操作系统标签，查看一步到位的图文教学指南：</p>
+            </div>
+
+            <!-- Tutorial Tabs Nav -->
+            <div class="tutorial-tabs-nav">
+                <button class="tutorial-tab-btn active" data-tab="tab-clash-party">
+                    <img src="images/clash-party-icon.svg" alt="Clash Party" style="width:18px;height:18px;"> Clash Party (强烈推荐)
+                </button>
+                <button class="tutorial-tab-btn" data-tab="tab-windows">
+                    <img src="images/windows-icon.svg" alt="Windows" style="width:18px;height:18px;"> Windows (Clash Verge)
+                </button>
+                <button class="tutorial-tab-btn" data-tab="tab-mac">
+                    <img src="images/mac-icon.svg" alt="macOS" style="width:18px;height:18px;"> macOS 苹果电脑
+                </button>
+                <button class="tutorial-tab-btn" data-tab="tab-ios">
+                    <img src="images/ios-icon.svg" alt="iOS" style="width:18px;height:18px;"> iOS 小火箭 (iPhone)
+                </button>
+                <button class="tutorial-tab-btn" data-tab="tab-android">
+                    <img src="images/android-icon.svg" alt="Android" style="width:18px;height:18px;"> Android 安卓手机
+                </button>
+            </div>
+
+            <!-- Tab Content: Clash Party -->
+            <div class="tutorial-pane active" id="tab-clash-party">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:35px;max-width:900px;margin:0 auto;">
+                    <h3 style="font-size:1.4rem;color:#1e293b;margin-bottom:15px;">🚀 Clash Party 现代化极简配置指南</h3>
+                    <p style="color:#64748b;margin-bottom:20px;">Clash Party 拥有极具现代感的高颜值亚克力界面与强悍的自动健康测速策略，是新手用户的首选。</p>
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <strong>获取订阅：</strong>前往 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">ssrdog 仪表盘</a> 复制通用 Clash 订阅 URL 链接。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <strong>导入订阅：</strong>打开软件点击左侧 <strong>Profiles</strong>，粘贴链接后点击 <strong>Download</strong> 下载全量专线节点。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <strong>启动代理：</strong>在 Proxies 页面选择 <strong>规则模式 (Rule)</strong> 与低延迟节点，开启主界面 <strong>System Proxy</strong> 即可瞬间畅游！
+                    </div>
+                    <div style="text-align:center;margin-top:25px;">
+                        <a href="tutorial-clash-party.html" class="btn-primary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">阅读 Clash Party 完整深度教程 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Windows -->
+            <div class="tutorial-pane" id="tab-windows">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:35px;max-width:900px;margin:0 auto;">
+                    <h3 style="font-size:1.4rem;color:#1e293b;margin-bottom:15px;">💻 Windows 客户端快速上手教程</h3>
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        下载安装 <strong>Clash Verge Rev</strong> 或 Clash for Windows 客户端安装包并运行。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        点击“订阅 (Profiles)”，输入从 ssrdog 后台获取的订阅链接，点击“导入”。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        勾选该配置为激活状态，并在设置中开启“系统代理 (System Proxy)”，完成配置！
+                    </div>
+                    <div style="text-align:center;margin-top:25px;">
+                        <a href="tutorial-windows.html" class="btn-secondary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">查看 Windows 详细图文教程 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Mac -->
+            <div class="tutorial-pane" id="tab-mac">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:35px;max-width:900px;margin:0 auto;">
+                    <h3 style="font-size:1.4rem;color:#1e293b;margin-bottom:15px;">🍎 macOS 苹果电脑快速配置</h3>
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        下载适用于 Apple Silicon (M1-M4) 或 Intel 芯片的 <strong>Clash Verge Mac</strong> 安装包拖入应用程序。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        导入 ssrdog 订阅文件，并在顶部状态栏图标菜单中选择“规则模式 (Rule)”。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        点击“设置为系统代理”，Safari 与各类终端命令即可自动享受专线极速加速。
+                    </div>
+                    <div style="text-align:center;margin-top:25px;">
+                        <a href="tutorial-mac.html" class="btn-secondary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">查看 macOS 详细配置指引 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: iOS -->
+            <div class="tutorial-pane" id="tab-ios">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:35px;max-width:900px;margin:0 auto;">
+                    <h3 style="font-size:1.4rem;color:#1e293b;margin-bottom:15px;">📱 iOS 苹果手机 (Shadowrocket 小火箭) 极速扫码</h3>
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        使用美区或外区 Apple ID 从 App Store 下载 <strong>Shadowrocket (小火箭)</strong>。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        使用手机小火箭左上角扫码器，扫描 ssrdog 后台的订阅二维码即可一键导入全量节点。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        路由选择“配置”，开启顶部连接开关并在弹窗中允许添加系统 VPN 描述文件即可！
+                    </div>
+                    <div style="text-align:center;margin-top:25px;">
+                        <a href="tutorial-ios.html" class="btn-secondary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">查看 iOS 小火箭详细教程 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Android -->
+            <div class="tutorial-pane" id="tab-android">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:35px;max-width:900px;margin:0 auto;">
+                    <h3 style="font-size:1.4rem;color:#1e293b;margin-bottom:15px;">🤖 Android 安卓手机 (Clash Meta) 配置</h3>
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        安装 <strong>Clash Meta for Android (CMFA)</strong> APK 客户端安装包。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        在“配置”中点击 [+] 粘贴 ssrdog 提供的 URL 链接，点击保存并下载节点。
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        返回主页开启主开关，并在“分应用代理”中可按需配置指定国内软件绕行。
+                    </div>
+                    <div style="text-align:center;margin-top:25px;">
+                        <a href="tutorial-android.html" class="btn-secondary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">查看 Android 详细配置教程 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section (用户真实评价) -->
+    <section id="testimonials" class="testimonials" style="padding:90px 0;background:#f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#ecfdf5;color:#065f46;font-weight:700;margin-bottom:10px;">💬 真实口碑见证</span>
+                <h2>来自海内外真实用户的深度评价</h2>
+                <p>已累计为数万名跨境卖家、全栈工程师与影音爱好者提供稳定可靠的<strong>科学上网</strong>体验</p>
+            </div>
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">“做跨境外贸 5 年了，之前用过很多廉价机场，经常遇到 PayPal 跳 IP 提示风险。换到 ssrdog 的美国原生专线后，整整一年没有触发过任何风控，开 Zoom 会议画质极度清晰，真正的外贸出海利器！”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="font-size:2rem;">💼</div>
+                        <div class="author-info">
+                            <div class="author-name">周总监</div>
+                            <div class="author-role">跨境独立站合伙人 / 深圳</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">“重度使用 ChatGPT Plus 和 Claude 3.5 Sonnet，之前用的梯子动不动就 Access Denied。ssrdog 的香港和新加坡专线节点不仅延迟低，而且 IP 极其纯净，从来没被封号过，Copilot 补全代码如同本地一样敏捷。”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="font-size:2rem;">👨‍💻</div>
+                        <div class="author-info">
+                            <div class="author-name">Alex 严</div>
+                            <div class="author-role">全栈架构师 / 杭州</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">“家里客厅 Apple TV 和 iPad 追美剧，对 Netflix 和 Disney+ 4K 体验要求极高。ssrdog 的 IPLC 专线晚高峰从不卡顿，配合 Clash Party 的规则分流，国内家人看爱优腾、我追奈飞互不影响，必须点赞！”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="font-size:2rem;">🎬</div>
+                        <div class="author-info">
+                            <div class="author-name">林小姐</div>
+                            <div class="author-role">影视调色师 / 上海</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ Section (常见问题) -->
+    <section id="faq" class="faq" style="padding:90px 0;background:#ffffff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#e0e7ff;color:#4338ca;font-weight:700;margin-bottom:10px;">❓ 答疑解惑</span>
+                <h2>关于 ssrdog 机场的常见问题 (FAQ)</h2>
+                <p>为您梳理关于购买选购、Clash 节点配置、隐私安全与日常维护的高频疑问：</p>
+            </div>
+            <div class="faq-list" style="max-width:900px;margin:0 auto;">
+                
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>什么是 Clash 机场？它和普通 VPN 有什么本质区别？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Clash 机场是专门提供多协议节点订阅与现代化规则路由加速的服务商。传统 VPN 通常是“全局代理”，开启后国内淘宝、微信等所有软件变慢且容易触发异地风控。而 Clash 具备强大的智能分流引擎，国内网站直连秒开，国外受限服务自动经由 ssrdog 专线节点加速，兼具速度、隐私与极低能耗。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>ssrdog 机场安全吗？会不会收集我的个人隐私或访问记录？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ssrdog 坚持行业最高标准的零日志（No-Logs）政策。所有中转服务器均开启了全内存运行与端到端高强度对称加密传输，不记录任何用户的网页浏览记录、DNS 查询或下载内容，服务器部署于隐私保护严格的海外法域，彻底杜绝数据泄露风险。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>晚高峰时段（20:00 - 23:00）速度怎么样？看 4K 会卡顿吗？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>表现极为优异！ssrdog 核心节点全部采用高质量 IPLC/IEPL 国际内网专线直连，晚高峰零丢包，物理带宽冗余保持在 40% 以上。即便在黄金高峰时段，播放 YouTube 4K/8K 视频依然能够做到拖动进度条秒加载无缓冲。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>Clash 和 Clash Party 有什么区别？新手应该选哪一个？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Clash Party 是基于全新内核和现代亚克力毛玻璃视觉设计打造的新一代桌面客户端，界面不仅美观现代，而且自带智能健康测速与自动回退策略，操作极其傻瓜化。新用户强烈推荐使用 Clash Party；习惯经典 Verge 布局的用户也可以选择 Clash Verge Rev。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>支持在哪些设备上使用？可以多台电脑手机同时在线吗？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>支持所有主流操作系统，包括 Windows 10/11、macOS (Intel/Apple Silicon)、iOS (iPhone/iPad)、Android 手机/平板以及软路由。根据您选购的套餐，支持 3 至 10 台设备同时并发在线使用。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>遇到订阅更新失败或节点测速显示超时怎么办？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>首先检查电脑系统时间是否准确（时间偏差超过 60 秒会导致 TLS 握手失败）；其次排查是否有其他软件占用了 7890 端口。若仍未解决，可参阅我们的 <a href="articles/clash-node-subscription-troubleshooting.html">Clash 订阅故障排查手册</a> 或随时在后台提交工单联系 7x24 客服协助解决。</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="faq-cta" style="text-align:center;margin-top:35px;">
+                <p style="color:#64748b;margin-bottom:12px;">还有更多疑问需要解答？</p>
+                <a href="faq.html" class="btn-secondary" style="display:inline-block;padding:10px 24px;border-radius:8px;text-decoration:none;">前往完整 FAQ 问答库 &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Articles Showcase Section (文章目录) -->
+    <section class="articles-preview" style="padding:90px 0;background:#f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <span class="ping-tag" style="background:#e0e7ff;color:#4338ca;font-weight:700;margin-bottom:10px;">📰 最新技术指南与评测</span>
+                <h2>精选文章与科学上网资讯目录</h2>
+                <p>由 ssrdog 资深工程师与出海专家倾心编写的深度教程、选购对比与避坑干货：</p>
+            </div>
+            
+            <div class="articles-grid">
+                
+                <!-- 1 -->
+                <article class="article-card" data-aos="fade-up">
+                    <div class="article-image">
+                        <img src="images/article-1.svg" alt="2026年稳定Clash机场推荐指南">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">机场选购评测</span>
+                        </div>
+                        <h3><a href="articles/clash-airport-recommendation-guide.html">2026年稳定Clash机场推荐指南：如何挑选高速安全好用的科学上网节点？</a></h3>
+                        <p>从内网专线链路、晚高峰丢包、流媒体解锁等多维度进行深度横向测评与对比...</p>
+                        <a href="articles/clash-airport-recommendation-guide.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="article-image">
+                        <img src="images/article-2.svg" alt="便宜机场避坑全攻略">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">性价比与避坑</span>
+                        </div>
+                        <h3><a href="articles/cheap-reliable-airport-selection.html">便宜机场避坑全攻略：低价高性价比科学上网魔法梯子深度评测</a></h3>
+                        <p>揭秘市面月付几元便宜机场超售与跑路内幕，传授学生党平价高质选购建议...</p>
+                        <a href="articles/cheap-reliable-airport-selection.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="article-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="article-image">
+                        <img src="images/article-3.svg" alt="Clash Party 客户端新手完整配置教程">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">客户端实战教学</span>
+                        </div>
+                        <h3><a href="articles/clash-party-beginner-tutorial.html">Clash Party 客户端新手完整配置教程：现代化UI与节点订阅一键导入教学</a></h3>
+                        <p>新一代美观强大的 Clash Party 软件下载、订阅导入与分流配置保姆级图文教学...</p>
+                        <a href="articles/clash-party-beginner-tutorial.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="article-card" data-aos="fade-up">
+                    <div class="article-image">
+                        <img src="images/article-4.svg" alt="外贸出海与跨境电商独立站加速指南">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">跨境出海方案</span>
+                        </div>
+                        <h3><a href="articles/foreign-trade-cross-border-airport.html">2026外贸出海与跨境电商独立站加速指南：安全稳定不跳IP的科学上网机场方案</a></h3>
+                        <p>针对跨境电商卖家、TikTok运营与海外独立站管理，解析防跳IP关联防封号专线方案...</p>
+                        <a href="articles/foreign-trade-cross-border-airport.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="article-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="article-image">
+                        <img src="images/article-5.svg" alt="4K/8K超高清流媒体与ChatGPT解锁方案">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">流媒体与AI</span>
+                        </div>
+                        <h3><a href="articles/streaming-4k-netflix-airport.html">4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐</a></h3>
+                        <p>彻底解决Netflix非自制剧锁定与ChatGPT Access Denied阻断，专线节点畅看4K画质...</p>
+                        <a href="articles/streaming-4k-netflix-airport.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="article-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="article-image">
+                        <img src="images/article-6.svg" alt="Clash节点订阅更新失败报错排查手册">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-date">2026-11-08</span>
+                            <span class="article-category">故障排查全集</span>
+                        </div>
+                        <h3><a href="articles/clash-node-subscription-troubleshooting.html">Clash节点订阅更新失败与无法联网常见报错排查解决全手册</a></h3>
+                        <p>解决订阅下载报错403/500、节点全部Timeout超时、端口7890冲突及断网排查流程...</p>
+                        <a href="articles/clash-node-subscription-troubleshooting.html" class="article-link">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="articles-more" style="text-align:center;margin-top:40px;">
+                <a href="articles.html" class="btn-primary" style="display:inline-block;padding:12px 30px;border-radius:30px;text-decoration:none;">查看全部 10 篇 SEO 深度技术文章 &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Final Call to Action Section (行动号召) -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>立即开启丝滑畅快的全球科学上网之旅</h2>
+                <p>加入数万全球用户的信赖之选，尊享电竞级 IPLC 专线中继、4K 随心秒开与全天候极速加速</p>
+                <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-hero btn-primary" target="_blank" rel="noopener">立即前往官网注册使用 &rarr;</a>
+                <p class="cta-note">支持支付宝/微信快捷支付 | 零日志隐私保护 | 7天售后服务保障</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer Section (页脚与完整网站地图) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <h4>关于 ssrdog 官方平台</h4>
+                    <p>ssrdog（ssrdogjic.homes）是行业领先的专业全球网络加速与科学上网服务提供商，专注为全球华人、程序员、外贸跨境电商与流媒体发烧友提供稳定、安全、高速的 IPLC 专线服务。</p>
+                    <div class="social-links">
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Telegram官方群"><img src="images/telegram-icon.svg" alt="Telegram社群"></a>
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Discord社区"><img src="images/discord-icon.svg" alt="Discord社区"></a>
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Twitter推特"><img src="images/twitter-icon.svg" alt="Twitter官方"></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#home">官网首屏</a></li>
+                        <li><a href="#features">核心优势</a></li>
+                        <li><a href="#pricing">套餐价格</a></li>
+                        <li><a href="#audience">适合人群</a></li>
+                        <li><a href="tutorials.html">客户端教程中心</a></li>
+                        <li><a href="articles.html">技术文章博客</a></li>
+                        <li><a href="faq.html">常见答疑 FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>全平台使用教程</h4>
+                    <ul>
+                        <li><a href="tutorial-windows.html">Windows Clash 教程</a></li>
+                        <li><a href="tutorial-mac.html">macOS 客户端配置</a></li>
+                        <li><a href="tutorial-ios.html">iOS 小火箭配置教程</a></li>
+                        <li><a href="tutorial-android.html">Android 手机翻墙教程</a></li>
+                        <li><a href="tutorial-clash-party.html">Clash Party 专属教学</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>法律条款与站点索引</h4>
+                    <ul>
+                        <li><a href="privacy.html">隐私政策 (Privacy Policy)</a></li>
+                        <li><a href="terms.html">服务条款 (Terms of Service)</a></li>
+                        <li><a href="disclaimer.html">免责声明 (Disclaimer)</a></li>
+                        <li><a href="sitemap.html">HTML 网站地图</a></li>
+                        <li><a href="sitemap.xml">XML 站点地图</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 ssrdog (ssrdogjic.homes). All rights reserved. | 官网唯一统一跳转通道：<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" style="color:var(--primary-color);font-weight:600;">https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4</a></p>
+                <p style="font-size:0.8rem;color:#94a3b8;margin-top:6px;">本站内容仅供技术探索与网络科研交流，请严格遵守所在国家与地区的法律法规，合规合法文明使用互联网。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Back to Top Button -->
+    <button class="floating-back-top" id="back-to-top" title="返回顶部">↑</button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, 'index.html'), indexHtml);
+console.log('Successfully generated index.html');

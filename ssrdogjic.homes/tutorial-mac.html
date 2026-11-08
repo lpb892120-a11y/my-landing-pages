@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macOS Clash教程：苹果电脑 Clash Verge / ClashX Meta 配置指南 - ssrdog 官方详细教程</title>
+    <meta name="description" content="针对 Apple Silicon (M1/M2/M3/M4) 与 Intel 架构 Mac 电脑的科学上网配置指南，详解订阅导入与权限设置。">
+    <meta name="keywords" content="Mac Clash教程, macOS翻墙, ClashX, Clash Verge Mac, 苹果电脑科学上网, 魔法梯子">
+    <link rel="canonical" href="https://ssrdogjic.homes/tutorial-mac.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/article.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "macOS Clash教程：苹果电脑 Clash Verge / ClashX Meta 配置指南",
+      "description": "针对 Apple Silicon (M1/M2/M3/M4) 与 Intel 架构 Mac 电脑的科学上网配置指南，详解订阅导入与权限设置。",
+      "step": [
+  {
+    "@type": "HowToStep",
+    "name": "获取订阅",
+    "text": "在 ssrdog 后台复制订阅 URL"
+  },
+  {
+    "@type": "HowToStep",
+    "name": "下载安装 Mac 客户端",
+    "text": "将 Clash Verge.dmg 拖入 Applications 应用程序文件夹"
+  },
+  {
+    "@type": "HowToStep",
+    "name": "导入并激活配置",
+    "text": "在客户端配置界面下载订阅节点"
+  },
+  {
+    "@type": "HowToStep",
+    "name": "开启系统代理",
+    "text": "在顶部菜单栏勾选规则模式并开启代理"
+  }
+]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://ssrdogjic.homes/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "教程中心",
+        "item": "https://ssrdogjic.homes/tutorials.html"
+      }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "macOS Clash教程：苹果电脑 Clash Verge / ClashX Meta 配置指南"
+      }]
+    }
+    </script>
+</head>
+<body>
+    <div class="top-notice-bar">
+        ⚡ 2026节点架构已升级！全平台客户端完美支持一键快速导入，<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">立即前往官网直达体验 &rarr;</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+                    <img src="images/logo.svg" alt="ssrdog机场Logo" class="logo">
+                    <span class="brand-name">ssrdog</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#features">核心优势</a></li>
+                <li><a href="index.html#pricing">套餐价格</a></li>
+                <li><a href="tutorials.html">使用教程</a></li>
+                <li><a href="articles.html">文章中心</a></li>
+                <li><a href="faq.html">常见问题</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener">立即使用</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="article-page">
+        <div class="container">
+            <header class="article-header">
+                <nav class="article-breadcrumb">
+                    <a href="index.html">首页</a> &gt; 
+                    <a href="tutorials.html">教程中心</a> &gt; 
+                    <span>macOS 教程</span>
+                </nav>
+                <h1>macOS Clash教程：苹果电脑 Clash Verge / ClashX Meta 配置指南</h1>
+                <div class="article-meta">
+                    <span>📅 最后更新：2026-11-08</span>
+                    <span>💻 适用平台：macOS</span>
+                    <span>⏱️ 阅读时长：约 6 分钟</span>
+                    <span>🛡️ ssrdog 官方验证保障</span>
+                </div>
+                <div class="callout-box info" style="margin-top:20px;">
+                    <div class="callout-title">💡 适用提示：</div>
+                    <p>原生支持 macOS Sonoma、Sequoia 及所有搭载 M 系列 Apple 芯片的 Mac 电脑，效能卓越，耗电极低。</p>
+                </div>
+            </header>
+
+            <article class="article-body">
+                
+            <h2>一、Mac 客户端安装与安全授权</h2>
+            <p>下载对应芯片架构的 <code>.dmg</code> 镜像包（M1-M4 用户请下载 arm64 版本，Intel 用户请下载 x64 版本），双击打开并将软件图标拖入“Applications”文件夹。</p>
+            <p>初次打开时如果系统提示“无法打开，因为 Apple 无法检查其是否包含恶意软件”，请打开 Mac <strong>系统设置 &rarr; 隐私与安全性</strong>，下滑点击“仍要打开”即可正常启动。</p>
+
+            <h2>二、导入 ssrdog 专线订阅</h2>
+            <p>登录 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">ssrdog 仪表盘</a> 复制订阅链接。在 Mac 客户端的“Profiles (配置)”中粘贴并回车下载。下载完成后，所有香港、日本、新加坡、美国专线节点将整齐罗列。</p>
+
+            <h2>三、状态栏控制与规则分流</h2>
+            <p>Mac 客户端会在顶部状态栏常驻一个猫咪或飞机图标。点击状态栏图标，勾选 <strong>“规则模式 (Rule)”</strong>，然后点击 <strong>“设置为系统代理”</strong>。此时 Safari 或 Chrome 浏览器已全面具备科学上网能力。</p>
+        
+
+                <div class="article-cta">
+                    <h3>🚀 马上获取 ssrdog 专属专线节点订阅</h3>
+                    <p>超低延迟 IPLC 专线直连、全球 50+ 高速节点、4K 随拖秒开，新手 3 分钟即可配置完毕。</p>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener" style="display:inline-block;padding:12px 30px;background:#ffffff;color:#4f46e5;font-weight:700;border-radius:30px;text-decoration:none;">立即注册并开启加速 &rarr;</a>
+                </div>
+
+                <!-- FAQ Section -->
+                <section class="article-faq">
+                    <h2>❓ macOS 客户端常见疑问</h2>
+                    <div class="faq-list">
+                        
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Mac 电脑合上盖子休眠后，唤醒偶尔无法联网？</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>在客户端设置中将内核切换为“Meta 内核”，并开启“休眠自动重启代理连接”，能够完美解决休眠唤醒后的套接字重连问题。</p>
+                                </div>
+                            </div>
+                        
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h3>Mac 终端 (Terminal) 如何走代理？</h3>
+                                    <span class="faq-toggle">+</span>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>在设置中开启“Tun Mode (虚拟网卡模式)”并安装辅助驱动，整机终端命令（如 git push、brew update）将全自动走专线加速。</p>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于 ssrdog</h4>
+                    <p>ssrdog 是业内领先的全球网络加速与科学上网服务商，专注为程序员、跨境出海、4K流媒体及外贸用户提供超低延迟的 IPLC 专线节点与全平台 Clash / Clash Party 客户端支持。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="index.html#features">核心优势</a></li>
+                        <li><a href="index.html#pricing">套餐价格</a></li>
+                        <li><a href="tutorials.html">客户端配置教程</a></li>
+                        <li><a href="articles.html">文章资讯中心</a></li>
+                        <li><a href="faq.html">常见答疑FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>教程专区</h4>
+                    <ul>
+                        <li><a href="tutorial-windows.html">Windows Clash 教程</a></li>
+                        <li><a href="tutorial-mac.html">macOS 客户端配置</a></li>
+                        <li><a href="tutorial-ios.html">iOS 小火箭配置教程</a></li>
+                        <li><a href="tutorial-android.html">Android 手机翻墙教程</a></li>
+                        <li><a href="tutorial-clash-party.html">Clash Party 专属教学</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律条款</h4>
+                    <ul>
+                        <li><a href="privacy.html">隐私政策 (Privacy)</a></li>
+                        <li><a href="terms.html">服务条款 (Terms)</a></li>
+                        <li><a href="disclaimer.html">免责声明 (Disclaimer)</a></li>
+                        <li><a href="sitemap.html">HTML 网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ssrdog (ssrdogjic.homes). All rights reserved. | 官方官网跳转链接：<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" style="color:var(--primary-color);">点击直达 ssrdog 平台</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

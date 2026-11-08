@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# 阻断特定临时资源
+Disallow: /temp/
+Disallow: /admin/
+Disallow: /api/
+
+# 站点地图声明
+Sitemap: https://ssrdogjic.homes/sitemap.xml
+
+# 常见搜索引擎爬虫优化
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.8
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1

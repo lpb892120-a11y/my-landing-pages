@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐 | ssrdog 官方技术指南</title>
+    <meta name="description" content="完美解锁Netflix奈飞非自制剧、Disney+、YouTube 4K/8K以及HBO Max的科学上网节点配置指南。配合原生住宅IP与智能分流规则，彻底告别流媒体限制与ChatGPT Access Denied阻断。">
+    <meta name="keywords" content="稳定节点, 科学上网, 流媒体解锁, 4K机场, Netflix节点, ChatGPT代理, 全球加速, Clash机场">
+    <link rel="canonical" href="https://ssrdogjic.homes/articles/streaming-4k-netflix-airport.html">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+
+    <!-- Schema Structured Data -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐",
+  "description": "完美解锁Netflix奈飞非自制剧、Disney+、YouTube 4K/8K以及HBO Max的科学上网节点配置指南。配合原生住宅IP与智能分流规则，彻底告别流媒体限制与ChatGPT Access Denied阻断。",
+  "image": "https://ssrdogjic.homes/images/article-5.svg",
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "author": {
+    "@type": "Organization",
+    "name": "ssrdog 技术团队"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ssrdog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ssrdogjic.homes/images/logo.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ssrdogjic.homes/articles/streaming-4k-netflix-airport.html"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://ssrdogjic.homes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "文章中心",
+      "item": "https://ssrdogjic.homes/articles.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐",
+      "item": "https://ssrdogjic.homes/articles/streaming-4k-netflix-airport.html"
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "用 ssrdog 看 YouTube 4K 视频，为什么能做到随拖进度条不转圈？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为 ssrdog 采用高规格的 IPLC 内网专线直连中继，晚高峰零丢包且物理带宽冗余充足，单线程瞬时下载速率可轻松冲破 100Mbps 以上，完全跑满播放器预缓冲管道。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Netflix 提示“检测到代理”，我该如何恢复观看？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首先在客户端的 Netflix 策略组中切换到带有“流媒体/原生解锁”标识的节点；然后彻底退出 Netflix App 或在浏览器无痕模式下重新登录，即可顺利解锁非自制剧。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "观看 4K 视频一个小时大概消耗多少流量？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "以 YouTube 4K@60fps 为例，平均每小时消耗约 6GB 至 9GB 流量；Netflix 4K HDR 约为 7GB/小时。建议流媒体爱好者选择 ssrdog 的 300GB 或 1000GB 充沛流量套餐。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "使用 ssrdog 访问 ChatGPT 需要开启全局模式吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全不需要！ssrdog 内置了精准的 AI 规则分流，使用默认的“规则模式（Rule）”即可自动识别 OpenAI 与 Claude 流量并走美国/新加坡优质节点，国内软件访问完全不受影响。"
+      }
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+    <div id="reading-progress"></div>
+    <div class="top-notice-bar">
+        ⚡ 2026节点架构已升级！全面支持 IPLC 专线与全协议解锁，<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">立即前往官网直达体验 &rarr;</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+                    <img src="../images/logo.svg" alt="ssrdog机场Logo" class="logo">
+                    <span class="brand-name">ssrdog</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../index.html#features">核心优势</a></li>
+                <li><a href="../index.html#pricing">套餐价格</a></li>
+                <li><a href="../tutorials.html">使用教程</a></li>
+                <li><a href="../articles.html">文章中心</a></li>
+                <li><a href="../faq.html">常见问题</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener">立即使用</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Article Container -->
+    <main class="article-page">
+        <div class="container">
+            <!-- Article Header -->
+            <header class="article-header">
+                <nav class="article-breadcrumb" aria-label="breadcrumb">
+                    <a href="../index.html">首页</a> &gt; 
+                    <a href="../articles.html">文章中心</a> &gt; 
+                    <span>流媒体与AI</span>
+                </nav>
+                <h1>4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐</h1>
+                <div class="article-meta">
+                    <span>📅 发布日期：2026-11-08</span>
+                    <span>⏱️ 阅读时长：约 10 分钟</span>
+                    <span>📂 分类：流媒体与AI</span>
+                    <span>🏷️ 核心词：4K/8K流媒体 / Netflix解锁 / Disney+ / ChatGPT</span>
+                </div>
+                <div class="article-reviewer-badge">
+                    <span>🛡️ 本文已由 ssrdog 网络安全与专线工程团队严格实测审校，包含最新测速数据与配置验证</span>
+                </div>
+                <div class="article-featured-image" style="margin-top:20px;">
+                    <img src="../images/article-5.svg" alt="4K/8K超高清流媒体与ChatGPT解锁方案：低延迟高带宽稳定节点推荐 - ssrdog配图插图">
+                </div>
+            </header>
+
+            <!-- Article Body Content -->
+            <article class="article-body">
+                <!-- Callout summary -->
+                <div class="callout-box info">
+                    <div class="callout-title">💡 核心要点速览 (Key Takeaways)</div>
+                    <p>很多人购买了科学上网梯子后，发现虽然能看 YouTube，但打开 Netflix 却只能看自制剧，甚至播放时频繁卡顿降画质成 480P；尝试登录 ChatGPT 时弹出“Access Denied 1020”。本文系统揭秘流媒体与 AI 大模型的 IP 封控机制，教你如何利用 ssrdog 专线节点实现 4K HDR 极速秒开与全功能解锁。</p>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="article-toc">
+                    <h3>📑 本文目录导读</h3>
+                    
+            <ul>
+                <li><a href="#s1">一、为什么你的梯子打不开 Netflix 全区非自制剧？</a></li>
+                <li><a href="#s2">二、4K/8K 超高清流媒体对带宽、延迟与抖动的硬核要求</a></li>
+                <li><a href="#s3">三、ChatGPT / Claude AI 大模型的 IP 风控与拦截解密</a></li>
+                <li><a href="#s4">四、ssrdog 流媒体与 AI 专线实测表现（香港/日韩/美区）</a></li>
+                <li><a href="#s5">五、如何在 Clash / Clash Party 中配置流媒体智能精准分流</a></li>
+                <li><a href="#s6">六、总结与观影体验建议</a></li>
+            </ul>
+        
+                </div>
+
+                <!-- Main Content Body -->
+                
+            <h2 id="s1">一、为什么你的梯子打不开 Netflix 全区非自制剧？</h2>
+            <p>不少新人在选购<strong>科学上网</strong>工具时，经常会遇到一个困惑：明明节点测速速度很快，Google 也能秒开，但打开 Netflix（奈飞）后，却搜不到《绝命毒师》、《寄生虫》等热门版权剧集，或者直接提示“您似乎在使用代理或解除阻止工具，请关闭这些服务后再试”。</p>
+            <p>这是因为 Netflix、Disney+ 等好莱坞流媒体平台受到极其严格的区域版权协议限制。为了保护各大版权方的利益，平台采购了 MaxMind、IP2Location 等商业数据库，将全球各大机房（如 AWS、Google Cloud、DigitalOcean 等）的公网 IP 进行了严格的批量拉黑。如果你的<strong>Clash 节点</strong>使用的是普通的广播机房 IP，Netflix 就会对你实施“软封锁”——仅允许观看 Netflix 拥有全球版权的原创自制剧，而屏蔽所有第三方区域版权内容。</p>
+            <p>要完美解锁全区流媒体，必须由机场运营方在海外出口处部署当地原生住宅 ISP 静态代理或者定制 DNS 解锁住宅网关，才能欺骗过奈飞的检测引擎。</p>
+
+            <h2 id="s2">二、4K/8K 超高清流媒体对带宽、延迟与抖动的硬核要求</h2>
+            <p>流畅观看 YouTube 4K@60fps 甚至 8K 视频，对于网络质量有着极其苛刻的要求：</p>
+            <ul>
+                <li><strong>持续无波动的瞬时吞吐量：</strong>4K HDR 视频的码率通常在 25Mbps 至 45Mbps 之间，8K 视频更是高达 80Mbps 以上。由于播放器采用分片预加载机制，节点必须在 2 秒内缓冲完成接下来数十秒的切片。如果节点网络抖动（Jitter）过大，就会导致缓冲中断转圈圈。</li>
+                <li><strong>丢包率（Packet Loss）必须低于 1%：</strong>在 TCP 协议下，只要出现 2% 的丢包，TCP 拥塞控制算法就会强制让传输窗口减半，导致下载速率腰斩，原本的 4K 画面会瞬间被降级为模糊的 720P。这也是为什么只有 <a href="iplc-iepl-dedicated-line-airport.html" class="internal-link">IPLC 专线机场</a> 才能真正做到 4K 随拖随播的根本原因。</li>
+            </ul>
+
+            <h2 id="s3">三、ChatGPT / Claude AI 大模型的 IP 风控与拦截解密</h2>
+            <p>不仅是影视流媒体，现在全球最热门的 AI 生产力工具（OpenAI ChatGPT、Claude 3.5 Sonnet）同样设置了顶级的地理封锁与 IP 信誉检测体系：</p>
+            <div class="callout-box warning">
+                <div class="callout-title">⚠️ AI 大模型访问常见报错原因：</div>
+                <ul>
+                    <li><strong>403 Forbidden / Access Denied：</strong>当前节点的出口 IP 已经被 Cloudflare 或 OpenAI 列入高危滥用池。</li>
+                    <li><strong>Country Not Supported (地区不支持)：</strong>使用了未开放国家（如部分俄区或中东节点）的 IP，或者 IP 归属地库识别漂移。</li>
+                    <li><strong>频繁要求人机验证 (Turnstile/hCaptcha)：</strong>节点被大量爬虫共享使用，信誉值跌破安全阈值。</li>
+                </ul>
+            </div>
+
+            <h2 id="s4">四、ssrdog 流媒体与 AI 专线实测表现</h2>
+            <p>作为深受流媒体发烧友与科技工作者推崇的品牌，<strong>ssrdog</strong> 在全球热门节点上进行了全方位的高标准解锁部署：</p>
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>节点区域</th>
+                            <th>物理延迟</th>
+                            <th>Netflix 解锁</th>
+                            <th>Disney+ / YouTube 4K</th>
+                            <th>ChatGPT / Claude</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>🇭🇰 香港 01 IPLC</strong></td>
+                            <td>14ms - 22ms</td>
+                            <td><span class="badge-pro">全解锁 (含港区独播)</span></td>
+                            <td><span class="badge-pro">4K/8K 极速秒开</span></td>
+                            <td><span class="badge-pro">完美支持 API 与网页版</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇯🇵 日本 01 原生专线</strong></td>
+                            <td>32ms - 40ms</td>
+                            <td><span class="badge-pro">全解锁 (日区海量动画)</span></td>
+                            <td><span class="badge-pro">4K HDR 流畅无卡顿</span></td>
+                            <td><span class="badge-pro">Claude 官方推荐首选节点</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇸🇬 新加坡 01 专线</strong></td>
+                            <td>36ms - 48ms</td>
+                            <td><span class="badge-pro">全解锁 (中英双语字幕多)</span></td>
+                            <td><span class="badge-pro">8K 稳定缓冲无压力</span></td>
+                            <td><span class="badge-pro">ChatGPT 极速响应，不掉线</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🇺🇸 美国 01 顶级专线</strong></td>
+                            <td>115ms - 135ms</td>
+                            <td><span class="badge-pro">全解锁 (美区片库最全)</span></td>
+                            <td><span class="badge-pro">4K 秒开，支持 HBO/Hulu</span></td>
+                            <td><span class="badge-pro">OpenAI / Sora 官方原生直达</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="s5">五、如何在 Clash / Clash Party 中配置流媒体智能精准分流</h2>
+            <p>利用现代 Clash 客户端的分流策略，我们可以做到“不同网站走不同地区的专属节点”，体验极其丝滑：</p>
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <strong>在节点组中找到专属流媒体策略：</strong>
+                <p>在 <a href="clash-party-beginner-tutorial.html" class="internal-link">Clash Party</a> 的 Proxies 页面中，ssrdog 预置了 <code>NETFLIX</code>、<code>YouTube</code>、<code>OpenAI/ChatGPT</code> 等独立策略组。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <strong>按需绑定最佳落地节点：</strong>
+                <p>将 <code>NETFLIX</code> 策略组选择为您喜欢的地区（例如看日漫选日本节点，看美剧选美国节点）；将 <code>OpenAI</code> 策略组绑定到美国或新加坡节点；而通用网页访问则保持低延迟的香港专线节点。</p>
+            </div>
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <strong>清理浏览器缓存与 Cookie：</strong>
+                <p>切换流媒体节点后，建议刷新页面或清理对应平台的 Cookie，即可立即享受无限制的全区视听盛宴！</p>
+            </div>
+
+            <h2 id="s6">六、总结与观影体验建议</h2>
+            <p>享受极致的影音与前沿 AI 生产力，离不开底层强大、干净且高速的网络管道支撑。告别反复切换节点和无限缓冲的痛苦，立即前往 <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener">ssrdog 官网</a>，开启畅通无阻的 4K 超高清视界！</p>
+        
+
+                <!-- In-article Conversion CTA -->
+                <div class="article-cta">
+                    <h3>🚀 体验极致流畅的科学上网服务</h3>
+                    <p>告别卡顿与断连！ssrdog 为您提供顶级 IPLC 专线中继、全球 50+ 节点、4K 秒开与零日志隐私保护。</p>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener" style="display:inline-block;padding:12px 30px;background:#ffffff;color:#4f46e5;font-weight:700;border-radius:30px;text-decoration:none;">立即注册 ssrdog 专线套餐 &rarr;</a>
+                    <p style="margin-top:12px;font-size:0.85rem;opacity:0.85;">支持支付宝、微信快捷充值 | 7天售后服务保障</p>
+                </div>
+
+                <!-- Dedicated FAQ Section -->
+                <section class="article-faq">
+                    <h2>❓ 关于“4K流媒体解锁与ChatGPT低延迟加速”的常见问题 (FAQ)</h2>
+                    <div class="faq-list">
+                        
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>用 ssrdog 看 YouTube 4K 视频，为什么能做到随拖进度条不转圈？</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>因为 ssrdog 采用高规格的 IPLC 内网专线直连中继，晚高峰零丢包且物理带宽冗余充足，单线程瞬时下载速率可轻松冲破 100Mbps 以上，完全跑满播放器预缓冲管道。</p>
+            </div>
+        </div>
+    
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Netflix 提示“检测到代理”，我该如何恢复观看？</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>首先在客户端的 Netflix 策略组中切换到带有“流媒体/原生解锁”标识的节点；然后彻底退出 Netflix App 或在浏览器无痕模式下重新登录，即可顺利解锁非自制剧。</p>
+            </div>
+        </div>
+    
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>观看 4K 视频一个小时大概消耗多少流量？</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>以 YouTube 4K@60fps 为例，平均每小时消耗约 6GB 至 9GB 流量；Netflix 4K HDR 约为 7GB/小时。建议流媒体爱好者选择 ssrdog 的 300GB 或 1000GB 充沛流量套餐。</p>
+            </div>
+        </div>
+    
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>使用 ssrdog 访问 ChatGPT 需要开启全局模式吗？</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>完全不需要！ssrdog 内置了精准的 AI 规则分流，使用默认的“规则模式（Rule）”即可自动识别 OpenAI 与 Claude 流量并走美国/新加坡优质节点，国内软件访问完全不受影响。</p>
+            </div>
+        </div>
+    
+                    </div>
+                </section>
+
+                <!-- Related Articles Recommendations -->
+                <section class="related-articles">
+                    <h2>📚 相关阅读推荐</h2>
+                    <div class="related-grid">
+                        
+        <a href="ai-tools-chatgpt-claude-airport-nodes.html" class="related-card">
+            <div class="related-image">
+                <img src="../images/article-9.svg" alt="畅享ChatGPT与Claude等AI工具">
+            </div>
+            <h3>畅享ChatGPT与Claude等AI工具</h3>
+            <p>AI开发者的安全机场选购与原生IP节点配置全攻略。</p>
+        </a>
+    
+
+        <a href="iplc-iepl-dedicated-line-airport.html" class="related-card">
+            <div class="related-image">
+                <img src="../images/article-7.svg" alt="什么是IPLC/IEPL内网专线？">
+            </div>
+            <h3>什么是IPLC/IEPL内网专线？</h3>
+            <p>为什么专线节点是4K秒开与超低延迟的核心基石？</p>
+        </a>
+    
+
+        <a href="clash-party-beginner-tutorial.html" class="related-card">
+            <div class="related-image">
+                <img src="../images/article-3.svg" alt="Clash Party 客户端新手完整配置教程">
+            </div>
+            <h3>Clash Party 客户端新手完整配置教程</h3>
+            <p>手把手教你配置规则分流与策略组切换。</p>
+        </a>
+    
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Floating Back to Top Button -->
+    <button class="floating-back-top" id="back-to-top" title="返回顶部">↑</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于 ssrdog</h4>
+                    <p>ssrdog 是业内领先的全球网络加速与科学上网服务商，专注为程序员、跨境出海、4K流媒体及外贸用户提供超低延迟的 IPLC 专线节点与全平台 Clash / Clash Party 客户端支持。</p>
+                    <div class="social-links">
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Telegram"><img src="../images/telegram-icon.svg" alt="Telegram客服通道"></a>
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Discord"><img src="../images/discord-icon.svg" alt="Discord社区"></a>
+                        <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" aria-label="Twitter"><img src="../images/twitter-icon.svg" alt="Twitter推特"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="../index.html#features">核心优势</a></li>
+                        <li><a href="../index.html#pricing">套餐价格</a></li>
+                        <li><a href="../tutorials.html">客户端配置教程</a></li>
+                        <li><a href="../articles.html">文章资讯中心</a></li>
+                        <li><a href="../faq.html">常见答疑FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>教程专区</h4>
+                    <ul>
+                        <li><a href="../tutorial-windows.html">Windows Clash 教程</a></li>
+                        <li><a href="../tutorial-mac.html">macOS 客户端配置</a></li>
+                        <li><a href="../tutorial-ios.html">iOS 小火箭配置教程</a></li>
+                        <li><a href="../tutorial-android.html">Android 手机翻墙教程</a></li>
+                        <li><a href="../tutorial-clash-party.html">Clash Party 专属教学</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律条款与索引</h4>
+                    <ul>
+                        <li><a href="../privacy.html">隐私政策 (Privacy)</a></li>
+                        <li><a href="../terms.html">服务条款 (Terms)</a></li>
+                        <li><a href="../disclaimer.html">免责声明 (Disclaimer)</a></li>
+                        <li><a href="../sitemap.html">HTML 网站地图</a></li>
+                        <li><a href="../sitemap.xml">XML 站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ssrdog (ssrdogjic.homes). All rights reserved. | 官方官网跳转链接：<a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" target="_blank" rel="noopener" style="color:var(--primary-color);">点击直达 ssrdog 平台</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

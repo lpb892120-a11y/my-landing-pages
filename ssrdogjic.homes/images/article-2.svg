@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+    <defs>
+      <linearGradient id="bg_059669" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#059669" />
+        <stop offset="100%" stop-color="#10b981" />
+      </linearGradient>
+      <linearGradient id="overlay" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#000000" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.08"/>
+      </pattern>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="450" fill="url(#bg_059669)"/>
+    <rect width="800" height="450" fill="url(#grid)"/>
+    <rect width="800" height="450" fill="url(#overlay)"/>
+    
+    <!-- Decorative dynamic circles -->
+    <circle cx="700" cy="100" r="160" fill="#ffffff" fill-opacity="0.05"/>
+    <circle cx="120" cy="380" r="120" fill="#ffffff" fill-opacity="0.04"/>
+    
+    <!-- Tag Pill -->
+    <rect x="60" y="60" width="148" height="34" rx="17" fill="#ffffff" fill-opacity="0.2"/>
+    <text x="75" y="82" fill="#ffffff" font-size="14" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, sans-serif">性价比与避坑</text>
+    <text x="720" y="82" fill="#e2e8f0" font-size="14" font-weight="600" font-family="sans-serif" text-anchor="end">ssrdog 权威技术指南</text>
+
+    <!-- Center Icon Graphic Badge -->
+    <circle cx="700" cy="220" r="60" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-width="2" stroke-opacity="0.3"/>
+    <text x="700" y="235" fill="#ffffff" font-size="40" text-anchor="middle">💰</text>
+
+    <!-- Main Title Lines -->
+    <text x="60" y="190" fill="#ffffff" font-size="34" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif">
+      便宜机场推荐避坑手册
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="60" y="245" fill="#e2e8f0" font-size="18" font-family="-apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif">
+      高性价比科学上网魔法梯子选购实测
+    </text>
+
+    <!-- Feature Dots Bar -->
+    <g transform="translate(60, 350)">
+      <rect x="0" y="0" width="680" height="48" rx="10" fill="#0f172a" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.1"/>
+      <circle cx="25" cy="24" r="4" fill="#10b981"/>
+      <text x="38" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="sans-serif">高速专线</text>
+      
+      <circle cx="145" cy="24" r="4" fill="#38bdf8"/>
+      <text x="158" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="sans-serif">零日志隐私</text>
+
+      <circle cx="285" cy="24" r="4" fill="#a855f7"/>
+      <text x="298" y="29" fill="#f8fafc" font-size="13" font-weight="600" font-family="sans-serif">Clash / Clash Party</text>
+
+      <text x="660" y="29" fill="#fbbf24" font-size="13" font-weight="700" font-family="sans-serif" text-anchor="end">2026 最新评测标准 ★★★★★</text>
+    </g>
+  </svg>
