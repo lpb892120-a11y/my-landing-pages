@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科学上网知识库 - 从零开始学习翻墙技术 | 八戒机场</title>
+    <meta name="description" content="八戒机场知识库提供完整的科学上网教程，包含梯子推荐、翻墙指南、技术科普、AI工具使用等12篇深度文章，帮助你从新手成长为高手。">
+    <link rel="canonical" href="https://bajiejichang.cc/knowledge-base">
+    <link rel="alternate" hreflang="zh-CN" href="https://bajiejichang.cc/knowledge-base">
+    <link rel="alternate" hreflang="x-default" href="https://bajiejichang.cc/knowledge-base">
+
+    <!-- GEO Tags (Region & Location Targeting) -->
+    <meta name="geo.region" content="CN">
+    <meta name="geo.placename" content="China">
+    <meta name="geo.position" content="39.9042;116.4074">
+    <meta name="ICBM" content="39.9042, 116.4074">
+    <meta http-equiv="content-language" content="zh-CN">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="八戒机场">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="科学上网知识库 - 从零开始学习翻墙技术 | 八戒机场">
+    <meta property="og:description" content="八戒机场知识库提供完整的科学上网教程，包含梯子推荐、翻墙指南、技术科普、AI工具使用等12篇深度文章，帮助你从新手成长为高手。">
+    <meta property="og:url" content="https://bajiejichang.cc/knowledge-base">
+    <meta property="og:image" content="https://bajiejichang.cc/images/hero-dashboard.png">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="科学上网知识库 - 从零开始学习翻墙技术 | 八戒机场">
+    <meta name="twitter:description" content="八戒机场知识库提供完整的科学上网教程，包含梯子推荐、翻墙指南、技术科普、AI工具使用等12篇深度文章，帮助你从新手成长为高手。">
+    <meta name="twitter:image" content="https://bajiejichang.cc/images/hero-dashboard.png">
+    <!-- GEO Tags (Region & Location Targeting) -->
+    <!-- Open Graph Meta Tags -->
+    <!-- Twitter Card Meta Tags -->
+    <!-- GEO Tags (Region & Location Targeting) -->
+    <!-- Open Graph Meta Tags -->
+    <!-- Twitter Card Meta Tags -->
+    <meta name="keywords" content="科学上网知识库,翻墙教程,梯子教程,机场知识,VPN科普,Clash教程">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .knowledge-nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 60px;
+            z-index: 99;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .knowledge-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .knowledge-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .knowledge-nav a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        .section-header {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        .article-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+        .article-card .article-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .article-card .article-content {
+            padding: 25px;
+        }
+        .article-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.4;
+        }
+        .article-card .article-desc {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .article-card .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #999;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .article-card .read-more {
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .article-card .read-more:hover {
+            text-decoration: underline;
+        }
+        .featured-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .featured-card h3,
+        .featured-card .article-desc,
+        .featured-card .article-meta {
+            color: white;
+        }
+        .featured-card .article-badge {
+            background: rgba(255,255,255,0.3);
+        }
+        .featured-card .read-more {
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .featured-card {
+                grid-column: span 1;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="八戒机场Logo" class="logo">
+                <span class="brand-name">八戒机场</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#features">核心优势</a></li>
+                <li><a href="index.html#pricing">套餐价格</a></li>
+                <li><a href="knowledge-base.html" class="active">知识库</a></li>
+                <li><a href="tutorial-windows.html">使用教程</a></li>
+                <li><a href="faq.html">常见问题</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary">立即使用</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 快速导航栏 -->
+    <div class="knowledge-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#beginner">🔰 新手入门</a></li>
+                <li><a href="#advanced">🚀 进阶技巧</a></li>
+                <li><a href="#tools">🛠️ 工具使用</a></li>
+                <li><a href="#security">🔒 安全隐私</a></li>
+                <li><a href="#troubleshooting">⚡ 问题解决</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" style="padding: 40px 0;">
+        <!-- 页面头部 -->
+        <div class="section-header">
+            <h1>科学上网知识库</h1>
+            <p>从零基础到精通，12篇深度文章带你全面掌握翻墙技术</p>
+        </div>
+
+        <!-- 新手入门板块 -->
+        <section id="beginner">
+            <div class="section-header">
+                <h2>🔰 新手入门</h2>
+                <p>适合第一次接触翻墙的用户，从基础概念到实际操作</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card featured-card">
+                    <div class="article-badge">⭐ 必读推荐</div>
+                    <div class="article-content">
+                        <h3>2024年最新科学上网完全指南 - 从入门到精通</h3>
+                        <p class="article-desc">什么是科学上网？为什么需要翻墙？本文将从最基础的概念讲起，详细介绍VPN、机场、代理的区别，帮助你选择最适合的方案，并提供完整的使用教程。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 15分钟阅读</span>
+                            <a href="kb/scientific-internet-complete-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">基础科普</div>
+                    <div class="article-content">
+                        <h3>什么是梯子？机场、VPN、代理全面科普</h3>
+                        <p class="article-desc">详细解析梯子、机场、VPN、Shadowsocks、V2Ray等常见术语的含义和区别，让你彻底搞懂科学上网的各种技术原理。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 10分钟阅读</span>
+                            <a href="kb/vpn-proxy-airport-explained.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">选购指南</div>
+                    <div class="article-content">
+                        <h3>2024年优质梯子推荐 - 机场选购完全指南</h3>
+                        <p class="article-desc">如何选择靠谱的机场？从价格、速度、稳定性、客服等多维度对比，推荐2024年最值得购买的机场服务。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 12分钟阅读</span>
+                            <a href="kb/best-vpn-airport-recommendation.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">客户端教程</div>
+                    <div class="article-content">
+                        <h3>Clash完整使用教程 - Windows/Mac/iOS/Android</h3>
+                        <p class="article-desc">Clash是最流行的科学上网客户端，本文提供全平台详细教程，从下载安装到配置使用，让你快速上手。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 20分钟阅读</span>
+                            <a href="kb/clash-complete-tutorial.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 进阶技巧板块 -->
+        <section id="advanced">
+            <div class="section-header">
+                <h2>🚀 进阶技巧</h2>
+                <p>提升使用体验，掌握高级配置和优化技巧</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-badge">性能优化</div>
+                    <div class="article-content">
+                        <h3>科学上网速度优化指南 - 让你的梯子飞起来</h3>
+                        <p class="article-desc">节点选择、规则配置、DNS优化、TCP参数调整等实用技巧，让你的翻墙速度提升50%以上。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 15分钟阅读</span>
+                            <a href="kb/speed-optimization-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">高级配置</div>
+                    <div class="article-content">
+                        <h3>Clash规则分流详解 - 智能分流配置指南</h3>
+                        <p class="article-desc">深入讲解Clash的规则配置原理，自定义分流规则，实现国内直连、国外代理的完美平衡。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 18分钟阅读</span>
+                            <a href="kb/clash-rules-configuration.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工具使用板块 -->
+        <section id="tools">
+            <div class="section-header">
+                <h2>🛠️ 工具使用</h2>
+                <p>科学上网后如何使用各种国外工具和服务</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card featured-card">
+                    <div class="article-badge">🔥 热门</div>
+                    <div class="article-content">
+                        <h3>科学上网后必用的AI工具完全指南</h3>
+                        <p class="article-desc">ChatGPT、Claude、Midjourney等顶级AI工具使用教程，从注册到精通，让你充分利用科学上网的价值。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 25分钟阅读</span>
+                            <a href="kb/ai-tools-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">流媒体</div>
+                    <div class="article-content">
+                        <h3>Netflix/YouTube/Disney+流媒体观看指南</h3>
+                        <p class="article-desc">如何解锁各国Netflix内容库？如何流畅观看4K视频？完整的流媒体使用攻略。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 12分钟阅读</span>
+                            <a href="kb/streaming-media-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">学术科研</div>
+                    <div class="article-content">
+                        <h3>Google Scholar/Sci-Hub学术资源访问指南</h3>
+                        <p class="article-desc">如何利用科学上网获取学术论文、使用学术搜索引擎、访问国外大学图书馆资源。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 10分钟阅读</span>
+                            <a href="kb/academic-resources-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 安全隐私板块 -->
+        <section id="security">
+            <div class="section-header">
+                <h2>🔒 安全隐私</h2>
+                <p>保护你的上网安全和个人隐私</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-badge">安全必读</div>
+                    <div class="article-content">
+                        <h3>科学上网安全指南 - 如何安全翻墙不被查</h3>
+                        <p class="article-desc">科学上网的法律风险、安全注意事项、隐私保护技巧，以及如何规避常见风险。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 15分钟阅读</span>
+                            <a href="kb/security-privacy-guide.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-badge">防护技巧</div>
+                    <div class="article-content">
+                        <h3>如何防止DNS泄漏和IP泄漏</h3>
+                        <p class="article-desc">详解DNS泄漏、WebRTC泄漏等常见问题，提供完整的检测和防护方案。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 12分钟阅读</span>
+                            <a href="kb/dns-leak-protection.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 问题解决板块 -->
+        <section id="troubleshooting">
+            <div class="section-header">
+                <h2>⚡ 问题解决</h2>
+                <p>常见问题排查和解决方案</p>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-badge">故障排查</div>
+                    <div class="article-content">
+                        <h3>科学上网常见问题解决方案大全</h3>
+                        <p class="article-desc">连接失败、速度慢、频繁断线等20+常见问题的详细排查步骤和解决方法。</p>
+                        <div class="article-meta">
+                            <span>📅 2024-11-08</span>
+                            <span>⏱️ 20分钟阅读</span>
+                            <a href="kb/common-problems-solutions.html" class="read-more">阅读全文 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA区域 -->
+        <div style="text-align: center; padding: 60px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; margin-top: 60px; color: white;">
+            <h2 style="font-size: 32px; margin-bottom: 20px;">准备开始你的科学上网之旅？</h2>
+            <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">八戒机场提供稳定快速的翻墙服务，19元起，新用户送试用流量</p>
+            <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" style="display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px;">立即注册享优惠</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 八戒机场. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+    // 平滑滚动到锚点
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 150;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>

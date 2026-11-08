@@ -1,0 +1,468 @@
+const fs = require('fs');
+const path = require('path');
+
+const indexHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八戒机场 - 稳定快速的Clash机场推荐 | 科学上网首选官网</title>
+    <meta name="description" content="八戒机场官网提供稳定安全的Clash节点服务，支持Clash Party与各平台客户端，价格实惠，全球专线加速，适合科学上网、外贸跨境与AI加速。提供详细的Clash使用教程和专业技术支持。">
+    <meta name="keywords" content="八戒机场,八戒机场官网,Clash机场,Clash节点,科学上网,翻墙,机场推荐,便宜机场,安全机场,Clash Party,魔法梯子,稳定节点">
+    
+    <link rel="canonical" href="https://bajiejichang.cc/">
+    <link rel="alternate" hreflang="zh-CN" href="https://bajiejichang.cc/">
+    <link rel="alternate" hreflang="x-default" href="https://bajiejichang.cc/">
+
+    <!-- GEO Tags (Region & Location Targeting) -->
+    <meta name="geo.region" content="CN">
+    <meta name="geo.placename" content="China">
+    <meta name="geo.position" content="39.9042;116.4074">
+    <meta name="ICBM" content="39.9042, 116.4074">
+    <meta http-equiv="content-language" content="zh-CN">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="八戒机场">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="八戒机场 - 稳定快速的Clash机场推荐 | 科学上网首选官网">
+    <meta property="og:description" content="八戒机场官网提供稳定安全的Clash节点服务，支持Clash Party与各平台客户端，价格实惠，全球专线加速。">
+    <meta property="og:url" content="https://bajiejichang.cc/">
+    <meta property="og:image" content="https://bajiejichang.cc/images/hero-dashboard.png">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="八戒机场 - 稳定快速的Clash机场推荐 | 科学上网首选官网">
+    <meta name="twitter:description" content="八戒机场官网提供稳定安全的Clash节点服务，支持Clash Party与各平台客户端，价格实惠，全球专线加速。">
+    <meta name="twitter:image" content="https://bajiejichang.cc/images/hero-dashboard.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://bajiejichang.cc/#organization",
+          "name": "八戒机场",
+          "alternateName": ["扬帆云机场", "ssrdog机场"],
+          "url": "https://bajiejichang.cc/",
+          "logo": "https://bajiejichang.cc/images/logo.png",
+          "description": "专业的Clash机场服务提供商，提供稳定快速的科学上网与跨境专线解决方案",
+          "sameAs": [
+            "https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://bajiejichang.cc/#website",
+          "url": "https://bajiejichang.cc/",
+          "name": "八戒机场官网",
+          "publisher": { "@id": "https://bajiejichang.cc/#organization" },
+          "inLanguage": "zh-CN"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://bajiejichang.cc/"
+          }]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://bajiejichang.cc/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "什么是Clash机场？如何使用？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Clash机场是指提供Clash节点订阅服务的专业加速平台。使用方法非常简单：1.在八戒机场官网注册账号并获取订阅链接 2.下载对应系统的Clash或Shadowrocket客户端 3.一键导入订阅链接 4.选择延迟最低的专线节点开启代理。全平台均有详细图文教程支持。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "八戒机场安全吗？有隐私风险吗？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "八戒机场采用高强度AES-256和ChaCha20端到端加密协议保护所有数据传输，实行严格的零访问日志政策，不记录任何用户上网行为，服务器物理机房均部署在隐私友好地区，确保用户数字足迹完全隐匿。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "支持哪些操作系统和设备？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "全面支持Windows电脑、Apple macOS、iPhone/iPad (iOS)、安卓Android智能手机，以及Linux、智能电视盒子与各类家庭OpenWrt软路由，一个订阅账号支持多台设备同时在线畅游。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "能否解锁Netflix、Disney+与ChatGPT/Claude？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "完全支持。八戒机场所有优质节点均标配原生住宅IP与流媒体解锁能力，全天候解锁Netflix、Disney+、YouTube Premium，并提供针对OpenAI ChatGPT、Claude以及Midjourney的纯净加速线路。"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="八戒机场Logo" class="logo">
+                <span class="brand-name">八戒机场</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#features">核心优势</a></li>
+                <li><a href="#pricing">套餐价格</a></li>
+                <li><a href="#tutorials">使用教程</a></li>
+                <li><a href="articles.html">文章中心</a></li>
+                <li><a href="knowledge-base.html">知识库</a></li>
+                <li><a href="faq.html">常见问题</a></li>
+                <li><a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-primary" target="_blank" rel="noopener">立即使用</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="animated-shape shape-1"></div>
+            <div class="animated-shape shape-2"></div>
+            <div class="animated-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">八戒机场</span><br>
+                    稳定快速的Clash机场推荐
+                </h1>
+                <p class="hero-subtitle">专业的科学上网解决方案 | 支持Clash & Clash Party | 全球加速 | 7x24技术支持</p>
+                <div class="hero-features">
+                    <div class="feature-tag">✓ 高速稳定节点</div>
+                    <div class="feature-tag">✓ 价格实惠透明</div>
+                    <div class="feature-tag">✓ 安全加密传输</div>
+                    <div class="feature-tag">✓ 新手友好教程</div>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-hero btn-primary" target="_blank" rel="noopener">立即开始使用</a>
+                    <a href="#tutorials" class="btn-hero btn-secondary">查看使用教程</a>
+                </div>
+                <p class="hero-trust">已为 <span class="count-up" data-target="50000">50000</span>+ 用户提供稳定出海加速服务</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-dashboard.png" alt="八戒机场Clash客户端界面展示" class="floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>为什么选择八戒机场？</h2>
+                <p>我们用心打磨每一个细节，为您带来无与伦比的科学上网极速体验</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>IEPL 极速专线</h3>
+                    <p>采用企业级物理内网专线中继，晚高峰丢包率低于 0.1%，4K 视频秒开无缓冲。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>全球节点覆盖</h3>
+                    <p>覆盖香港、台湾、日本、新加坡、美国、英国等 50+ 国家与地区核心骨干机房。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>流媒体全解锁</h3>
+                    <p>标配原生住宅 IP 库，完美解锁 Netflix、Disney+、YouTube Premium、TikTok 等。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI 生产力护航</h3>
+                    <p>针对 OpenAI ChatGPT、Claude 3.5、Midjourney、Copilot 深度优化专线路由通道。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>零日志隐私保护</h3>
+                    <p>高规格加密隧道传输，严格恪守无日志准则，全方位筑牢个人数字隐私防线。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>全天候极速售后</h3>
+                    <p>专业技术团队 7x24 小时在线待命，工单与在线客服极速响应，使用全程无忧。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>透明实惠的套餐价格</h2>
+                <p>无论个人日常查资料、学生科研，还是重度流媒体与外贸办公，都能找到称心套餐</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>基础版</h3>
+                        <p>适合轻度日常查资料与学术科研</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">¥</span>
+                        <span class="amount">19</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 100GB 高速月流量</li>
+                        <li>✓ 3台设备同时在线</li>
+                        <li>✓ 包含港日新美主流节点</li>
+                        <li>✓ 4K视频流畅播放</li>
+                        <li>✓ 基础工单支持</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing" target="_blank" rel="noopener">立即订阅</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">最受欢迎</div>
+                    <div class="pricing-header">
+                        <h3>标准版</h3>
+                        <p>兼顾超大流量与全能专线体验</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">¥</span>
+                        <span class="amount">39</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 500GB 超大月流量</li>
+                        <li>✓ 5台设备同时在线</li>
+                        <li>✓ 全球IEPL专线节点全开</li>
+                        <li>✓ Netflix/Disney+全解锁</li>
+                        <li>✓ ChatGPT/Claude专线直通</li>
+                        <li>✓ 极速工单响应</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing btn-primary" target="_blank" rel="noopener">立即订阅</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>旗舰旗舰版</h3>
+                        <p>面向外贸跨境工作室与极客玩家</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">¥</span>
+                        <span class="amount">69</span>
+                        <span class="period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 1000GB 海量月流量</li>
+                        <li>✓ 10台设备同时在线</li>
+                        <li>✓ 全球100+优质内网专线</li>
+                        <li>✓ 8K超高清视频极速秒开</li>
+                        <li>✓ VIP专属客服一对一支持</li>
+                        <li>✓ 不限峰值速率保障</li>
+                    </ul>
+                    <a href="https://vipmjj01.jlyvipaff.com/#/?code=hBq1VTw4" class="btn-pricing" target="_blank" rel="noopener">立即订阅</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="tutorials">
+        <div class="container">
+            <div class="section-header">
+                <h2>全平台客户端使用教程</h2>
+                <p>详尽图文配置指引，帮助您在各系统上 3 分钟极速上手</p>
+            </div>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">🪟</div>
+                    <h3>Windows 教程</h3>
+                    <p>Clash for Windows / Verge 完整配置指南</p>
+                    <a href="tutorial-windows.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">🍎</div>
+                    <h3>macOS 教程</h3>
+                    <p>ClashX 与 Clash Verge Mac 极速配置步骤</p>
+                    <a href="tutorial-mac.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">📱</div>
+                    <h3>iOS 教程</h3>
+                    <p>Shadowrocket（小火箭）与 Stash 快捷配置</p>
+                    <a href="tutorial-ios.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">🤖</div>
+                    <h3>Android 教程</h3>
+                    <p>Clash for Android 安卓手机配置教程</p>
+                    <a href="tutorial-android.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">🎉</div>
+                    <h3>Clash Party 教程</h3>
+                    <p>新一代极简现代化 Clash 客户端指南</p>
+                    <a href="tutorial-clash-party.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+                <div class="tutorial-card">
+                    <div class="tutorial-icon">📶</div>
+                    <h3>软路由教程</h3>
+                    <p>OpenWrt / OpenClash 全屋免客户端翻墙教程</p>
+                    <a href="tutorial-router.html" class="tutorial-link">查看教程 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>用户真实口碑反馈</h2>
+                <p>数万用户每天共同见证的高品质加速服务</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"用了八戒机场大半年，速度极其稳定，看 YouTube 4K 零缓冲，晚高峰完全没有掉过线。日常查 GitHub 和学术文献帮了大忙！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">张工 · 资深架构师</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"性价比真的没得挑！之前用过几家大机场，一到晚上就卡顿。八戒机场价格非常亲民，客服响应也飞快，新手教程一看就懂！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">李同学 · 留学生</div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"跨境做外贸每天都要管理海外社媒和店铺，八戒机场的香港和美国节点非常干净原生，视频会议流畅清晰，强烈推荐！"</p>
+                    <div class="testimonial-author">
+                        <div class="author-name">王经理 · 跨境电商运营</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题 (FAQ)</h2>
+                <p>解答您关于八戒机场、节点订阅与网络代理的所有疑问</p>
+            </div>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>什么是Clash机场？如何使用？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Clash机场是指提供Clash节点订阅服务的专业加速平台。使用方法非常简单：1.在八戒机场官网注册账号并获取订阅链接 2.下载对应系统的Clash或Shadowrocket客户端 3.一键导入订阅链接 4.选择延迟最低的专线节点开启代理。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>八戒机场安全吗？有隐私风险吗？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>八戒机场采用高强度AES-256和ChaCha20端到端加密协议保护所有数据传输，实行严格的零访问日志政策，不记录任何用户上网行为，确保用户数字足迹完全隐匿。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>支持哪些操作系统和设备？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>全面支持Windows电脑、Apple macOS、iPhone/iPad (iOS)、安卓Android智能手机，以及Linux与各类OpenWrt软路由，支持多台设备同时在线畅游。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>能否解锁Netflix、Disney+与ChatGPT/Claude？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>完全支持。八戒机场所有优质节点均标配原生住宅IP与流媒体解锁能力，全天候解锁Netflix、Disney+，并提供针对OpenAI ChatGPT、Claude的专线通道。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于八戒机场</h4>
+                    <p>八戒机场（扬帆云机场 / ssrdog机场）是业界领先的高速安全出海网络加速品牌，提供高可用专线与全平台客户端支持。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>平台教程</h4>
+                    <ul>
+                        <li><a href="tutorial-windows.html">Windows教程</a></li>
+                        <li><a href="tutorial-mac.html">macOS教程</a></li>
+                        <li><a href="tutorial-ios.html">iOS教程</a></li>
+                        <li><a href="tutorial-android.html">Android教程</a></li>
+                        <li><a href="tutorial-clash-party.html">Clash Party教程</a></li>
+                        <li><a href="tutorial-router.html">软路由教程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="articles.html">文章中心</a></li>
+                        <li><a href="knowledge-base.html">科学知识库</a></li>
+                        <li><a href="faq.html">常见问题</a></li>
+                        <li><a href="sitemap.html">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务与协议</h4>
+                    <ul>
+                        <li><a href="privacy.html">隐私政策</a></li>
+                        <li><a href="terms.html">服务条款</a></li>
+                        <li><a href="disclaimer.html">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 八戒机场 (bajiejichang.cc). All rights reserved. | 仅供技术交流与科研学习使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, '..', 'index.html'), indexHtml, 'utf8');
+console.log('Successfully written index.html');
