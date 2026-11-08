@@ -47,3 +47,4 @@ if (!response.ok) {
 }
 
 console.log("IndexNow accepted " + urls.length + " URL(s) for " + host + " (HTTP " + response.status + ").");
+
