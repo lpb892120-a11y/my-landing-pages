@@ -1,0 +1,17 @@
+# Caddyfile (适用于 lanfanyunjic.homes)
+lanfanyunjic.homes, www.lanfanyunjic.homes {
+    root * /var/www/lanfanyunjic.homes
+    file_server
+
+    encode zstd gzip
+
+    # 路由规则
+    try_files {path} {path}/ /index.html
+
+    # 缓存头
+    @static {
+        path *.css *.js *.svg *.png *.jpg *.webp *.ico
+    }
+    header @static Cache-Control "max-age=2592000, public"
+}
+

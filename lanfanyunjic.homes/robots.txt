@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index for lanfanyunjic.homes
+Sitemap: https://lanfanyunjic.homes/sitemap.xml
+

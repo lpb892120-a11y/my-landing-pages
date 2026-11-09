@@ -1,0 +1,16 @@
+{
+  "name": "蓝帆云机场官网",
+  "short_name": "蓝帆云",
+  "description": "蓝帆云机场官网 - 2026高速IPLC内网专线节点 | 4K秒开与ChatGPT流畅解锁",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
