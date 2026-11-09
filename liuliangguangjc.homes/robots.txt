@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://liuliangguangjc.homes/sitemap.xml
+
+# IndexNow Key Verification
+# Key: c4b8e192a7d34ef598160e32f418d1a9
+# Location: https://liuliangguangjc.homes/c4b8e192a7d34ef598160e32f418d1a9.txt
