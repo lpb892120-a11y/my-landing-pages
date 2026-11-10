@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="splitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="650" height="360" rx="16" fill="#0f172a" />
+  
+  <!-- 标题与流程指示 -->
+  <text x="325" y="42" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">Clash / Clash Party 智能规则分流工作原理</text>
+  <text x="325" y="65" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">国内网站直连不耗流量 · 国外网站与AI服务自动走青云梯高速专线</text>
+
+  <!-- 左侧：用户终端 -->
+  <g transform="translate(40, 110)">
+    <rect width="130" height="150" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="65" cy="50" r="24" fill="#0284c7" opacity="0.3" />
+    <text x="65" y="55" text-anchor="middle" font-size="20">💻 📱</text>
+    <text x="65" y="95" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#f1f5f9">用户设备</text>
+    <text x="65" y="118" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">PC / Mac / 手机</text>
+    <text x="65" y="136" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#38bdf8">发起网络访问</text>
+  </g>
+
+  <!-- 中间：Clash / Clash Party 内核与分流规则 -->
+  <g transform="translate(250, 95)">
+    <rect width="150" height="180" rx="14" fill="#1e1e38" stroke="#818cf8" stroke-width="2" />
+    <text x="75" y="32" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#a5b4fc">Clash 内核大脑</text>
+    
+    <!-- 分流器分支示意 -->
+    <rect x="20" y="50" width="110" height="32" rx="6" fill="#0f172a" stroke="#10b981" />
+    <text x="75" y="70" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#34d399">国内域名 ➔ DIRECT</text>
+
+    <rect x="20" y="90" width="110" height="32" rx="6" fill="#0f172a" stroke="#38bdf8" />
+    <text x="75" y="110" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#38bdf8">出海应用 ➔ PROXY</text>
+
+    <rect x="20" y="130" width="110" height="32" rx="6" fill="#0f172a" stroke="#f43f5e" />
+    <text x="75" y="150" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#fb7185">流媒体/AI ➔ 原生专线</text>
+  </g>
+
+  <!-- 连线 1: 用户 -> Clash -->
+  <path d="M170 185 L250 185" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4,4" />
+  
+  <!-- 右侧上方：国内直连 -->
+  <g transform="translate(480, 90)">
+    <rect width="130" height="75" rx="10" fill="#064e3b" stroke="#059669" />
+    <text x="65" y="30" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#a7f3d0">国内网站/APP直连</text>
+    <text x="65" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#6ee7b7">百度 / 微信 / 淘宝</text>
+    <text x="65" y="65" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#d1fae5">0延迟 · 不消耗套餐流量</text>
+  </g>
+
+  <!-- 右侧下方：青云梯专线代理 -->
+  <g transform="translate(480, 190)">
+    <rect width="130" height="95" rx="10" fill="#1e3a8a" stroke="#3b82f6" />
+    <text x="65" y="28" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#bfdbfe">青云梯全球专线</text>
+    <text x="65" y="48" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#93c5fd">Google / YouTube / 4K</text>
+    <text x="65" y="66" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#93c5fd">ChatGPT / TikTok / 外贸</text>
+    <text x="65" y="84" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#00f2fe">IEPL专线 · 超低延迟</text>
+  </g>
+
+  <!-- 连线 2: Clash -> DIRECT & PROXY -->
+  <path d="M400 130 C440 130, 440 120, 480 120" stroke="#10b981" stroke-width="2.5" fill="none" />
+  <path d="M400 210 C440 210, 440 235, 480 235" stroke="#38bdf8" stroke-width="2.5" fill="none" />
+
+  <!-- 底部提示条 -->
+  <rect x="50" y="305" width="550" height="36" rx="8" fill="#1e293b" />
+  <text x="325" y="328" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">💡 智能分流模式下，平常无需频繁开关。一劳永逸，国内外网络无缝顺滑切换。</text>
+</svg>
+

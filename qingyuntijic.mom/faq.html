@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题与技术支持 FAQ - 青云梯官网</title>
+  <meta name="description" content="青云梯官网常见问题汇总与技术解答。涵盖如何选择便宜机场与安全机场套餐、Clash与Clash Party订阅导入报错排查、ChatGPT与Netflix流媒体解锁、IPLC专线原理与退款售后支持。">
+  <meta name="keywords" content="青云梯FAQ, 机场常见问题, Clash报错排查, 科学上网故障, 节点超时, 便宜机场答疑, 翻墙梯子问答">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://qingyuntijic.mom/faq.html">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- 结构化数据 FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "青云梯采用的是什么网络架构？为什么晚高峰不卡顿？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "青云梯采用多线 BGP 入口与端到端 IEPL / IPLC 商业内网专线。数据从国内入口机房通过物理内网光缆直接送达香港、日本、美国等海外核心机房，全程不走公网国际出口，不受电信联通移动晚高峰公网拥堵影响，丢包率趋近于零。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "新手应该买哪款套餐最划算？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "如果您主要是用于 Google 搜索、学术查阅和轻度社交，每月 100GB 的入门版完全够用；如果您需要频繁观看 YouTube 4K、Netflix 超高清或者使用 ChatGPT/Midjourney，推荐选购每月 350GB 的主力版，性价比最高。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么在 Clash 中测试节点全部显示 Timeout 超时？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "节点全部超时通常有以下几种原因：① 您的电脑或手机本地系统时间与网络标准时间相差超过 60 秒（请同步互联网时钟）；② 您的套餐流量已耗尽或服务到期；③ 本地防火墙或第三方杀毒拦截了 Clash 核心程序；④ 订阅链接有更新，请在客户端中右键点击配置选择【Update 更新】。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "青云梯是否支持在软路由 (OpenWrt) 上使用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "完全支持。青云梯支持标准 Clash、OpenClash、PassWall、SSR Plus+ 等各类软路由插件。只需将青云梯的通用订阅链接导入插件中即可实现全屋智能家电、电视盒子、主机及手机电脑的无感分流加速。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "使用青云梯节点访问国内网站会扣除流量吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不会。只要您的客户端设置在【规则模式 (Rule)】或【绕过大陆 (Bypass Mainland)】，访问微信、淘宝、百度、抖音等国内网站时均自动走本地直连，完全不经过海外代理服务器，既不消耗套餐流量，也不产生额外延迟。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <div class="bg-ambient-glow glow-top-right"></div>
+  <div class="bg-ambient-glow glow-bottom-left"></div>
+
+  <!-- 导航 -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="brand-logo" title="返回青云梯官网首页">
+        <img src="assets/images/logo.svg" alt="青云梯官网Logo" width="180" height="42">
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">官网首页</a></li>
+          <li><a href="/#features" class="nav-link">核心优势</a></li>
+          <li><a href="/#pricing" class="nav-link">套餐价格</a></li>
+          <li><a href="tutorial.html" class="nav-link">客户端教程</a></li>
+          <li><a href="/#articles" class="nav-link">文章资讯</a></li>
+          <li><a href="faq.html" class="nav-link active">常见问题 FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" class="btn btn-primary btn-pulse" target="_blank" rel="noopener">进入官网 ➔</a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 40px; padding-bottom: 80px;">
+    <div class="breadcrumb-nav">
+      <a href="/">首页</a> <span>/</span> <span>常见问题 FAQ</span>
+    </div>
+
+    <div class="article-header">
+      <h1 class="article-h1">青云梯常见问题与技术支持汇总 (FAQ)</h1>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 820px;">
+        这里整理了广大出海用户、新手朋友在使用青云梯节点服务时最关心的核心问题。如果您在日常使用中遇到疑难杂症，请先在此查阅，90% 以上的问题都能在 1 分钟内自行解决。
+      </p>
+    </div>
+
+    <div class="faq-accordion" style="max-width: 900px; margin: 0 auto 50px;">
+      <!-- 分类一：网络与专线架构 -->
+      <h3 style="margin: 30px 0 15px; color: var(--accent-cyan);">🌐 一、网络性能与节点线路相关</h3>
+
+      <div class="faq-item active">
+        <button class="faq-question">
+          <span>青云梯采用的是什么网络架构？为什么晚高峰不卡顿？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" style="max-height: 200px;">
+          <p>
+            青云梯全线部署了多线 BGP 入口与端到端 IEPL / IPLC 商业内网专线。数据从国内入口机房通过专属物理内网光缆直接送达香港、日本、美国等海外核心机房，全程不走公网国际出口，不受电信、联通、移动晚高峰国际出口拥堵影响，丢包率趋近于零。
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>青云梯节点倍率是如何计算的？是否存在暗扣？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            青云梯秉持透明公道原则，全节点标注真实倍率（通常核心专线为标准 1.0x 倍率，特快直连或大流量低峰节点可能低至 0.5x）。扣费系统严格按照节点标示倍率计算，后台实时记录流量明细，绝无任何暗扣或虚标现象。
+          </p>
+        </div>
+      </div>
+
+      <!-- 分类二：客户端与订阅配置 -->
+      <h3 style="margin: 30px 0 15px; color: var(--accent-cyan);">⚙️ 二、客户端操作与报错排查</h3>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>为什么在 Clash 中测试节点全部显示 Timeout 超时？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            节点全部超时通常有以下几种原因：<br>
+            1. 本地系统时钟不准：协议加密要求本地时间与世界标准时间误差在 60 秒以内，请在系统设置中点击【立即同步时钟】。<br>
+            2. 套餐流量用尽或服务过期：请登录青云梯官网查看套餐状态。<br>
+            3. 安全软件拦截：退出 360 等可能篡改系统代理的软件。<br>
+            4. 节点更新：在 Clash 中右键点击配置，选择【Update 更新】重新拉取最新节点。
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>访问国内网站（如百度、微信、网银）会被减速或耗费流量吗？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            不会。在客户端选择【规则模式 (Rule)】后，Clash 会根据内置的几万条权威域名规则集进行智能分流：遇到国内网站与应用时自动执行 DIRECT 直连，不消耗套餐流量，也不影响国内极速访问；仅当访问国外网站（如 Google、YouTube、GitHub）时才通过青云梯专线转发。
+          </p>
+        </div>
+      </div>
+
+      <!-- 分类三：流媒体与AI工具解锁 -->
+      <h3 style="margin: 30px 0 15px; color: var(--accent-cyan);">🍿 三、流媒体与 ChatGPT / AI 工具</h3>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>为什么我连接节点后，打开 ChatGPT 提示“Access Denied 1020”？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            ChatGPT 严禁使用普通数据中心（机房）公网 IP。青云梯专设了<strong>【AI 专线】</strong>与<strong>【原生住宅】</strong>节点分组。遇到拒访报错时，只需在 Clash 代理分组中将 ChatGPT / OpenAI 规则切换至青云梯的「美西 AI 原生」或「新加坡 01」，并清理浏览器 Cookie 后刷新页面即可顺畅使用。
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Netflix（网飞）看剧只能看自制剧，看不到非自制剧怎么办？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            如果能看《怪奇物语》等 Netflix 自制剧，但搜不到《绝命毒师》或本地版权剧，说明当前节点的 IP 属于未完全解锁状态。青云梯带有【NF解锁】标识的香港、新加坡、日本节点均配置了原生住宅级住宅 DNS 流媒体重定向，切换至此类节点即可解锁完整片库。
+          </p>
+        </div>
+      </div>
+
+      <!-- 分类四：账号与支付售后 -->
+      <h3 style="margin: 30px 0 15px; color: var(--accent-cyan);">💳 四、购买支付与售后支持</h3>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>青云梯支持哪些支付方式？购买后多久可以开通？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            青云梯支持支付宝、微信支付以及 USDT 等主流加密货币结算。支付完成后由系统全自动秒级入账开通，无需人工审核，购买后刷新后台即可直接获取订阅链接。
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>套餐可以在多台设备同时使用吗？</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            可以。青云梯支持个人全家桶使用（手机、平板、笔记本、台式机、软路由等）。不同套餐规格对应不同的并发在线设备数（入门版支持 2 台，主力版支持 5 台，企业版支持 12 台），只要在并发限额内，您可以随时随地跨设备使用。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部行动唤起 -->
+    <div class="article-cta-box">
+      <h3>还有其他疑问？立即进入官网与客服沟通</h3>
+      <p>青云梯官网技术支持团队 7×24 小时待命，为您排忧解难。</p>
+      <a href="https://jichang-go.org/go.php" class="btn btn-primary btn-lg btn-pulse" target="_blank" rel="noopener">
+        立即前往青云梯官网 ➔
+      </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand-logo">
+            <img src="assets/images/logo.svg" alt="青云梯官网Logo" width="160" height="38">
+          </a>
+          <p>青云梯官网（qingyuntijic.mom）专业提供全协议跨平台代理加速服务，保障出海网络超快、超稳、超安全。</p>
+        </div>
+        <div class="footer-column">
+          <h4>快速导航</h4>
+          <ul class="footer-links">
+            <li><a href="/">官网首页</a></li>
+            <li><a href="tutorial.html">客户端教程</a></li>
+            <li><a href="faq.html">常见问题 FAQ</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener">控制台登录</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>热门文章</h4>
+          <ul class="footer-links">
+            <li><a href="articles/clash-party-tutorial.html">Clash Party 使用教程</a></li>
+            <li><a href="articles/cheap-airport-recommendation.html">便宜机场推荐指南</a></li>
+            <li><a href="articles/safe-airport-selection.html">安全机场深度测评</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>法律与政策</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">隐私政策</a></li>
+            <li><a href="terms.html">服务条款</a></li>
+            <li><a href="disclaimer.html">免责声明</a></li>
+            <li><a href="sitemap.xml">XML 网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 青云梯官网. All Rights Reserved. 统一跳转: https://jichang-go.org/go.php</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

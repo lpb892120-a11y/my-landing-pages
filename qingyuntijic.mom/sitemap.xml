@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
+  <url>
+    <loc>https://qingyuntijic.mom/</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 教程主页 -->
+  <url>
+    <loc>https://qingyuntijic.mom/tutorial.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FAQ 汇总页 -->
+  <url>
+    <loc>https://qingyuntijic.mom/faq.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 10篇精选 SEO 长文 -->
+  <url>
+    <loc>https://qingyuntijic.mom/articles/clash-party-tutorial.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/cheap-airport-recommendation.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/safe-airport-selection.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/clash-verge-rev-guide.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/cross-border-ecommerce-ladder.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/streaming-unlock-netflix-disney.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/ai-tools-chatgpt-gemini-airport.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/game-acceleration-global-nodes.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/airport-nodes-common-errors-fix.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/articles/scientific-internet-security-handbook.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 政策与合规 -->
+  <url>
+    <loc>https://qingyuntijic.mom/privacy.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/terms.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/disclaimer.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://qingyuntijic.mom/sitemap.html</loc>
+    <lastmod>2026-11-10T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
+

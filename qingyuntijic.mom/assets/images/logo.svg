@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#4facfe" />
+      <stop offset="100%" stop-color="#0052d4" />
+    </linearGradient>
+    <linearGradient id="ladderGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 图标主体：青云 + 飞升阶梯 + 极速折线 -->
+  <g transform="translate(15, 12)">
+    <!-- 祥云与上升光轨 -->
+    <path d="M25 55 A18 18 0 0 1 50 35 A24 24 0 0 1 85 45 A16 16 0 0 1 95 62 A14 14 0 0 1 82 75 L30 75 A18 18 0 0 1 25 55 Z" fill="url(#cloudGrad)" opacity="0.25" />
+    
+    <!-- 阶梯向上跃迁 (Ladder) -->
+    <path d="M22 68 L36 68 M28 54 L44 54 M36 40 L52 40 M45 26 L62 26" stroke="url(#ladderGrad)" stroke-width="4.5" stroke-linecap="round" />
+    
+    <!-- 极速飞升光箭 (Speed Rocket Trend) -->
+    <path d="M30 70 L50 48 L62 55 L82 20" fill="none" stroke="#00f2fe" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    <polygon points="82,14 74,24 88,26" fill="#00f2fe" filter="url(#glow)"/>
+    
+    <!-- 光核粒子 -->
+    <circle cx="50" cy="48" r="3" fill="#ffffff" />
+    <circle cx="62" cy="55" r="3" fill="#ffffff" />
+    <circle cx="82" cy="20" r="4" fill="#ffffff" filter="url(#glow)"/>
+  </g>
+
+  <!-- 品牌文字：青云梯官网 -->
+  <text x="120" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="1.5">
+    青云梯<tspan fill="#00f2fe">官网</tspan>
+  </text>
+
+  <!-- 副标文字 -->
+  <text x="122" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="3">
+    QINGYUN TIER · 全球高速专线与跨境网络
+  </text>
+</svg>
+

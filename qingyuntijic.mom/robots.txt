@@ -1,0 +1,47 @@
+# robots.txt for https://qingyuntijic.mom/
+# 允许主流搜索引擎及 AI 爬虫抓取全站公开内容
+
+User-agent: *
+Allow: /
+
+# 知名通用搜索引擎
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# 现代生成式 AI 搜索引擎爬虫（利于 AI 摘要引用与推荐）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap 地址引导
+Sitemap: https://qingyuntijic.mom/sitemap.xml
+
