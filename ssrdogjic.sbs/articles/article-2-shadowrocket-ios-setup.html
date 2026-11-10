@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小火箭Shadowrocket新手使用全指南：iOS免拔卡节点导入与稳定规则配置 - ssrdog机场官网</title>
+  <meta name="description" content="针对苹果iPhone与iPad用户的Shadowrocket（小火箭）新手配置完全手册。详解海外Apple ID获取、SSRDog机场订阅一键扫码导入、免拔卡畅刷TikTok技巧、智能分流规则设置及晚高峰不卡顿技巧。">
+  <meta name="keywords" content="Shadowrocket, 小火箭, 苹果翻墙, 科学上网, SSRDog, 便宜机场, 稳定节点, 翻墙出海, 全球加速, 魔法梯子">
+  <link rel="canonical" href="https://jichang-go.org/go.php">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "小火箭Shadowrocket新手使用全指南：iOS免拔卡节点导入与稳定规则配置",
+        "description": "详解苹果iOS端Shadowrocket小火箭从下载、SSRDog订阅导入到免拔卡刷TikTok的分流规则配置方法。",
+        "image": "https://jichang-go.org/go.php/assets/images/hero-network.svg",
+        "datePublished": "2026-11-10T10:30:00+08:00",
+        "dateModified": "2026-11-10T12:00:00+08:00",
+        "author": {
+          "@type": "Organization",
+          "name": "ssrdog机场官网"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "ssrdog机场官网",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jichang-go.org/go.php/assets/images/hero-network.svg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://jichang-go.org/go.php"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "官网首页",
+            "item": "https://jichang-go.org/go.php"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "精选教程专栏",
+            "item": "https://jichang-go.org/go.php#articles"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Shadowrocket 新手使用全指南",
+            "item": "https://jichang-go.org/go.php"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "国内国区 App Store 为什么搜索不到 Shadowrocket？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "由于苹果 App Store 的地区合规政策，网络代理类工具在国区已被下架。您只需要准备一个美区、港区或日区的非大陆 Apple ID，在 App Store 登录并完成下载（官方售价 2.99 美元，切勿在系统设置中登录 iCloud，只需在 App Store 登录即可）。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何配置 Shadowrocket 免拔国内 SIM 卡刷海外 TikTok？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TikTok 会通过运营商代码 (MCC/MNC) 检测并屏蔽国内 SIM 卡。在 Shadowrocket 中，可以通过安装并信任 HTTPS 解密证书，并在【配置】中启用 TikTok 专用的重写 (Rewrite) 模块，将请求伪装成美区或日区，即可免拔卡、不改手机语言直接畅看海外版抖音。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "小火箭连上后微信和国内软件发不出消息怎么解决？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "请将小火箭主界面底部的【全局路由】由‘代理’更改为‘配置’。在‘配置’模式下，Shadowrocket 内置的中国大陆直连分流白名单规则会自动生效，国内应用直连光速送达，绝不受代理干扰。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div id="reading-progress"></div>
+  <canvas id="canvas-particles"></canvas>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="16" stroke="#00e5ff" stroke-width="2.5" stroke-dasharray="8 4"/>
+          <path d="M12 18L16 22L24 14" stroke="#00f59b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>SSRDog</span>
+        <span class="brand-badge">教程专栏</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">返回官网首页</a></li>
+          <li><a href="../index.html#pricing">套餐价格</a></li>
+          <li><a href="../index.html#tutorials">客户端下载</a></li>
+          <li><a href="../index.html#articles">全部文章</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">进入 SSRDog 官网</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="移动端菜单切换">☰</button>
+    </div>
+  </header>
+
+  <section class="article-page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html">官网首页</a>
+        <span>/</span>
+        <a href="../index.html#articles">知识库专栏</a>
+        <span>/</span>
+        <span>Shadowrocket iOS 指南</span>
+      </div>
+
+      <h1 class="article-main-title">
+        小火箭Shadowrocket新手使用全指南：iOS免拔卡节点导入与稳定规则配置
+      </h1>
+
+      <div class="article-info-bar">
+        <span>✍️ 发布作者：SSRDog 移动安全实验室</span>
+        <span>📅 更新时间：2026-11-10</span>
+        <span>⏱️ 阅读时长：约 7 分钟（1920 字实战指南）</span>
+        <span>🏷️ 标签：Shadowrocket、小火箭、iOS翻墙、免拔卡TikTok</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="container section" style="padding-top: 10px;">
+    <div class="article-layout">
+      
+      <article class="article-body">
+        
+        <p>
+          在整个苹果 iOS 生态中，如果评选一款兼具<strong>易用性、功能广度、协议丰富度与性能稳定性</strong>的科学上网工具，俗称“小火箭”的 <strong>Shadowrocket</strong> 毫无疑问常年稳居榜首。无论是外贸人使用 WhatsApp 与海外客户沟通、海外留学生查阅 Google 学术资料，还是普通用户畅刷 YouTube 4K、TikTok 视频，小火箭都是 iPhone 与 iPad 上最为成熟的代理利器。
+        </p>
+
+        <p>
+          然而，不少初入苹果生态的新人由于不了解美区 Apple ID 的切换机制，或者错误配置了全局代理规则，常常遇到“无法下载软件”、“国内微信收发迟缓”以及“TikTok 黑屏闪退”等困扰。本文将针对这些常见痛点，深度解析小火箭的安装、配合 <strong><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">ssrdog机场官网</a></strong> 专线订阅的极速导入、分流规则优化以及免拔卡刷 TikTok 的独家秘籍。
+        </p>
+
+        <div class="article-figure">
+          <img src="../assets/images/hero-network.svg" alt="Shadowrocket 节点极速分流与网络拓扑示意图">
+          <figcaption>图 1：Shadowrocket 搭配 SSRDog IPLC 高速专线实现 iOS 智能透明分流</figcaption>
+        </div>
+
+        <h2>一、Shadowrocket 软件下载与海外 Apple ID 准备</h2>
+        <p>
+          很多新手常常在国区 App Store 搜索“Shadowrocket”，结果下载到了李鬼山寨软件，不仅白白花费冤枉钱，甚至可能泄露网络隐私。需要明确的是：<strong>正版小火箭图标为一个带有黄色小圆点的黑色小火箭剪影</strong>，开发者为 Shadow Launch Technology Limited。
+        </p>
+        <p>正规安全下载的唯一路径如下：</p>
+        <ol>
+          <li><strong>准备一个海外 Apple ID：</strong>推荐免绑信用卡的全新美区或港区 Apple ID。</li>
+          <li><strong>登录 App Store（切记不要在手机“设置”中登录）：</strong>打开 App Store，点击右上角头像滑到最底部退出当前国区账号，然后输入海外 Apple ID 登录。</li>
+          <li><strong>购买与下载：</strong>在美区 App Store 搜索 <code>Shadowrocket</code>，官方买断价格为 2.99 美元。完成后即可切回国区账号，软件依然正常使用且终身享有更新。</li>
+        </ol>
+
+        <h2>二、从 SSRDog 获取专线订阅并一键导入小火箭</h2>
+        <p>
+          Shadowrocket 仅仅是一个客户端引擎，必须注入高品质的<strong>稳定专线节点</strong>才能真正翱翔海外网络。作为公认的高性价比便宜安全机场，SSRDog 为小火箭用户提供了极其优雅的一键导入支持：
+        </p>
+        
+        <h3>方法 A：Safari 浏览器一键直连导入（推荐小白用户）</h3>
+        <ul>
+          <li>在 iPhone 上使用自带的 Safari 浏览器登录 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">SSRDog 机场官网控制台</a>。</li>
+          <li>在用户中心首页找到<strong>【便捷导入】</strong>按钮，点击<strong>【一键导入到 Shadowrocket】</strong>。</li>
+          <li>系统会弹出提示：“在‘Shadowrocket’中打开此页吗？”，点击<strong>【打开】</strong>。</li>
+          <li>小火箭会自动启动并将数十个全球 IPLC 专线节点（包含香港、日本、新加坡、美国、英国等）瞬间同步至本地。</li>
+        </ul>
+
+        <h3>方法 B：扫码快速导入或手动粘贴链接</h3>
+        <p>
+          如果您在电脑上登录了 SSRDog 官网，只需打开手机端的小火箭，点击右上角的<strong>【扫码图标】</strong>，对准电脑屏幕上的小火箭订阅专属二维码扫描，即可瞬间完成添加。
+        </p>
+
+        <div class="article-cta-box">
+          <div>
+            <h4>拥有 SSRDog，告别 iOS 换节点的烦恼</h4>
+            <p>1000Mbps 极速 IPLC 专线，晚高峰 0 丢包，免拔卡畅刷海外社交应用。</p>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            立即开通 SSRDog 体验
+          </a>
+        </div>
+
+        <h2>三、路由模式与核心分流设置技巧</h2>
+        <p>
+          小火箭导入节点后，最核心的一步是选择正确的<strong>【全局路由 (Routing)】</strong>。在小火箭主界面的底部，您可以看到四个路由选项：
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>路由选项</th>
+              <th>原理与网络行为</th>
+              <th>建议使用场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>配置 (Config)</strong></td>
+              <td>基于国内外域名白名单智能路由，国内直连、国外走代理</td>
+              <td><strong>99% 场景强烈推荐始终保持此选项</strong></td>
+            </tr>
+            <tr>
+              <td><strong>代理 (Proxy)</strong></td>
+              <td>所有手机网络请求无论国内外均强制走节点转发</td>
+              <td>仅在特定内网调试时使用，日常会浪费流量</td>
+            </tr>
+            <tr>
+              <td><strong>直连 (Direct)</strong></td>
+              <td>所有流量直接访问，不经过任何加速通道</td>
+              <td>测试本地网络物理状况时使用</td>
+            </tr>
+            <tr>
+              <td><strong>场景 (Scene)</strong></td>
+              <td>根据当前连接的 Wi-Fi 名称自动切换不同策略</td>
+              <td>高级进阶用户家庭与公司环境自动切换</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>四、进阶技巧：iPhone 免拔卡畅刷海外 TikTok 实操</h2>
+        <p>
+          许多出海短视频运营者和外贸从业者都会发现：即使连接了普通科学上网梯子，打开海外版 TikTok 依然是一片黑屏或者提示无网络连接。这是因为字节跳动官方对 SIM 卡的 MCC（移动国家代码）进行了强制校验，一旦识别为 460（中国运营商）就会立即限制内容拉取。
+        </p>
+        <p>通过 Shadowrocket 的<strong>重写与解密模块</strong>，完全无需拔出实体电话卡即可轻松破解此限制：</p>
+        <ol>
+          <li><strong>开启 HTTPS 解密：</strong>在小火箭底部进入【配置】-> 点击当前生效的 <code>default.conf</code> 规则 -> 选择【通用】-> 开启【HTTPS 解密】。</li>
+          <li><strong>安装与信任根证书：</strong>点击【生成新的 CA 证书】并点击安装。随后进入 iOS 系统的【设置】->【通用】->【关于本机】->【证书信任设置】，将 Shadowrocket 证书勾选为完全信任。</li>
+          <li><strong>加载 TikTok 专用分流规则：</strong>在小火箭配置模块中添加 TikTok Rewrite 脚本，将请求中的运营商归属伪装为美区或日区。</li>
+          <li><strong>连接 SSRDog 原生住宅节点：</strong>在小火箭主界面选择 SSRDog 标记有【TikTok / 住宅 IP】的美国或日本节点，打开 TikTok 即可如丝般顺滑刷取全球精彩短视频。</li>
+        </ol>
+
+        <h2>五、常见问题与疑难解答</h2>
+        <div class="faq-list" style="margin-top: 20px;">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>初次点击连接开关时，弹出的“添加 VPN 配置”是什么意思？</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>这是 iOS 系统的安全授权机制。点击“允许 (Allow)”并验证您的锁屏密码或 Face ID 即可。小火箭会在系统内建立一个本机的 Network Extension 代理网卡，这是正常科学上网所必须的标准操作，绝不会窃取个人隐私。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>为什么连上小火箭后微信经常出现“收取中”或延迟很高？</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>请确认主界面底部的【全局路由】是否误开成了【代理】模式。请切换回【配置】模式。此外，在【配置】页面长按默认规则，选择【更新规则文件】，确保本地的中国大陆直连域名数据库保持最新状态。</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>小火箭连接后手机掉电速度变快正常吗？</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Shadowrocket 本身是纯 Swift 原生编写，底层耗电极低。若发现耗电剧增，通常是因为后台有频繁产生重连的应用（例如一直在尝试后台刷新的海外 App），或者是选用了丢包严重的劣质公网节点导致 TCP 频繁重传。换用 SSRDog 的零丢包 IPLC 专线可以显著降低传输重传功耗。</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">六、总结</h2>
+        <p>
+          小火箭 Shadowrocket 作为 iOS 平台的标杆级神器，其稳定性和功能深度经过了上千万用户的检验。搭配拥有物理专线直连与原生纯净 IP 的 <strong>ssrdog机场官网</strong>，能够让您的苹果设备释放出真正的全球互联网互联潜能。
+        </p>
+
+      </article>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-widget">
+          <h4 class="sidebar-title">📑 本文内容目录</h4>
+          <ul class="toc-list">
+            <li><a href="#一shadowrocket-软件下载与海外-apple-id-准备">一、软件正版安全下载</a></li>
+            <li><a href="#二从-ssrdog-获取专线订阅并一键导入小火箭">二、获取专线一键导入</a></li>
+            <li><a href="#三路由模式与核心分流设置技巧">三、路由模式与核心分流</a></li>
+            <li><a href="#四进阶技巧iphone-免拔卡畅刷海外-tiktok-实操">四、免拔卡刷 TikTok 实操</a></li>
+            <li><a href="#五常见问题与疑难解答">五、常见问题排查解答</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(121, 40, 202, 0.15)); border-color: rgba(0, 229, 255, 0.3);">
+          <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 8px;">🚀 小火箭黄金搭档</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">
+            SSRDog 专线支持小火箭一键唤醒导入，原生 IP 秒开海外社交媒体。
+          </p>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; font-size: 0.9rem;">
+            立即注册开通
+          </a>
+        </div>
+
+        <div class="sidebar-widget">
+          <h4 class="sidebar-title">🔗 关联深度文章</h4>
+          <ul class="related-articles-list">
+            <li>
+              <a href="article-1-clash-party-tutorial.html">Clash Party 极速配置保姆级教程</a>
+              <span>2026-11-10 · 1850 字</span>
+            </li>
+            <li>
+              <a href="article-4-cross-border-ecommerce-security.html">跨境电商与外贸出海网络防封号指南</a>
+              <span>2026-11-10 · 1950 字</span>
+            </li>
+            <li>
+              <a href="article-5-streaming-unlock-4k-netflix-disney.html">4K/8K 流媒体解锁实测与参数优化</a>
+              <span>2026-11-10 · 1860 字</span>
+            </li>
+            <li>
+              <a href="article-10-safe-privacy-anti-leak-dns.html">科学上网隐私防关联与 WebRTC 防泄漏</a>
+              <span>2026-11-10 · 1940 字</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 ssrdog机场官网 版权所有 · <a href="../index.html">返回官网首页</a></div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务条款</a>
+          <a href="../disclaimer.html">免责声明</a>
+          <a href="../sitemap.xml">网站地图</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

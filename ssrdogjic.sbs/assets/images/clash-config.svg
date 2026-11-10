@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="clashBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1424"/>
+      <stop offset="100%" stop-color="#141c30"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" rx="16" fill="url(#clashBg)"/>
+
+  <text x="400" y="55" fill="#00e5ff" font-family="sans-serif" font-size="22" font-weight="bold" text-anchor="middle">Clash / Clash Party 3步傻瓜式极速配置流程</text>
+  <text x="400" y="85" fill="#94a3b8" font-family="sans-serif" font-size="13" text-anchor="middle">一键导入订阅 · 智能分流规则 · 晚高峰无缝自动选路</text>
+
+  <!-- Step 1 -->
+  <g transform="translate(60, 130)">
+    <rect width="200" height="250" rx="14" fill="#131b2e" stroke="#00e5ff" stroke-width="1.5"/>
+    <circle cx="100" cy="50" r="26" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="2"/>
+    <text x="100" y="58" fill="#00e5ff" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">1</text>
+    <text x="100" y="115" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">获取订阅链接</text>
+    <text x="100" y="145" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">登录 SSRDog 官网后台</text>
+    <text x="100" y="170" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">点击【一键导入订阅】</text>
+    <rect x="30" y="195" width="140" height="32" rx="6" fill="#00e5ff"/>
+    <text x="100" y="215" fill="#0a0e1c" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">复制 Clash 订阅</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 280 250 L 320 250" stroke="#00e5ff" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="300" y="240" fill="#00e5ff" font-family="sans-serif" font-size="20" text-anchor="middle">→</text>
+
+  <!-- Step 2 -->
+  <g transform="translate(340, 130)">
+    <rect width="200" height="250" rx="14" fill="#131b2e" stroke="#7928ca" stroke-width="1.5"/>
+    <circle cx="100" cy="50" r="26" fill="rgba(121, 40, 202, 0.15)" stroke="#7928ca" stroke-width="2"/>
+    <text x="100" y="58" fill="#c084fc" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">2</text>
+    <text x="100" y="115" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">同步节点配置</text>
+    <text x="100" y="145" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">在客户端内粘贴链接</text>
+    <text x="100" y="170" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">下载香港/日本等节点池</text>
+    <rect x="30" y="195" width="140" height="32" rx="6" fill="#7928ca"/>
+    <text x="100" y="215" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">点击 Download</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <text x="560" y="240" fill="#00e5ff" font-family="sans-serif" font-size="20" text-anchor="middle">→</text>
+
+  <!-- Step 3 -->
+  <g transform="translate(580, 130)">
+    <rect width="180" height="250" rx="14" fill="#131b2e" stroke="#00f59b" stroke-width="1.5"/>
+    <circle cx="90" cy="50" r="26" fill="rgba(0, 245, 155, 0.15)" stroke="#00f59b" stroke-width="2"/>
+    <text x="90" y="58" fill="#00f59b" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle">3</text>
+    <text x="90" y="115" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle">开启规则代理</text>
+    <text x="90" y="145" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">模式选择【Rule/规则】</text>
+    <text x="90" y="170" fill="#94a3b8" font-family="sans-serif" font-size="12" text-anchor="middle">开启系统代理立即上网</text>
+    <rect x="25" y="195" width="130" height="32" rx="6" fill="#00f59b"/>
+    <text x="90" y="215" fill="#0a0e1c" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">System Proxy ON</text>
+  </g>
+
+  <text x="400" y="425" fill="#38bdf8" font-family="sans-serif" font-size="13" text-anchor="middle">💡 支持 Windows、macOS、iOS (Shadowrocket/Quantumult X)、Android (Clash) 全端适配</text>
+</svg>
+
