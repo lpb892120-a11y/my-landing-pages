@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题答疑汇总 (FAQ) - wgetcloud官网</title>
+  <meta name="description" content="wgetcloud 官方常见问题汇总，涵盖 IPLC 专线稳定性、晚高峰表现、客户端分流规则、流媒体与 ChatGPT 解锁、账号多设备登录等详尽解答。">
+  <meta name="keywords" content="wgetcloud FAQ, 科学上网常见问题, Clash报错排查, 机场疑问解答, 梯子掉线解决">
+  <link rel="canonical" href="https://wgetcloudvpn.my/faq.html">
+  <meta name="robots" content="index, follow">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/article.css">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "wgetcloud 采用的 IPLC 专线为什么比普通公网梯子更稳定？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IPLC (国际私有租用线路) 是运营商级别的内网物理专线，数据包在内网点对点传输，不经过公共国际出口海缆与 GFW 防火墙检测，全天候零丢包，完全免受敏感时期网络波动的干扰。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "晚高峰晚上 8 点到 11 点，网速会受到影响吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全不会。因为 wgetcloud 的物理专线具备严格的带宽冗余预留机制，不参与公网国际海缆的拥塞排队，晚高峰观看 4K/8K 视频依然保持拖拽秒开。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "节点偶尔显示超时或延迟很高怎么排查？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首先可以在客户端执行一键 Ping 测速，切换至同区域其他备用节点；其次检查本地电脑或手机的“系统时间”是否精确同步北京时间；最后检查订阅是否需要更新。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "什么是规则模式 (Rule)，为什么强烈推荐使用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "规则模式会智能识别你的目标网址：访问国内网站（如百度、淘宝、微信）直接走本地宽带直连，不耗费机场流量；只有访问境外受限网站才走专线加速，国内外丝滑并存。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "开启代理后，为什么国内某些软件提示“网络不可用”？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这通常是因为误开启了“全局模式 (Global)”，导致国内应用流量也绕行境外触发了安全防御。只需将代理模式切换为“规则模式 (Rule)”即可恢复正常。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何让命令行（CMD / PowerShell / Terminal）也走代理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在 Clash Party 或 Clash Verge 中直接打开“Tun 模式”，虚拟网卡会在操作系统网络层接管所有 IP 包，无需任何环境变量配置即可让命令行全自动走代理。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持哪些支付方式？购买后多长时间能开通？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持支付宝、微信支付及加密货币等多种便捷通道。系统全自动化交付，支付成功后数秒内即可在用户后台看到有效订阅并一键导入。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支持多台设备同时在线使用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持！个人套餐均支持多设备并发在线，不限制安装设备数量，您的手机、电脑、平板可共用同一套专线订阅。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "套餐内的流量用完了怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "流量会在每月账单日自动重置。若当月提前用尽，可以在后台一键增购流量包或直接升级至更高档位的套餐。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="index.html#features">核心优势</a></li>
+        <li><a href="index.html#pricing">套餐价格</a></li>
+        <li><a href="tutorials.html">教程中心</a></li>
+        <li><a href="faq.html" class="active">常见问题</a></li>
+        <li><a href="index.html#articles">文章专栏</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即登录体验</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">常见问题答疑</span>
+      </nav>
+      <h1 class="article-hero-title">常见问题与技术支持 (FAQ)</h1>
+      <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
+        整理汇总了广大用户在网络连通性、客户端调优、多端配置与账单服务方面的高频疑问，帮您迅速扫清障碍。
+      </p>
+    </div>
+  </section>
+
+  <main class="container" style="padding: 50px 24px 80px; max-width: 900px;">
+    
+    <div style="margin-bottom: 48px;">
+      <h2 style="font-size: 1.6rem; color: var(--accent-cyan); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+        <span>#</span> 网络与稳定性
+      </h2>
+      <div class="faq-accordion faq-single-open">
+        
+          <div class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>wgetcloud 采用的 IPLC 专线为什么比普通公网梯子更稳定？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>IPLC (国际私有租用线路) 是运营商级别的内网物理专线，数据包在内网点对点传输，不经过公共国际出口海缆与 GFW 防火墙检测，全天候零丢包，完全免受敏感时期网络波动的干扰。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>晚高峰晚上 8 点到 11 点，网速会受到影响吗？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>完全不会。因为 wgetcloud 的物理专线具备严格的带宽冗余预留机制，不参与公网国际海缆的拥塞排队，晚高峰观看 4K/8K 视频依然保持拖拽秒开。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>节点偶尔显示超时或延迟很高怎么排查？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>首先可以在客户端执行一键 Ping 测速，切换至同区域其他备用节点；其次检查本地电脑或手机的“系统时间”是否精确同步北京时间；最后检查订阅是否需要更新。</p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  
+
+    <div style="margin-bottom: 48px;">
+      <h2 style="font-size: 1.6rem; color: var(--accent-cyan); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+        <span>#</span> 客户端与使用技巧
+      </h2>
+      <div class="faq-accordion faq-single-open">
+        
+          <div class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>什么是规则模式 (Rule)，为什么强烈推荐使用？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>规则模式会智能识别你的目标网址：访问国内网站（如百度、淘宝、微信）直接走本地宽带直连，不耗费机场流量；只有访问境外受限网站才走专线加速，国内外丝滑并存。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>开启代理后，为什么国内某些软件提示“网络不可用”？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>这通常是因为误开启了“全局模式 (Global)”，导致国内应用流量也绕行境外触发了安全防御。只需将代理模式切换为“规则模式 (Rule)”即可恢复正常。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>如何让命令行（CMD / PowerShell / Terminal）也走代理？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>在 Clash Party 或 Clash Verge 中直接打开“Tun 模式”，虚拟网卡会在操作系统网络层接管所有 IP 包，无需任何环境变量配置即可让命令行全自动走代理。</p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  
+
+    <div style="margin-bottom: 48px;">
+      <h2 style="font-size: 1.6rem; color: var(--accent-cyan); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+        <span>#</span> 账号与购买疑问
+      </h2>
+      <div class="faq-accordion faq-single-open">
+        
+          <div class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>支持哪些支付方式？购买后多长时间能开通？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>支持支付宝、微信支付及加密货币等多种便捷通道。系统全自动化交付，支付成功后数秒内即可在用户后台看到有效订阅并一键导入。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>支持多台设备同时在线使用吗？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>支持！个人套餐均支持多设备并发在线，不限制安装设备数量，您的手机、电脑、平板可共用同一套专线订阅。</p>
+            </div>
+          </div>
+        
+
+          <div class="faq-item ">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>套餐内的流量用完了怎么办？</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>流量会在每月账单日自动重置。若当月提前用尽，可以在后台一键增购流量包或直接升级至更高档位的套餐。</p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  
+
+    <div class="article-cta-box" style="margin-top: 40px;">
+      <h3>还有其他未解答的疑问？</h3>
+      <p>我们的技术团队 7x24 小时在线待命，欢迎随时进入后台提交工单咨询。</p>
+      <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">联系在线客服</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; color: var(--text-dark); font-size: 0.9rem;">
+      &copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。 | <a href="index.html">返回首页</a> | <a href="privacy.html">隐私政策</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速 - wgetcloud官网</title>
+  <meta name="description" content="苹果 iPhone 用户最强代理工具 Shadowrocket (小火箭) 完整配置指南！手把手教你一键扫码导入 wgetcloud 订阅、自动化规则分流及 Windows/Mac/Android 多端配置同步。">
+  <meta name="keywords" content="Clash, 科学上网, 魔法梯子, 稳定节点, Clash节点, 机场推荐, 安全机场">
+  <link rel="canonical" href="https://wgetcloudvpn.my/articles/ios-shadowrocket-clash-party-sync.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速">
+  <meta property="og:description" content="苹果 iPhone 用户最强代理工具 Shadowrocket (小火箭) 完整配置指南！手把手教你一键扫码导入 wgetcloud 订阅、自动化规则分流及 Windows/Mac/Android 多端配置同步。">
+  <meta property="og:url" content="https://wgetcloudvpn.my/articles/ios-shadowrocket-clash-party-sync.html">
+  <meta property="og:image" content="https://wgetcloudvpn.my/assets/images/article-9.svg">
+  <meta property="og:site_name" content="wgetcloud官网">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://wgetcloudvpn.my/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "知识库与文章",
+      "item": "https://wgetcloudvpn.my/#articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速",
+      "item": "https://wgetcloudvpn.my/articles/ios-shadowrocket-clash-party-sync.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速",
+  "description": "苹果 iPhone 用户最强代理工具 Shadowrocket (小火箭) 完整配置指南！手把手教你一键扫码导入 wgetcloud 订阅、自动化规则分流及 Windows/Mac/Android 多端配置同步。",
+  "image": "https://wgetcloudvpn.my/assets/images/article-9.svg",
+  "author": {
+    "@type": "Person",
+    "name": "wgetcloud移动端实验室"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wgetcloud官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wgetcloudvpn.my/assets/images/hero-illustration.svg"
+    }
+  },
+  "datePublished": "2026-04-05",
+  "dateModified": "2026-04-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wgetcloudvpn.my/articles/ios-shadowrocket-clash-party-sync.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "首次在 iPhone 上打开小火箭连接时弹出的“添加 VPN 配置”是什么意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是 iOS 系统的安全授权提示。小火箭需要使用系统网络底层接口创建本地虚拟代理通道，点击“允许”并输入手机锁屏密码即可顺利完成激活。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小火箭在后台运行会非常耗电发烫吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全不会。Shadowrocket 专门针对 iOS 内核进行了深度节能优化，日常在后台静默待机的耗电量甚至低于微信或音乐播放软件，全天常驻也不会对手机续航造成明显负担。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么测速显示有毫秒延迟，但依然打不开推特或 YouTube？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "连通性测试（Ping）只能证明本地与节点入口之间的网络连通性。如果打不开网页，请检查手机系统时间是否精准同步，或者全局路由是否误设为了“直连 (Direct)”。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "小火箭如何分享热点给电脑或 Switch 游戏机科学上网？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在小火箭设置中找到“代理共享 (Proxy Share)”，开启“启用共享”，系统会显示本地局域网 IP 与端口号。在电脑或 Switch 的 Wi-Fi 代理设置中填入该 IP 与端口，即可共享手机的翻墙加速效果。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" title="wgetcloud官网">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../index.html#features">核心优势</a></li>
+        <li><a href="../index.html#pricing">套餐价格</a></li>
+        <li><a href="../tutorials.html">教程中心</a></li>
+        <li><a href="../faq.html">常见问题</a></li>
+        <li><a href="../index.html#articles" class="active">深度文章</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">用户登录</a>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即注册使用</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html#articles">文章资讯</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">正文</span>
+      </nav>
+
+      <h1 class="article-hero-title">苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速</h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>发布日期：2026-04-05</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>作者：wgetcloud移动端实验室</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>阅读时间：约 8 分钟</span>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--accent-green);">● 已通过技术团队深度实测</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container article-layout">
+    <article class="article-content">
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-9.svg" alt="苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速 - 封面技术示意图" loading="lazy">
+        <div class="article-img-caption">苹果iOS小火箭与安卓/PC多端同步Clash订阅教程：一键导入与自动化测速 实测架构与技术指导示意图</div>
+      </div>
+
+      
+      <h2 id="section-ios-intro">1. iOS 平台科学上网利器：Shadowrocket 核心优势</h2>
+      <p>对于广大的苹果 iPhone 与 iPad 用户而言，由于 iOS 系统生态的沙盒限制与审核机制，无法直接安装第三方的开源 APK 软件。而在苹果 App Store 中，常年雄霸工具榜榜首、被广大科学上网玩家亲切称为“<strong>小火箭</strong>”的 <strong>Shadowrocket</strong>，无疑是移动端综合体验最好、协议兼容性最强、电量消耗最低的代理神器。</p>
+      <p>Shadowrocket 支持 Shadowsocks、Trojan、Vmess、Vless-Reality 等几乎所有主流翻墙出海协议，能够完美兼容 <a href="../index.html">wgetcloud官网</a> 生成的通用订阅与 Clash 订阅规则，并具备深度集成 iOS 系统“VPN 与网络拓展”的无感后台常驻能力。</p>
+
+      <h2 id="section-download-prep">2. 正版小火箭下载与海外 Apple ID 准备指南</h2>
+      <p>需要特别注意：Shadowrocket 在中国大陆地区的 App Store 是无法搜寻并下载的，必须借助<strong>海外地区（如美区、日区、港区）的 Apple ID</strong>：</p>
+      <div class="callout callout-warning">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <strong>极其重要的防锁机原则：</strong>切勿在 iPhone 的“设置 - 顶部个人 iCloud”中登录任何来历不明的外区账号！正确做法是：打开手机自带的 <strong>App Store 应用商店</strong>，点击右上角个人头像，滑到最底部退出当前大陆账号，在此处仅登录海外 Apple ID 下载小火箭。下载完毕后立即换回自己的国内私人账号，绝不影响日常使用。
+        </div>
+      </div>
+
+      <h2 id="section-import-guide">3. wgetcloud 订阅节点导入小火箭（扫码与唤醒）</h2>
+      <p>在 iPhone 上完成 Shadowrocket 下载后，将 wgetcloud 的高速专线节点导入客户端极为快捷：</p>
+      <ol>
+        <li>使用手机自带 Safari 浏览器访问 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">wgetcloud官网用户中心</a> 并登录。</li>
+        <li>在控制面板中找到“便捷导入”，点击 <code>一键导入到 Shadowrocket</code>。系统将自动弹出“在 Shadowrocket 中打开此链接？”，点击“打开”。</li>
+        <li>客户端将自动弹起，并一键完成服务器节点列表的下载与解密，数十条包含香港、日本、新加坡、美国的极速专线节点瞬间就绪。</li>
+        <li><strong>备用扫码导入法：</strong>如果你是在电脑上打开 wgetcloud 后台，只需在手机小火箭首页点击左上角的“扫码”图标，直接对准电脑屏幕上的订阅二维码轻轻一扫，配置同样立即可用。</li>
+      </ol>
+
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-9.svg" alt="iOS小火箭导入订阅与测速图解" loading="lazy">
+        <div class="article-img-caption">Shadowrocket 订阅节点导入与智能分组示意图</div>
+      </div>
+
+      <h2 id="section-config-rules">4. 分流设置实战：配置 (Config) 模式详解</h2>
+      <p>在 Shadowrocket 主界面正中央，有一项非常核心的设置——<strong>全局路由 (Global Routing)</strong>。点击进入后会看到四个选项，请务必选择 <strong>配置 (Config)</strong> 模式：</p>
+      <ul>
+        <li><strong>配置 (Config / 强烈推荐)：</strong>智能分流规则。小火箭会依据内置的 ACL 分流规则，自动判断目标网站。国内网站走 Direct 直连，国外被墙网站走 Proxy 专线，完全不影响微信后台消息推送与国内外卖、打车软件定位。</li>
+        <li><strong>代理 (Proxy)：</strong>强制全局代理。所有流量不论国内外一律走代理，极度耗费套餐流量，且可能导致国内银行或微信弹安全风控，平时切勿开启。</li>
+        <li><strong>直连 (Direct)：</strong>直接关闭所有节点的代理功能，等同于使用本地裸网。</li>
+      </ul>
+
+      <h2 id="section-auto-update">5. 订阅自动更新与一键节点测速优化</h2>
+      <p>为了保障节点的持续高可用，建议开启小火箭的“后台自动同步”：</p>
+      <p>在小火箭底部点击 <code>设置 (Settings)</code> -&gt; <code>订阅 (Subscribe)</code>，勾选 <code>打开时更新</code> 与 <code>自动后台更新</code>。如此一来，每当你点开小火箭，它都会在后台自动拉取 wgetcloud 最新的健康节点与动态 IP。</p>
+      <p>在首页服务器列表处，点击“连通性测试 (Ping Test)”，软件会向测试服务器发送 ICMP/TCP 握手包，几秒内以不同颜色标出各个节点的真实延迟。选择绿色低延迟节点（如“香港 01 IPLC”），点击顶部总开关开启即可畅游国际互联网！</p>
+
+      <h2 id="section-multi-device">6. 手机、电脑、平板全设备多端同步心法</h2>
+      <p>现代出海用户的设备通常不仅有一台手机，还包括 Windows 办公电脑、MacBook 笔记本或 iPad 平板。wgetcloud 提供统一的<strong>多终端通用订阅链接</strong>机制：</p>
+      <p>只需在用户中心复制一次订阅源 URL，便可分别在电脑的 Clash Verge / Clash Party、手机的小火箭、平板的 Loon 以及 Android 上的 Clash Meta 中无缝复用。所有的套餐流量消耗合并计算，支持多设备同时并发高速在线，为你构筑无死角的全球全场景高速数字出海生活。</p>
+    
+
+      <!-- Bottom In-article CTA -->
+      <div class="article-cta-box" style="margin-top: 40px;">
+        <h4>体验专线极速体验 - 告别卡顿与断连</h4>
+        <p>wgetcloud 提供真正的 IPLC 内网专线与多平台 Clash / Clash Party 智能客户端，晚高峰 4K 视频秒开无压力。</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">一键注册体验高可用专线</a>
+          <a href="../tutorials.html" class="btn btn-secondary btn-lg">查看新手客户端教程</a>
+        </div>
+      </div>
+
+      <!-- Dedicated FAQ Section -->
+      <section class="article-faq-section" id="faq">
+        <h3>关于本篇主题的常见疑难问题（FAQ）</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">针对上述教程与实际配置过程中高频出现的网络、规则、测速与订阅问题，我们为您整理了以下专业解答：</p>
+        <div class="faq-accordion faq-single-open">
+          
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>首次在 iPhone 上打开小火箭连接时弹出的“添加 VPN 配置”是什么意思？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>这是 iOS 系统的安全授权提示。小火箭需要使用系统网络底层接口创建本地虚拟代理通道，点击“允许”并输入手机锁屏密码即可顺利完成激活。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>小火箭在后台运行会非常耗电发烫吗？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>完全不会。Shadowrocket 专门针对 iOS 内核进行了深度节能优化，日常在后台静默待机的耗电量甚至低于微信或音乐播放软件，全天常驻也不会对手机续航造成明显负担。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么测速显示有毫秒延迟，但依然打不开推特或 YouTube？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>连通性测试（Ping）只能证明本地与节点入口之间的网络连通性。如果打不开网页，请检查手机系统时间是否精准同步，或者全局路由是否误设为了“直连 (Direct)”。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>小火箭如何分享热点给电脑或 Switch 游戏机科学上网？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>在小火箭设置中找到“代理共享 (Proxy Share)”，开启“启用共享”，系统会显示本地局域网 IP 与端口号。在电脑或 Switch 的 Wi-Fi 代理设置中填入该 IP 与端口，即可共享手机的翻墙加速效果。</p>
+      </div>
+    </div>
+  
+        </div>
+      </section>
+
+      <!-- Related Recommendations -->
+      <section class="related-section">
+        <h3>相关精选教程与延伸阅读</h3>
+        <div class="card-grid-2">
+          
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="scientific-surfing-beginner-guide.html" style="color: #ffffff;">新手科学上网零基础全流程攻略与避坑指南</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">详解魔法梯子入门必备的三大常识与客户端挑选技巧。</p>
+    </div>
+  
+
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="clash-party-tutorial.html" style="color: #ffffff;">2026 最新 Clash Party 桌面端使用指南</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">电脑与手机多端协同办公的最佳拍档。</p>
+    </div>
+  
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Sticky TOC -->
+    <aside class="article-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent-cyan)"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            目录导航 (TOC)
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#section-ios-intro">1. iOS 平台科学上网利器：Shadowrocket 核心优势</a></li>
+<li><a href="#section-download-prep">2. 正版小火箭下载与海外 Apple ID 准备指南</a></li>
+<li><a href="#section-import-guide">3. wgetcloud 订阅节点导入小火箭（扫码与唤醒）</a></li>
+<li><a href="#section-config-rules">4. 分流设置实战：配置 (Config) 模式详解</a></li>
+<li><a href="#section-auto-update">5. 订阅自动更新与一键节点测速优化</a></li>
+<li><a href="#section-multi-device">6. 手机、电脑、平板全设备多端同步心法</a></li>
+            <li><a href="#faq">常见问题答疑 (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12)); border-color: rgba(6, 182, 212, 0.3);">
+          <h3 class="widget-title" style="color: var(--accent-cyan);">⚡ 节点测速监控</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">当前 wgetcloud 全球 IPLC 专线骨干链路状态：</p>
+          <div style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1; font-family: var(--font-mono); margin-bottom: 16px;">
+            <div>● 香港 01 [IPLC] : <span style="color: #10b981;">16ms</span> / 0%丢包</div>
+            <div>● 日本 02 [IPLC] : <span style="color: #10b981;">32ms</span> / 0%丢包</div>
+            <div>● 新加坡 01 [IPLC] : <span style="color: #10b981;">38ms</span> / 0%丢包</div>
+            <div>● 美国 01 [优质BGP] : <span style="color: #10b981;">128ms</span> / 0%丢包</div>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" style="width: 100%;">获取专线订阅节点</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>wgetcloud官网</span>
+          </a>
+          <p>wgetcloud 致力于为全球华人提供稳定、极速、无感翻墙出海网络解决方案。企业级 IPLC 专线传输，保障跨境办公、学术科研与影音娱乐永不掉线。</p>
+          <div style="font-size: 0.85rem; color: var(--text-dark);">官方唯一镜像通道：wgetcloudvpn.my</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="../index.html">品牌首页</a></li>
+            <li><a href="../index.html#features">核心优势</a></li>
+            <li><a href="../index.html#pricing">套餐价格</a></li>
+            <li><a href="../tutorials.html">Clash教程</a></li>
+            <li><a href="../faq.html">常见疑问</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>站内教程指南</h4>
+          <ul>
+            <li><a href="clash-party-tutorial.html">Clash Party 新手教程</a></li>
+            <li><a href="best-clash-airport-recommendation.html">2026 高速机场推荐</a></li>
+            <li><a href="cheap-vs-secure-airport-comparison.html">便宜机场选购避坑</a></li>
+            <li><a href="scientific-surfing-beginner-guide.html">科学上网入门流程</a></li>
+            <li><a href="clash-verge-rev-setup-guide.html">Clash Verge 分流实战</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服务条款与合规</h4>
+          <ul>
+            <li><a href="../privacy.html">隐私权保护政策</a></li>
+            <li><a href="../terms.html">用户服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+            <li><a href="../sitemap.xml">XML网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。</div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务协议</a>
+          <a href="../disclaimer.html">合规说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top -->
+  <div class="float-controls">
+    <button class="float-btn" id="backToTop" aria-label="返回顶部" style="opacity: 0; pointer-events: none;">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

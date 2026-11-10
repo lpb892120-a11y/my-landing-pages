@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海 - wgetcloud官网</title>
+  <meta name="description" content="本文详细介绍 2026 新一代跨平台代理客户端 Clash Party 的下载安装、wgetcloud 订阅链接一键导入、智能分流策略配置及高频网络报错排除，助你轻松实现稳定流畅的翻墙出海与科学上网体验。">
+  <meta name="keywords" content="Clash Party机场, Clash, 科学上网, 翻墙出海, 稳定节点, Clash节点, 机场推荐, 魔法梯子">
+  <link rel="canonical" href="https://wgetcloudvpn.my/articles/clash-party-tutorial.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海">
+  <meta property="og:description" content="本文详细介绍 2026 新一代跨平台代理客户端 Clash Party 的下载安装、wgetcloud 订阅链接一键导入、智能分流策略配置及高频网络报错排除，助你轻松实现稳定流畅的翻墙出海与科学上网体验。">
+  <meta property="og:url" content="https://wgetcloudvpn.my/articles/clash-party-tutorial.html">
+  <meta property="og:image" content="https://wgetcloudvpn.my/assets/images/article-1.svg">
+  <meta property="og:site_name" content="wgetcloud官网">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://wgetcloudvpn.my/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "知识库与文章",
+      "item": "https://wgetcloudvpn.my/#articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海",
+      "item": "https://wgetcloudvpn.my/articles/clash-party-tutorial.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海",
+  "description": "本文详细介绍 2026 新一代跨平台代理客户端 Clash Party 的下载安装、wgetcloud 订阅链接一键导入、智能分流策略配置及高频网络报错排除，助你轻松实现稳定流畅的翻墙出海与科学上网体验。",
+  "image": "https://wgetcloudvpn.my/assets/images/article-1.svg",
+  "author": {
+    "@type": "Person",
+    "name": "wgetcloud网络实验室"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wgetcloud官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wgetcloudvpn.my/assets/images/hero-illustration.svg"
+    }
+  },
+  "datePublished": "2026-03-20",
+  "dateModified": "2026-04-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wgetcloudvpn.my/articles/clash-party-tutorial.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Clash Party 与传统的 Clash for Windows 有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Clash Party 采用了持续更新的现代化内核（兼容 Meta / Mihomo），修复了旧版 CFW 长期未解决的内存泄露与安全漏洞，并提供了更直观的现代化 UI 与一键式 Tun 虚拟网卡支持，兼容性与稳定性大幅提升。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "导入 wgetcloud 订阅链接后为什么显示“下载配置失败”？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通常有三种原因：一是本地网络阻断了订阅下发 API，可尝试开启手机热点后再试；二是订阅链接复制不完整（注意首尾不能有空格）；三是本地防火墙或安全卫士拦截了网络连接，请给予软件放行权限。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "使用 Clash Party 会导致我的国内网银或微信被封号吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。只要您在代理模式中保持选择“规则模式 (Rule)”，所有中国大陆境内的网站、银行网银、微信通信都会走 DIRECT（本地直接访问），完全不经过境外节点，既安全又合规。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么晚高峰时节点延迟变高或偶尔缓冲？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这通常是由于公网普通中继受到跨国骨干网拥塞影响。而 wgetcloud 全面采用企业级内网 IPLC 专线，不经过公网国际出口审查，即使在晚高峰晚上 8 点至 11 点，依然能保持全线零丢包与 4K 秒开。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" title="wgetcloud官网">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../index.html#features">核心优势</a></li>
+        <li><a href="../index.html#pricing">套餐价格</a></li>
+        <li><a href="../tutorials.html">教程中心</a></li>
+        <li><a href="../faq.html">常见问题</a></li>
+        <li><a href="../index.html#articles" class="active">深度文章</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">用户登录</a>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即注册使用</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html#articles">文章资讯</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">正文</span>
+      </nav>
+
+      <h1 class="article-hero-title">2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海</h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>发布日期：2026-03-20</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>作者：wgetcloud网络实验室</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>阅读时间：约 9 分钟</span>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--accent-green);">● 已通过技术团队深度实测</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container article-layout">
+    <article class="article-content">
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-1.svg" alt="2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海 - 封面技术示意图" loading="lazy">
+        <div class="article-img-caption">2026最新Clash Party机场配置与使用完全指南：从新手入门到极速翻墙出海 实测架构与技术指导示意图</div>
+      </div>
+
+      
+      <h2 id="section-intro">1. 为什么选择 Clash Party 作为新一代客户端</h2>
+      <p>在科学上网与跨境加速领域，传统 Clash 内核在过去几年中奠定了强大的分流规则生态。然而随着网络协议的演进以及操作系统内核的更新，许多初学者经常在原版客户端中遭遇内核停止维护、Tun 模式权限冲突、内存占用过高以及规则更新失败等痛点。<strong>Clash Party</strong> 正是在此背景下脱颖而出的一款现代图形化代理工具。</p>
+      <p>Clash Party 深度整合了活跃维护的开源内核（兼容 Clash Meta / Mihomo 分支），具备轻量、低资源占用、界面现代化以及原生支持全平台系统代理与虚拟网卡（Tun 虚拟驱动）等突出特点。对于需要长期稳定连接国际互联网、进行跨境电商办公、海内外学术科研以及观看 4K 流媒体视频的用户而言，Clash Party 搭配高品质的 <a href="../index.html">wgetcloud官网</a> 专线节点，能够彻底摆脱传统梯子卡顿与断流的困扰。</p>
+
+      <div class="callout callout-info">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <strong>新手核心提示：</strong>代理软件本身并不自带任何网络流量或服务器节点，它相当于一个高速公路调度器。要畅快翻墙出海，必须在客户端中导入可靠的 <a href="best-clash-airport-recommendation.html">优质Clash机场</a> 订阅节点。
+        </div>
+      </div>
+
+      <h2 id="section-install">2. 客户端下载与系统运行环境准备</h2>
+      <p>在使用 Clash Party 之前，请务必从官方认证渠道或 wgetcloud 用户中心下载安装包，警惕任何搜索引擎第三方下载站中夹带木马、后门程序的篡改版客户端。Clash Party 目前已全面支持主流桌面操作系统：</p>
+      <ul>
+        <li><strong>Windows 系统：</strong>支持 Windows 10 / 11 64位系统。首次安装时，建议右键选择“以管理员身份运行”，以便顺利注册虚拟网卡服务（用于 Tun 模式接管系统全部流量）。</li>
+        <li><strong>macOS 系统：</strong>支持 Intel 架构与 Apple Silicon (M1/M2/M3/M4) 原生芯片。安装后首次启动需在“系统设置 - 隐私与安全性”中允许应用程序运行，并授予网络系统拓展权限。</li>
+        <li><strong>Linux 系统：</strong>提供 AppImage 与 deb 格式安装包，适合 Ubuntu、Debian 及 Arch 等主流发行版开发者。</li>
+      </ul>
+
+      <h2 id="section-import">3. 获取 wgetcloud 订阅链接并一键导入</h2>
+      <p>完成客户端安装后，下一步便是将你的订阅配置载入 Clash Party。借助 wgetcloud 的智能化 API，整个导入流程仅需不到一分钟：</p>
+      <ol>
+        <li>首先进入 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">wgetcloud官网用户中心</a>，注册并登录账号。</li>
+        <li>在“我的服务”或“仪表盘”界面，找到“便捷导入”功能区，点击复制专属的 <strong>Clash 订阅链接</strong>，或直接点击“一键导入 Clash Party / Clash”按钮。</li>
+        <li>若选择手动导入：打开 Clash Party 客户端主界面，在左侧导航栏点击 <code>Profiles (配置管理)</code>。</li>
+        <li>在顶部输入框中粘贴刚刚复制的专属订阅 URL，点击 <code>Download (下载并保存)</code>。</li>
+        <li>客户端将自动解析远程服务器列表，下载香港、日本、新加坡、美国、欧洲等数十条高可用 IPLC 专线节点。</li>
+      </ol>
+
+      <div class="article-img-wrap">
+        <img src="../assets/images/tutorial-hero.svg" alt="Clash Party 订阅导入与配置步骤图解" loading="lazy">
+        <div class="article-img-caption">Clash Party 订阅节点导入与智能分组示意图</div>
+      </div>
+
+      <h2 id="section-modes">4. 分流模式解析：规则(Rule) vs 全局(Global)</h2>
+      <p>许多刚接触魔法梯子的新手用户最常犯的错误，就是将代理模式误设为“全局模式 (Global)”，导致访问微信、百度、淘宝等国内网站也走境外节点，不仅白白消耗机场套餐流量，还可能引发国内账号异地风控。理解以下三种核心模式至关重要：</p>
+
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>分流模式</th>
+              <th>运作机制</th>
+              <th>适用场景</th>
+              <th>新手推荐指数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>规则模式 (Rule / 推荐)</strong></td>
+              <td>基于 GEOIP 数据库与域名白名单，国内网站直接直连，海外受限网站自动分流走专线节点。</td>
+              <td>日常办公、看剧、国内聊天与海外资料查询并行的绝大多数场景。</td>
+              <td>★★★★★ (默认首选)</td>
+            </tr>
+            <tr>
+              <td><strong>全局模式 (Global)</strong></td>
+              <td>无论访问任何网站，所有网络流量强制打包通过指定的单一境外代理节点。</td>
+              <td>排查特定网站无法打开、跨国游戏锁区登录等极端调试场景。</td>
+              <td>★★☆☆☆ (容易误耗流量)</td>
+            </tr>
+            <tr>
+              <td><strong>直连模式 (Direct)</strong></td>
+              <td>绕过所有代理核心，直接使用本地宽带上网。</td>
+              <td>临时暂停翻墙出海需求，无需关闭软件即可恢复纯净本地网络。</td>
+              <td>★★★☆☆</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-optimize">5. 节点智能延迟测试与负载均衡优化</h2>
+      <p>为了获得最丝滑的网页加载与 4K 秒开体验，建议在 Clash Party 中定期执行延迟测速：</p>
+      <p>在“Proxies (代理分组)”页面，点击右上角的“小闪电”图标（URL-Test）。客户端会向 Google 或 Cloudflare 测速探针发送毫秒级探测包，并按响应速度为节点染色（绿色代表延迟低且网络通畅，黄色代表中等，红色或超时代表拥堵）。对于中国大陆用户：</p>
+      <ul>
+        <li><strong>日常网页加速与办公：</strong>推荐选择 <strong>香港 (HK)</strong> 或 <strong>日本 (JP)</strong> 节点，物理延迟通常仅 15ms~40ms，交互反馈极佳。</li>
+        <li><strong>AI 生产力工具（如 ChatGPT、Claude）：</strong>推荐使用 <strong>美国 (US)</strong>、<strong>新加坡 (SG)</strong> 或 <strong>台湾 (TW)</strong> 节点，具备更完善的原生 IP 库与合规访问权限。</li>
+        <li><strong>4K / 8K 高码率流媒体（如 Netflix、YouTube）：</strong>可直接选用 wgetcloud 的“自动测速分组 (Auto-Fallback)”，系统将智能路由至当前承载最低、带宽最高的高可用链路。</li>
+      </ul>
+
+      <h2 id="section-troubleshoot">6. 常见断连、DNS污染与连不上排查方案</h2>
+      <p>在日常使用中，如果你遇到了“Clash 节点测速全部超时”或“国内网站无法打开”的情况，请按照以下标准化流程快速自查：</p>
+      <p><strong>第一步：检查系统时间同步。</strong>现代加密协议（如 TLS 1.3、Shadowsocks-AEAD、Trojan）对设备系统时间非常敏感。如果电脑或手机时间与北京时间误差超过 60 秒，握手将直接失败。请进入系统设置开启“自动同步网络时间”。</p>
+      <p><strong>第二步：检查系统代理开关是否被残留占用。</strong>如果之前开启过其他 VPN 或解密抓包软件，可能导致系统代理端口冲突。尝试在 Clash Party 设置中先关闭系统代理，再重新打开。</p>
+      <p><strong>第三步：开启 Tun 模式解决 DNS 污染。</strong>对于 UWP 应用、游戏客户端或部分命令行工具无法走代理的问题，开启 Clash Party 侧边栏的 <code>Tun Mode</code>，由虚拟网卡在网络层拦截全部 IP 包，彻底杜绝本地运营商的 DNS 劫持。</p>
+    
+
+      <!-- Bottom In-article CTA -->
+      <div class="article-cta-box" style="margin-top: 40px;">
+        <h4>体验专线极速体验 - 告别卡顿与断连</h4>
+        <p>wgetcloud 提供真正的 IPLC 内网专线与多平台 Clash / Clash Party 智能客户端，晚高峰 4K 视频秒开无压力。</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">一键注册体验高可用专线</a>
+          <a href="../tutorials.html" class="btn btn-secondary btn-lg">查看新手客户端教程</a>
+        </div>
+      </div>
+
+      <!-- Dedicated FAQ Section -->
+      <section class="article-faq-section" id="faq">
+        <h3>关于本篇主题的常见疑难问题（FAQ）</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">针对上述教程与实际配置过程中高频出现的网络、规则、测速与订阅问题，我们为您整理了以下专业解答：</p>
+        <div class="faq-accordion faq-single-open">
+          
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>Clash Party 与传统的 Clash for Windows 有什么区别？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>Clash Party 采用了持续更新的现代化内核（兼容 Meta / Mihomo），修复了旧版 CFW 长期未解决的内存泄露与安全漏洞，并提供了更直观的现代化 UI 与一键式 Tun 虚拟网卡支持，兼容性与稳定性大幅提升。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>导入 wgetcloud 订阅链接后为什么显示“下载配置失败”？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>通常有三种原因：一是本地网络阻断了订阅下发 API，可尝试开启手机热点后再试；二是订阅链接复制不完整（注意首尾不能有空格）；三是本地防火墙或安全卫士拦截了网络连接，请给予软件放行权限。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>使用 Clash Party 会导致我的国内网银或微信被封号吗？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>不会。只要您在代理模式中保持选择“规则模式 (Rule)”，所有中国大陆境内的网站、银行网银、微信通信都会走 DIRECT（本地直接访问），完全不经过境外节点，既安全又合规。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么晚高峰时节点延迟变高或偶尔缓冲？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>这通常是由于公网普通中继受到跨国骨干网拥塞影响。而 wgetcloud 全面采用企业级内网 IPLC 专线，不经过公网国际出口审查，即使在晚高峰晚上 8 点至 11 点，依然能保持全线零丢包与 4K 秒开。</p>
+      </div>
+    </div>
+  
+        </div>
+      </section>
+
+      <!-- Related Recommendations -->
+      <section class="related-section">
+        <h3>相关精选教程与延伸阅读</h3>
+        <div class="card-grid-2">
+          
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="best-clash-airport-recommendation.html" style="color: #ffffff;">2026 高速稳定 Clash 机场推荐与选购评测</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">深入对比专线机场与中继机场性能差异，找到最适合你的科学上网套餐。</p>
+    </div>
+  
+
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="clash-verge-rev-setup-guide.html" style="color: #ffffff;">Clash Verge Rev 核心进阶分流与Tun模式配置</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">针对高级用户的自建规则链与规则合并实战指南。</p>
+    </div>
+  
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Sticky TOC -->
+    <aside class="article-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent-cyan)"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            目录导航 (TOC)
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#section-intro">1. 为什么选择 Clash Party 作为新一代客户端</a></li>
+<li><a href="#section-install">2. 客户端下载与系统运行环境准备</a></li>
+<li><a href="#section-import">3. 获取 wgetcloud 订阅链接并一键导入</a></li>
+<li><a href="#section-modes">4. 分流模式解析：规则(Rule) vs 全局(Global)</a></li>
+<li><a href="#section-optimize">5. 节点智能延迟测试与负载均衡优化</a></li>
+<li><a href="#section-troubleshoot">6. 常见断连、DNS污染与连不上排查方案</a></li>
+            <li><a href="#faq">常见问题答疑 (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12)); border-color: rgba(6, 182, 212, 0.3);">
+          <h3 class="widget-title" style="color: var(--accent-cyan);">⚡ 节点测速监控</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">当前 wgetcloud 全球 IPLC 专线骨干链路状态：</p>
+          <div style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1; font-family: var(--font-mono); margin-bottom: 16px;">
+            <div>● 香港 01 [IPLC] : <span style="color: #10b981;">16ms</span> / 0%丢包</div>
+            <div>● 日本 02 [IPLC] : <span style="color: #10b981;">32ms</span> / 0%丢包</div>
+            <div>● 新加坡 01 [IPLC] : <span style="color: #10b981;">38ms</span> / 0%丢包</div>
+            <div>● 美国 01 [优质BGP] : <span style="color: #10b981;">128ms</span> / 0%丢包</div>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" style="width: 100%;">获取专线订阅节点</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>wgetcloud官网</span>
+          </a>
+          <p>wgetcloud 致力于为全球华人提供稳定、极速、无感翻墙出海网络解决方案。企业级 IPLC 专线传输，保障跨境办公、学术科研与影音娱乐永不掉线。</p>
+          <div style="font-size: 0.85rem; color: var(--text-dark);">官方唯一镜像通道：wgetcloudvpn.my</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="../index.html">品牌首页</a></li>
+            <li><a href="../index.html#features">核心优势</a></li>
+            <li><a href="../index.html#pricing">套餐价格</a></li>
+            <li><a href="../tutorials.html">Clash教程</a></li>
+            <li><a href="../faq.html">常见疑问</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>站内教程指南</h4>
+          <ul>
+            <li><a href="clash-party-tutorial.html">Clash Party 新手教程</a></li>
+            <li><a href="best-clash-airport-recommendation.html">2026 高速机场推荐</a></li>
+            <li><a href="cheap-vs-secure-airport-comparison.html">便宜机场选购避坑</a></li>
+            <li><a href="scientific-surfing-beginner-guide.html">科学上网入门流程</a></li>
+            <li><a href="clash-verge-rev-setup-guide.html">Clash Verge 分流实战</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服务条款与合规</h4>
+          <ul>
+            <li><a href="../privacy.html">隐私权保护政策</a></li>
+            <li><a href="../terms.html">用户服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+            <li><a href="../sitemap.xml">XML网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。</div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务协议</a>
+          <a href="../disclaimer.html">合规说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top -->
+  <div class="float-controls">
+    <button class="float-btn" id="backToTop" aria-label="返回顶部" style="opacity: 0; pointer-events: none;">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

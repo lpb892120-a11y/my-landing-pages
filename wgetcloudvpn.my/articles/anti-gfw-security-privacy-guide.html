@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护 - wgetcloud官网</title>
+  <meta name="description" content="科学上网如何保障绝对隐私与数字安全？深度拆解防火墙（GFW）检测机制、DNS污染与泄露防范（DoH/DoT）、WebRTC本地IP隐匿及零日志安全机场甄别守则。">
+  <meta name="keywords" content="安全机场, 科学上网, 翻墙出海, 稳定节点, 魔法梯子, Clash节点, 全球加速">
+  <link rel="canonical" href="https://wgetcloudvpn.my/articles/anti-gfw-security-privacy-guide.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护">
+  <meta property="og:description" content="科学上网如何保障绝对隐私与数字安全？深度拆解防火墙（GFW）检测机制、DNS污染与泄露防范（DoH/DoT）、WebRTC本地IP隐匿及零日志安全机场甄别守则。">
+  <meta property="og:url" content="https://wgetcloudvpn.my/articles/anti-gfw-security-privacy-guide.html">
+  <meta property="og:image" content="https://wgetcloudvpn.my/assets/images/article-10.svg">
+  <meta property="og:site_name" content="wgetcloud官网">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://wgetcloudvpn.my/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "知识库与文章",
+      "item": "https://wgetcloudvpn.my/#articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护",
+      "item": "https://wgetcloudvpn.my/articles/anti-gfw-security-privacy-guide.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护",
+  "description": "科学上网如何保障绝对隐私与数字安全？深度拆解防火墙（GFW）检测机制、DNS污染与泄露防范（DoH/DoT）、WebRTC本地IP隐匿及零日志安全机场甄别守则。",
+  "image": "https://wgetcloudvpn.my/assets/images/article-10.svg",
+  "author": {
+    "@type": "Person",
+    "name": "wgetcloud安全与合规审计部"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wgetcloud官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wgetcloudvpn.my/assets/images/hero-illustration.svg"
+    }
+  },
+  "datePublished": "2026-04-08",
+  "dateModified": "2026-04-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wgetcloudvpn.my/articles/anti-gfw-security-privacy-guide.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "如何检测我当前的网络是否存在 DNS 泄漏？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "您可以访问专门的国际检测网站（如 dnsleaktest.com），点击“Extended Test”。如果检测结果中显示的全部是海外专线所在机房的 DNS 服务器，说明完全安全；若出现了中国电信、联通或移动的本地 DNS，则说明存在严重的 DNS 泄漏，需开启 Fake-IP 或 Tun 模式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在公共场所（如咖啡厅/机场免费 Wi-Fi）使用科学上网安全吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "极其安全，甚至强烈建议开启！因为公共 Wi-Fi 极易被黑客搭建假热点进行中间人（MITM）嗅探，而开启 wgetcloud 专线代理后，从你的设备发出的所有数据包均经过企业级高强度加密，黑客看到的只能是一串无序乱码。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "wgetcloud 专线会保留我的上网历史记录吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "绝对不会。wgetcloud 严格遵循国际零日志政策（No-Log Policy），专线中转网关完全运行在 RAM 纯内存环境中，从技术与架构层面不记录任何用户的访问 URL、浏览明细及个人隐私数据。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "使用全局代理和规则模式，哪一个隐私安全性更高？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "两者在对境外受限网站的加密防护上毫无差异。但从综合体验与账号安全角度，“规则模式 (Rule)”更安全，因为它避免了国内日常聊天和网银被误走境外节点而触发账号异地风控的麻烦。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" title="wgetcloud官网">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../index.html#features">核心优势</a></li>
+        <li><a href="../index.html#pricing">套餐价格</a></li>
+        <li><a href="../tutorials.html">教程中心</a></li>
+        <li><a href="../faq.html">常见问题</a></li>
+        <li><a href="../index.html#articles" class="active">深度文章</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">用户登录</a>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即注册使用</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html#articles">文章资讯</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">正文</span>
+      </nav>
+
+      <h1 class="article-hero-title">翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护</h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>发布日期：2026-04-08</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>作者：wgetcloud安全与合规审计部</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>阅读时间：约 9 分钟</span>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--accent-green);">● 已通过技术团队深度实测</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container article-layout">
+    <article class="article-content">
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-10.svg" alt="翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护 - 封面技术示意图" loading="lazy">
+        <div class="article-img-caption">翻墙出海安全与隐私防泄漏必备常识：从DNS防污染到日志清除全方位防护 实测架构与技术指导示意图</div>
+      </div>
+
+      
+      <h2 id="section-security-myth">1. 以为“开了梯子就安全”？致命认知盲区揭秘</h2>
+      <p>随着互联网安全意识的普及，越来越多出海用户意识到个人隐私与数据安全的重要性。然而许多人存在一个致命的误区，以为只要手机或电脑右下角挂上了代理软件、能够打开境外网页，自己的网络连接就是“绝对安全、绝对匿名”的。</p>
+      <p>现实远比想象残酷。如果在科学上网过程中忽视了底层网络配置的漏洞，你的真实地理位置、本地宽带公网 IP、浏览记录甚至敏感账号凭据，依然可能通过 <strong>DNS 旁路查询泄露、浏览器 WebRTC 局域网穿透、第三方统计指纹跨域追踪</strong> 等多种途径暴露无遗。要构建真正坚不可摧的数字隐私堡垒，必须全面了解现代网络攻防常识。</p>
+
+      <h2 id="section-gfw-mechanisms">2. 现代防火墙（GFW）深度检测算法的进化历程</h2>
+      <p>要防范网络风险，首先需要了解防火墙的拦截机制。在过去十余年中，GFW 的检测手段经历了三次代际飞跃：</p>
+      <ul>
+        <li><strong>第一代（基于 IP 黑名单与关键字匹配）：</strong>早期防火墙通过阻断特定 IP 地址或在 HTTP 明文流量中匹配敏感关键词进行连接重置（TCP Reset）。</li>
+        <li><strong>第二代（基于 SNI 嗅探与 DNS 污染）：</strong>当全网普及 HTTPS 加密后，防火墙利用 TLS 握手阶段尚未加密的 Client Hello 报文中的 <code>Server Name Indication (SNI)</code> 字段识别用户访问的目标域名，并实施针对性阻断。</li>
+        <li><strong>第三代（机器学习与全流量特征行为分析）：</strong>现代防火墙广泛应用了基于卷积神经网络与流模式识别的 AI 模型。即便数据包内容经过高强度加密，系统依然可以通过数据包的长度分布、到达时间间隔（IAT）、熵值特征分析出其是否为代理流量并实施阻断。这也是为什么单凭个人租用海外 VPS 自建梯子在当今极难存活的根本技术原因。</li>
+      </ul>
+
+      <h2 id="section-dns-leak-defense">3. 终结 DNS 污染与泄露：DoH / DoT 与 Fake-IP</h2>
+      <p>DNS 相当于互联网的导航仪。如果你的代理客户端没有妥善配置 DNS 模块，每当你试图访问一个境外域名时，系统可能依然向本地运营商的 53 端口发起明文 UDP 查询。这不仅会导致运营商轻而易举记录你的全部上网轨迹，而且运营商返回的往往是受到 GFW 投毒的虚假 IP 地址（即 <strong>DNS 污染</strong>）。</p>
+      <p>彻底解决 DNS 污染的行业标准方案是采用 <strong>安全加密 DNS 协议</strong> 与 <strong>Fake-IP 机制</strong>：</p>
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>DNS 保护技术</th>
+              <th>加密机制与端口</th>
+              <th>抗嗅探与抗投毒效果</th>
+              <th>建议开启状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DNS-over-HTTPS (DoH)</strong></td>
+              <td>将 DNS 查询通过标准 443 端口封装在 HTTPS 加密流中。</td>
+              <td>极高，与正常网页流量融为一体，无法被旁路劫持。</td>
+              <td>★★★★★ (必开)</td>
+            </tr>
+            <tr>
+              <td><strong>DNS-over-TLS (DoT)</strong></td>
+              <td>在专门的 853 端口上建立原生 TLS 加密通信通道。</td>
+              <td>高，能够防止篡改，但 853 独立端口易被针对性阻断。</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td><strong>Clash Fake-IP 虚拟解析</strong></td>
+              <td>本地代理内核直接拦截系统 DNS 请求，返回虚构的保留网段 IP。</td>
+              <td><strong>终极，完全不在本地发起真实解析，将域名送至海外专线解析。</strong></td>
+              <td>★★★★★ (强烈推荐)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-webrtc-fingerprint">4. WebRTC 穿透与浏览器数字指纹反追踪实战</h2>
+      <p>即使代理运行得天衣无缝，现代浏览器本身也可能成为泄密的“内鬼”：</p>
+      <p><strong>1. WebRTC 局域网/公网 IP 穿透漏洞：</strong>WebRTC 协议为了实现点对点的高清音视频串流，被设计为可以绕过系统代理直接向 STUN/TURN 服务器发送探测包，从而将你的家庭宽带真实外网 IP 直接拱手送出。建议在出海浏览器中安装防泄露插件，或在 <code>about:config</code> / 扩展设置中彻底禁用 WebRTC 功能。</p>
+      <p><strong>2. Canvas 与 Audio 浏览器指纹：</strong>商业追踪机构利用不同显卡、驱动和声卡在渲染微小图像时的极微小硬件差异，能够为你的设备生成一个独一无二的 64 位哈希指纹。对于高隐私需求的用户，推荐在日常出海使用 Brave 浏览器或指纹隔离浏览器进行深度防护。</p>
+
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-10.svg" alt="科学上网安全防护与全链路加密机制" loading="lazy">
+        <div class="article-img-caption">端到端全链路专线加密与无痕隐私保护机制</div>
+      </div>
+
+      <h2 id="section-no-log-standard">5. 零日志 (No-Log) 架构：内存化运行与无痕审计</h2>
+      <p>选择一家合格的 <a href="../index.html">安全机场服务商</a>，其核心就在于服务商对用户数据的主动防护能力。<a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">wgetcloud官网</a> 秉承严格的<strong>工业级无痕架构设计</strong>：</p>
+      <ul>
+        <li><strong>纯内存镜像部署 (RAM-Disk Only)：</strong>全线专线网关均无物理机械硬盘或持久化 SSD 存储日志，所有系统运行在内存盘中，每当服务器重启，所有临时网络数据直接在物理层面彻底灰飞烟灭。</li>
+        <li><strong>不记录用户行为日志：</strong>系统坚决不采集用户的目标访问网址、传输数据内容或账号访问频次，从机制上杜绝了任何数据被黑客拖库或第三方索取的可能。</li>
+      </ul>
+
+      <h2 id="section-hygiene-rules">6. 终极数字安全守则：个人敏感数据隔离建议</h2>
+      <p>最后，安全专家的黄金忠告永远是“良好的使用习惯重于工具本身”：在境外网络交流与浏览时，请务必做到<strong>工作环境与个人隐私环境的物理隔离</strong>；为重要海外账号设置高强度独立密码并强制绑定基于时间的一次性密码（TOTP 2FA，如 Google Authenticator）；切勿在任何未经 HTTPS 认证的陌生网页输入银行卡卡号或个人身份证件信息。依托稳健的 <a href="../index.html">wgetcloud安全专线</a>，畅享安全、自由、无界的数字未来。</p>
+    
+
+      <!-- Bottom In-article CTA -->
+      <div class="article-cta-box" style="margin-top: 40px;">
+        <h4>体验专线极速体验 - 告别卡顿与断连</h4>
+        <p>wgetcloud 提供真正的 IPLC 内网专线与多平台 Clash / Clash Party 智能客户端，晚高峰 4K 视频秒开无压力。</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">一键注册体验高可用专线</a>
+          <a href="../tutorials.html" class="btn btn-secondary btn-lg">查看新手客户端教程</a>
+        </div>
+      </div>
+
+      <!-- Dedicated FAQ Section -->
+      <section class="article-faq-section" id="faq">
+        <h3>关于本篇主题的常见疑难问题（FAQ）</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">针对上述教程与实际配置过程中高频出现的网络、规则、测速与订阅问题，我们为您整理了以下专业解答：</p>
+        <div class="faq-accordion faq-single-open">
+          
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>如何检测我当前的网络是否存在 DNS 泄漏？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>您可以访问专门的国际检测网站（如 dnsleaktest.com），点击“Extended Test”。如果检测结果中显示的全部是海外专线所在机房的 DNS 服务器，说明完全安全；若出现了中国电信、联通或移动的本地 DNS，则说明存在严重的 DNS 泄漏，需开启 Fake-IP 或 Tun 模式。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>在公共场所（如咖啡厅/机场免费 Wi-Fi）使用科学上网安全吗？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>极其安全，甚至强烈建议开启！因为公共 Wi-Fi 极易被黑客搭建假热点进行中间人（MITM）嗅探，而开启 wgetcloud 专线代理后，从你的设备发出的所有数据包均经过企业级高强度加密，黑客看到的只能是一串无序乱码。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>wgetcloud 专线会保留我的上网历史记录吗？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>绝对不会。wgetcloud 严格遵循国际零日志政策（No-Log Policy），专线中转网关完全运行在 RAM 纯内存环境中，从技术与架构层面不记录任何用户的访问 URL、浏览明细及个人隐私数据。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>使用全局代理和规则模式，哪一个隐私安全性更高？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>两者在对境外受限网站的加密防护上毫无差异。但从综合体验与账号安全角度，“规则模式 (Rule)”更安全，因为它避免了国内日常聊天和网银被误走境外节点而触发账号异地风控的麻烦。</p>
+      </div>
+    </div>
+  
+        </div>
+      </section>
+
+      <!-- Related Recommendations -->
+      <section class="related-section">
+        <h3>相关精选教程与延伸阅读</h3>
+        <div class="card-grid-2">
+          
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="cheap-vs-secure-airport-comparison.html" style="color: #ffffff;">便宜机场与安全机场选购对比深度评测</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">为你全面拆解廉价翻墙梯子的数据隐患与安全专线的核心优势。</p>
+    </div>
+  
+
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="cross-border-ecommerce-vpn-guide.html" style="color: #ffffff;">跨境电商外贸出海网络搭建与防关联指南</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">详解多账号环境下的指纹浏览器隔离与住宅 IP 部署实战。</p>
+    </div>
+  
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Sticky TOC -->
+    <aside class="article-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent-cyan)"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            目录导航 (TOC)
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#section-security-myth">1. 以为“开了梯子就安全”？致命认知盲区揭秘</a></li>
+<li><a href="#section-gfw-mechanisms">2. 现代防火墙（GFW）深度检测算法的进化历程</a></li>
+<li><a href="#section-dns-leak-defense">3. 终结 DNS 污染与泄露：DoH / DoT 与 Fake-IP</a></li>
+<li><a href="#section-webrtc-fingerprint">4. WebRTC 穿透与浏览器数字指纹反追踪实战</a></li>
+<li><a href="#section-no-log-standard">5. 零日志 (No-Log) 架构：内存化运行与无痕审计</a></li>
+<li><a href="#section-hygiene-rules">6. 终极数字安全守则：个人敏感数据隔离建议</a></li>
+            <li><a href="#faq">常见问题答疑 (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12)); border-color: rgba(6, 182, 212, 0.3);">
+          <h3 class="widget-title" style="color: var(--accent-cyan);">⚡ 节点测速监控</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">当前 wgetcloud 全球 IPLC 专线骨干链路状态：</p>
+          <div style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1; font-family: var(--font-mono); margin-bottom: 16px;">
+            <div>● 香港 01 [IPLC] : <span style="color: #10b981;">16ms</span> / 0%丢包</div>
+            <div>● 日本 02 [IPLC] : <span style="color: #10b981;">32ms</span> / 0%丢包</div>
+            <div>● 新加坡 01 [IPLC] : <span style="color: #10b981;">38ms</span> / 0%丢包</div>
+            <div>● 美国 01 [优质BGP] : <span style="color: #10b981;">128ms</span> / 0%丢包</div>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" style="width: 100%;">获取专线订阅节点</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>wgetcloud官网</span>
+          </a>
+          <p>wgetcloud 致力于为全球华人提供稳定、极速、无感翻墙出海网络解决方案。企业级 IPLC 专线传输，保障跨境办公、学术科研与影音娱乐永不掉线。</p>
+          <div style="font-size: 0.85rem; color: var(--text-dark);">官方唯一镜像通道：wgetcloudvpn.my</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="../index.html">品牌首页</a></li>
+            <li><a href="../index.html#features">核心优势</a></li>
+            <li><a href="../index.html#pricing">套餐价格</a></li>
+            <li><a href="../tutorials.html">Clash教程</a></li>
+            <li><a href="../faq.html">常见疑问</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>站内教程指南</h4>
+          <ul>
+            <li><a href="clash-party-tutorial.html">Clash Party 新手教程</a></li>
+            <li><a href="best-clash-airport-recommendation.html">2026 高速机场推荐</a></li>
+            <li><a href="cheap-vs-secure-airport-comparison.html">便宜机场选购避坑</a></li>
+            <li><a href="scientific-surfing-beginner-guide.html">科学上网入门流程</a></li>
+            <li><a href="clash-verge-rev-setup-guide.html">Clash Verge 分流实战</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服务条款与合规</h4>
+          <ul>
+            <li><a href="../privacy.html">隐私权保护政策</a></li>
+            <li><a href="../terms.html">用户服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+            <li><a href="../sitemap.xml">XML网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。</div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务协议</a>
+          <a href="../disclaimer.html">合规说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top -->
+  <div class="float-controls">
+    <button class="float-btn" id="backToTop" aria-label="返回顶部" style="opacity: 0; pointer-events: none;">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

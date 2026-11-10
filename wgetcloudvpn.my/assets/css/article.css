@@ -1,0 +1,313 @@
+/* ===================================================================
+   wgetcloud官网 - 文章与教程专用排版样式
+   Domain: wgetcloudvpn.my
+   =================================================================== */
+
+.article-page-header {
+  padding: 60px 0 40px;
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+.breadcrumb a {
+  color: var(--text-muted);
+}
+.breadcrumb a:hover {
+  color: var(--accent-cyan);
+}
+.breadcrumb-separator {
+  color: var(--text-dark);
+}
+.breadcrumb-current {
+  color: var(--accent-cyan);
+}
+
+.article-hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.article-meta-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.article-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.article-meta-item svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent-cyan);
+}
+
+/* Article Layout */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  padding: 50px 0 80px;
+}
+
+.article-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #cbd5e1;
+}
+
+/* Content Headings */
+.article-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 44px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  scroll-margin-top: 90px;
+}
+.article-content h2::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 24px;
+  background: var(--gradient-brand);
+  border-radius: 3px;
+}
+
+.article-content h3 {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 32px 0 16px;
+  scroll-margin-top: 90px;
+}
+
+.article-content p {
+  margin-bottom: 22px;
+  text-align: justify;
+}
+
+.article-content strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.article-content ul, 
+.article-content ol {
+  margin: 0 0 24px 24px;
+}
+.article-content li {
+  margin-bottom: 10px;
+}
+
+/* Featured & In-article Images */
+.article-img-wrap {
+  margin: 30px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
+  background: #0f172a;
+}
+.article-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.article-img-caption {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  background: rgba(15, 23, 42, 0.95);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Callouts / Highlights */
+.callout {
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin: 28px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.callout-info {
+  background: rgba(6, 182, 212, 0.08);
+  border-left: 4px solid var(--accent-cyan);
+}
+.callout-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 4px solid var(--accent-amber);
+}
+.callout-success {
+  background: rgba(16, 185, 129, 0.08);
+  border-left: 4px solid var(--accent-green);
+}
+.callout-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.callout-body {
+  font-size: 0.96rem;
+  color: #e2e8f0;
+}
+.callout-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Comparison Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 30px 0;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.94rem;
+}
+.comparison-table th {
+  background: rgba(19, 27, 49, 0.95);
+  padding: 14px 18px;
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+  white-space: nowrap;
+}
+.comparison-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(13, 18, 34, 0.6);
+  color: var(--text-muted);
+}
+.comparison-table tr:hover td {
+  background: rgba(26, 38, 70, 0.5);
+}
+
+/* Sidebar & Table of Contents (TOC) */
+.article-sidebar {
+  position: relative;
+}
+.sidebar-sticky {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.sidebar-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toc-list {
+  list-style: none;
+}
+.toc-list li {
+  margin-bottom: 10px;
+}
+.toc-list a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: block;
+  line-height: 1.45;
+  transition: all 0.2s ease;
+}
+.toc-list a:hover {
+  color: var(--accent-cyan);
+  padding-left: 6px;
+}
+
+/* In-article CTA box */
+.article-cta-box {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(99, 102, 241, 0.2));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+}
+.article-cta-box h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.article-cta-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* Article bottom FAQ */
+.article-faq-section {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 2px dashed rgba(255, 255, 255, 0.1);
+}
+.article-faq-section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+/* Related Articles */
+.related-section {
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.related-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 992px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-hero-title {
+    font-size: 2rem;
+  }
+}
+

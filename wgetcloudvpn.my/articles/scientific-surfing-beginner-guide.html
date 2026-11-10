@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南 - wgetcloud官网</title>
+  <meta name="description" content="专为中文新手打造的科学上网保姆级入门教程。图文详解翻墙底层原理、各类魔法梯子软件区别、wgetcloud 订阅一键导入教程及防范网络钓鱼的实用安全常识。">
+  <meta name="keywords" content="科学上网, 魔法梯子, Clash, Clash节点, 机场推荐, 翻墙出海, 稳定节点">
+  <link rel="canonical" href="https://wgetcloudvpn.my/articles/scientific-surfing-beginner-guide.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南">
+  <meta property="og:description" content="专为中文新手打造的科学上网保姆级入门教程。图文详解翻墙底层原理、各类魔法梯子软件区别、wgetcloud 订阅一键导入教程及防范网络钓鱼的实用安全常识。">
+  <meta property="og:url" content="https://wgetcloudvpn.my/articles/scientific-surfing-beginner-guide.html">
+  <meta property="og:image" content="https://wgetcloudvpn.my/assets/images/article-4.svg">
+  <meta property="og:site_name" content="wgetcloud官网">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://wgetcloudvpn.my/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "知识库与文章",
+      "item": "https://wgetcloudvpn.my/#articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南",
+      "item": "https://wgetcloudvpn.my/articles/scientific-surfing-beginner-guide.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南",
+  "description": "专为中文新手打造的科学上网保姆级入门教程。图文详解翻墙底层原理、各类魔法梯子软件区别、wgetcloud 订阅一键导入教程及防范网络钓鱼的实用安全常识。",
+  "image": "https://wgetcloudvpn.my/assets/images/article-4.svg",
+  "author": {
+    "@type": "Person",
+    "name": "wgetcloud新手指导组"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wgetcloud官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wgetcloudvpn.my/assets/images/hero-illustration.svg"
+    }
+  },
+  "datePublished": "2026-03-26",
+  "dateModified": "2026-04-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wgetcloudvpn.my/articles/scientific-surfing-beginner-guide.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "新手刚入门，每个月大约需要多少流量才够用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "对于日常查阅海外学术资料、网页浏览与聊天沟通，每月 50G~100G 流量绰绰有余；如果经常需要观看 4K 高画质 YouTube 视频或追剧，建议选择 200G~500G 的大流量套餐。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么打开梯子之后，微信提示“网络连接异常”？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这通常是因为误将代理模式开成了“全局模式 (Global)”，导致微信服务器判定登录 IP 发生了异常跨境漂移。只需在客户端切换回“规则模式 (Rule)”即可完美解决。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "电脑关机前需要先关闭 Clash 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "建议在关机前顺手在客户端中关闭“系统代理”开关。若直接关机，部分 Windows 系统可能在下次开机时残留代理端口设置，导致不打开 Clash 就无法正常上网。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "苹果 iPhone 用户没有美区 Apple ID 怎么下载小火箭？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "您可以在淘宝或海外数字商品平台购买一个现成的海外苹果账号，登录 App Store 下载 Shadowrocket；或者直接使用支持一键网页免配置客户端的 Android/PC 设备。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" title="wgetcloud官网">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../index.html#features">核心优势</a></li>
+        <li><a href="../index.html#pricing">套餐价格</a></li>
+        <li><a href="../tutorials.html">教程中心</a></li>
+        <li><a href="../faq.html">常见问题</a></li>
+        <li><a href="../index.html#articles" class="active">深度文章</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">用户登录</a>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即注册使用</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html#articles">文章资讯</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">正文</span>
+      </nav>
+
+      <h1 class="article-hero-title">新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南</h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>发布日期：2026-03-26</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>作者：wgetcloud新手指导组</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>阅读时间：约 8 分钟</span>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--accent-green);">● 已通过技术团队深度实测</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container article-layout">
+    <article class="article-content">
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-4.svg" alt="新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南 - 封面技术示意图" loading="lazy">
+        <div class="article-img-caption">新手科学上网零基础全流程攻略：梯子工具选择、节点订阅与日常避坑指南 实测架构与技术指导示意图</div>
+      </div>
+
+      
+      <h2 id="section-concept">1. 科学上网底层原理通俗图解</h2>
+      <p>对于刚刚接触互联网出海的朋友来说，“科学上网”、“魔法梯子”、“翻墙”等词汇可能充满了神秘感。其实在计算机网络领域，它的本质非常简单清晰：</p>
+      <p>正常情况下，我们在中国大陆境内访问境外某些特定网站（如 Google、YouTube、Twitter、Wikipedia）时，请求数据包在经过国际互联网出口网关时，会受到<strong>国家防火墙（GFW）</strong>的关键词过滤、DNS 污染或 IP 黑名单拦截，从而导致网页显示“连接已重置”或“无法访问”。</p>
+      <p>而科学上网则是通过在境外架设一台不受限制的高速中转服务器（即<strong>代理节点</strong>），并在本地设备安装专门的代理软件（如 Clash、Clash Party、v2rayN、Shadowrocket）。当你想访问 Google 时，本地客户端先将请求高强度加密打包发送给境外中转服务器，再由中转服务器代为获取网页内容并加密传回本地。如此一来，防火墙看到的只是一段普通的合规加密通信，从而实现了通畅无阻的信息获取。</p>
+
+      <h2 id="section-myths">2. 初学者极易踩中的三大认知误区</h2>
+      <p>很多新手初次翻墙时，往往由于缺乏基础常识而走很多弯路：</p>
+      <ul>
+        <li><strong>误区一：盲目迷信“免费梯子”。</strong>许多应用商店里标榜“永久免费加速器”的 App，底层盈利模式往往是通过贩卖用户的个人隐私数据、设备剪贴板信息，甚至强制在后台挖矿。所谓“免费的才是最昂贵的”。</li>
+        <li><strong>误区二：认为“自己租 VPS 搭建更安全”。</strong>在数年前自建或许行得通，但在如今机器学习行为识别机制下，单台 VPS 的 IP 缺乏动态混淆与专线通道，往往使用不到两周就会被精准识别并列入黑名单，换 IP 的费用远高于购买专业机场订阅。</li>
+        <li><strong>误区三：以为下载了客户端软件就能直接上网。</strong>新手常常问：“为什么我下载了 Clash 却打不开外网？”——请记住，客户端软件只是一个“播放器”，还需要在软件中载入包含服务器地址与密钥的“唱片”（即 <a href="../index.html">wgetcloud官网</a> 提供的订阅链接）。</li>
+      </ul>
+
+      <h2 id="section-clients">3. 主流代理客户端横向对比与挑选</h2>
+      <p>根据你日常使用的设备类型，选择一款成熟稳定的客户端是顺畅上网的第一步：</p>
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>操作系统</th>
+              <th>推荐客户端软件</th>
+              <th>优势特点</th>
+              <th>获取难度</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Windows</strong></td>
+              <td>Clash Party / Clash Verge Rev</td>
+              <td>界面现代高颜值，原生支持 Tun 模式，智能分流稳定。</td>
+              <td>开箱即用，官网免费下载</td>
+            </tr>
+            <tr>
+              <td><strong>macOS</strong></td>
+              <td>Clash Verge Rev / Clash Party</td>
+              <td>完美适配 Apple Silicon M 系列芯片，系统占用极低。</td>
+              <td>开箱即用，官网免费下载</td>
+            </tr>
+            <tr>
+              <td><strong>Android</strong></td>
+              <td>Clash for Android (CFA) / Surfboard</td>
+              <td>支持分应用代理，电量控制优秀，通知栏快捷开关。</td>
+              <td>支持一键安装 APK</td>
+            </tr>
+            <tr>
+              <td><strong>iOS / iPadOS</strong></td>
+              <td>Shadowrocket (小火箭) / Loon</td>
+              <td>性能强劲，规则丰富，常年稳居工具榜首位。</td>
+              <td>需使用海外 Apple ID 在 App Store 下载</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="section-quickstart">4. 三步从零上手：注册、订阅与一键连接</h2>
+      <p>借助 wgetcloud 极简的人性化设计，即使是计算机基础薄弱的新手，也能在三分钟内完成配置：</p>
+      <ol>
+        <li><strong>第一步：获取订阅账号。</strong>访问 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">wgetcloud官网入口</a> 注册一个专属账户，在套餐选购页根据自己的日常流量需求选择合适的入门或进阶套餐。</li>
+        <li><strong>第二步：一键导入客户端。</strong>在用户后台点击“便捷导入”功能，选择你已下载好的客户端（如 Clash Party 或 Clash Verge），浏览器将自动拉起客户端并完成节点配置文件的下载。</li>
+        <li><strong>第三步：开启代理享受极速网络。</strong>在客户端中将代理模式切换为 <strong>Rule (规则模式)</strong>，在节点列表中选中任意绿色低延迟节点（如“香港 01 IPLC”），勾选“系统代理”开关。此时打开浏览器访问 youtube.com，即可见证极速加载！</li>
+      </ol>
+
+      <h2 id="section-daily-rules">5. 日常使用技巧：分流规则与流量节省</h2>
+      <p>为了让科学上网体验如丝般顺滑，建议掌握以下两条黄金使用习惯：</p>
+      <p><strong>习惯一：始终保持规则模式 (Rule)。</strong>在规则模式下，只有被墙的网站才会经过 wgetcloud 的海外专线传输，访问国内的爱奇艺、腾讯视频、淘宝等依然走你本地的家庭宽带，不仅不耗费你的机场流量配额，而且国内网速不受任何影响。</p>
+      <p><strong>习惯二：善用自动测速分组。</strong>如果不清楚当前哪个节点最快，直接勾选订阅分组中的 <code>Auto (自动优选)</code>，客户端每隔数分钟会自动探测延迟最低的线路，无需手动频繁切换。</p>
+
+      <h2 id="section-safety-tips">6. 新手出海必须防范的隐私与钓鱼陷阱</h2>
+      <p>最后，安全永远是第一位的。在畅游全球互联网的同时，请时刻注意保护个人数字安全：</p>
+      <p>请勿在任何不明来源的公共电报群或论坛点击所谓的“特惠充值折扣码”，严防钓鱼网站仿冒官网；建议为 Google、Apple 等重要海外账户开启双重身份验证（2FA）；切勿在境外网站从事任何违反相关法律法规的行为。使用合规、高品质的 <a href="../index.html">安全机场服务</a>，为你和家人的数字出海保驾护航。</p>
+    
+
+      <!-- Bottom In-article CTA -->
+      <div class="article-cta-box" style="margin-top: 40px;">
+        <h4>体验专线极速体验 - 告别卡顿与断连</h4>
+        <p>wgetcloud 提供真正的 IPLC 内网专线与多平台 Clash / Clash Party 智能客户端，晚高峰 4K 视频秒开无压力。</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">一键注册体验高可用专线</a>
+          <a href="../tutorials.html" class="btn btn-secondary btn-lg">查看新手客户端教程</a>
+        </div>
+      </div>
+
+      <!-- Dedicated FAQ Section -->
+      <section class="article-faq-section" id="faq">
+        <h3>关于本篇主题的常见疑难问题（FAQ）</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">针对上述教程与实际配置过程中高频出现的网络、规则、测速与订阅问题，我们为您整理了以下专业解答：</p>
+        <div class="faq-accordion faq-single-open">
+          
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>新手刚入门，每个月大约需要多少流量才够用？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>对于日常查阅海外学术资料、网页浏览与聊天沟通，每月 50G~100G 流量绰绰有余；如果经常需要观看 4K 高画质 YouTube 视频或追剧，建议选择 200G~500G 的大流量套餐。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么打开梯子之后，微信提示“网络连接异常”？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>这通常是因为误将代理模式开成了“全局模式 (Global)”，导致微信服务器判定登录 IP 发生了异常跨境漂移。只需在客户端切换回“规则模式 (Rule)”即可完美解决。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>电脑关机前需要先关闭 Clash 吗？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>建议在关机前顺手在客户端中关闭“系统代理”开关。若直接关机，部分 Windows 系统可能在下次开机时残留代理端口设置，导致不打开 Clash 就无法正常上网。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>苹果 iPhone 用户没有美区 Apple ID 怎么下载小火箭？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>您可以在淘宝或海外数字商品平台购买一个现成的海外苹果账号，登录 App Store 下载 Shadowrocket；或者直接使用支持一键网页免配置客户端的 Android/PC 设备。</p>
+      </div>
+    </div>
+  
+        </div>
+      </section>
+
+      <!-- Related Recommendations -->
+      <section class="related-section">
+        <h3>相关精选教程与延伸阅读</h3>
+        <div class="card-grid-2">
+          
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="clash-party-tutorial.html" style="color: #ffffff;">Clash Party 电脑与手机端全能使用指南</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">手把手教你如何玩转最新一代跨平台代理客户端。</p>
+    </div>
+  
+
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="ios-shadowrocket-clash-party-sync.html" style="color: #ffffff;">苹果 iOS 小火箭多端同步与测速教程</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">详细解答苹果设备下小火箭的安装、节点导入与自动化规则设定。</p>
+    </div>
+  
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Sticky TOC -->
+    <aside class="article-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent-cyan)"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            目录导航 (TOC)
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#section-concept">1. 科学上网底层原理通俗图解</a></li>
+<li><a href="#section-myths">2. 初学者极易踩中的三大认知误区</a></li>
+<li><a href="#section-clients">3. 主流代理客户端横向对比与挑选</a></li>
+<li><a href="#section-quickstart">4. 三步从零上手：注册、订阅与一键连接</a></li>
+<li><a href="#section-daily-rules">5. 日常使用技巧：分流规则与流量节省</a></li>
+<li><a href="#section-safety-tips">6. 新手出海必须防范的隐私与钓鱼陷阱</a></li>
+            <li><a href="#faq">常见问题答疑 (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12)); border-color: rgba(6, 182, 212, 0.3);">
+          <h3 class="widget-title" style="color: var(--accent-cyan);">⚡ 节点测速监控</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">当前 wgetcloud 全球 IPLC 专线骨干链路状态：</p>
+          <div style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1; font-family: var(--font-mono); margin-bottom: 16px;">
+            <div>● 香港 01 [IPLC] : <span style="color: #10b981;">16ms</span> / 0%丢包</div>
+            <div>● 日本 02 [IPLC] : <span style="color: #10b981;">32ms</span> / 0%丢包</div>
+            <div>● 新加坡 01 [IPLC] : <span style="color: #10b981;">38ms</span> / 0%丢包</div>
+            <div>● 美国 01 [优质BGP] : <span style="color: #10b981;">128ms</span> / 0%丢包</div>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" style="width: 100%;">获取专线订阅节点</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>wgetcloud官网</span>
+          </a>
+          <p>wgetcloud 致力于为全球华人提供稳定、极速、无感翻墙出海网络解决方案。企业级 IPLC 专线传输，保障跨境办公、学术科研与影音娱乐永不掉线。</p>
+          <div style="font-size: 0.85rem; color: var(--text-dark);">官方唯一镜像通道：wgetcloudvpn.my</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="../index.html">品牌首页</a></li>
+            <li><a href="../index.html#features">核心优势</a></li>
+            <li><a href="../index.html#pricing">套餐价格</a></li>
+            <li><a href="../tutorials.html">Clash教程</a></li>
+            <li><a href="../faq.html">常见疑问</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>站内教程指南</h4>
+          <ul>
+            <li><a href="clash-party-tutorial.html">Clash Party 新手教程</a></li>
+            <li><a href="best-clash-airport-recommendation.html">2026 高速机场推荐</a></li>
+            <li><a href="cheap-vs-secure-airport-comparison.html">便宜机场选购避坑</a></li>
+            <li><a href="scientific-surfing-beginner-guide.html">科学上网入门流程</a></li>
+            <li><a href="clash-verge-rev-setup-guide.html">Clash Verge 分流实战</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服务条款与合规</h4>
+          <ul>
+            <li><a href="../privacy.html">隐私权保护政策</a></li>
+            <li><a href="../terms.html">用户服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+            <li><a href="../sitemap.xml">XML网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。</div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务协议</a>
+          <a href="../disclaimer.html">合规说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top -->
+  <div class="float-controls">
+    <button class="float-btn" id="backToTop" aria-label="返回顶部" style="opacity: 0; pointer-events: none;">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

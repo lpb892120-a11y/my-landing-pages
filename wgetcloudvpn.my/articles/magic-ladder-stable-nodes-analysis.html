@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术 - wgetcloud官网</title>
+  <meta name="description" content="梯子频繁断流卡顿背后究竟有什么技术内幕？本文深度拆解国际骨干网抖动、BGP多线接入、IPLC内网专线与容灾切换技术，带你了解企业级稳定节点的硬核构筑逻辑。">
+  <meta name="keywords" content="魔法梯子, 稳定节点, 全球加速, Clash节点, 安全机场, 科学上网, 便宜机场">
+  <link rel="canonical" href="https://wgetcloudvpn.my/articles/magic-ladder-stable-nodes-analysis.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术">
+  <meta property="og:description" content="梯子频繁断流卡顿背后究竟有什么技术内幕？本文深度拆解国际骨干网抖动、BGP多线接入、IPLC内网专线与容灾切换技术，带你了解企业级稳定节点的硬核构筑逻辑。">
+  <meta property="og:url" content="https://wgetcloudvpn.my/articles/magic-ladder-stable-nodes-analysis.html">
+  <meta property="og:image" content="https://wgetcloudvpn.my/assets/images/article-5.svg">
+  <meta property="og:site_name" content="wgetcloud官网">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首页",
+      "item": "https://wgetcloudvpn.my/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "知识库与文章",
+      "item": "https://wgetcloudvpn.my/#articles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术",
+      "item": "https://wgetcloudvpn.my/articles/magic-ladder-stable-nodes-analysis.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术",
+  "description": "梯子频繁断流卡顿背后究竟有什么技术内幕？本文深度拆解国际骨干网抖动、BGP多线接入、IPLC内网专线与容灾切换技术，带你了解企业级稳定节点的硬核构筑逻辑。",
+  "image": "https://wgetcloudvpn.my/assets/images/article-5.svg",
+  "author": {
+    "@type": "Person",
+    "name": "wgetcloud网络架构部"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wgetcloud官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wgetcloudvpn.my/assets/images/hero-illustration.svg"
+    }
+  },
+  "datePublished": "2026-03-28",
+  "dateModified": "2026-04-10",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wgetcloudvpn.my/articles/magic-ladder-stable-nodes-analysis.html"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "为什么有些节点平时测速很快，一到晚上 8 点就频繁断线？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为普通节点的公网出口在晚高峰面临严重的国际骨干网拥挤，丢包率激增触发 TCP 拥塞控制，导致带宽雪崩。而真正的内网专线（如 wgetcloud）完全避开了公网，全天保持相同的高速与稳定性。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的宽带是 1000M，为什么连接科学上网后测速只有 200M？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "跨国传输受到光速传播物理极限与 TCP 拥塞控制窗口算法的制约。单线程测速很难跑满千兆带宽；如果使用多线程并发下载工具，wgetcloud 专线可以轻松拉满数百兆乃至千兆的极速。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "玩外服网络游戏经常跳 ping 应该如何解决？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "网络游戏对 UDP 协议的抖动非常敏感。建议使用 wgetcloud 专门标注了游戏支持的 IPLC 游戏专用节点，并在客户端开启 Tun 模式代理，可将外服延迟锁定在平稳的 30ms 左右。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "节点名称里的“倍率”是什么含义？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "倍率是指消耗流量的计算系数。例如 1.0x 代表使用 1GB 实际扣除 1GB 流量；0.5x 代表使用 1GB 只扣除 0.5GB；而极高防或特殊原生 IP 节点可能会设定更高的倍率。wgetcloud 节点计费透明规范，性价比极高。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="bg-grid-pattern"></div>
+  <div class="glow-blob glow-blob-1"></div>
+  <div class="glow-blob glow-blob-2"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="../index.html" class="brand-logo" title="wgetcloud官网">
+        <div class="brand-logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>wgetcloud官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开导航菜单" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../index.html#features">核心优势</a></li>
+        <li><a href="../index.html#pricing">套餐价格</a></li>
+        <li><a href="../tutorials.html">教程中心</a></li>
+        <li><a href="../faq.html">常见问题</a></li>
+        <li><a href="../index.html#articles" class="active">深度文章</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">用户登录</a>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary">立即注册使用</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Header -->
+  <section class="article-page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑导航">
+        <a href="../index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html#articles">文章资讯</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">正文</span>
+      </nav>
+
+      <h1 class="article-hero-title">为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术</h1>
+
+      <div class="article-meta-bar">
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>发布日期：2026-03-28</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>作者：wgetcloud网络架构部</span>
+        </div>
+        <div class="article-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>阅读时间：约 9 分钟</span>
+        </div>
+        <div class="article-meta-item">
+          <span style="color: var(--accent-green);">● 已通过技术团队深度实测</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="container article-layout">
+    <article class="article-content">
+      <div class="article-img-wrap">
+        <img src="../assets/images/article-5.svg" alt="为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术 - 封面技术示意图" loading="lazy">
+        <div class="article-img-caption">为什么你的魔法梯子总掉线？全方位揭秘稳定节点、BGP中继与全球加速网络技术 实测架构与技术指导示意图</div>
+      </div>
+
+      
+      <h2 id="section-root-causes">1. 梯子频繁掉线与卡顿的底层技术原因</h2>
+      <p>几乎所有使用过科学上网工具的用户，都曾经历过以下令人抓狂的场景：正开着国际视频会议，画面突然定格转圈；刚打到外服游戏的关键团战，延迟瞬间从 40ms 暴增至 999ms；又或者 YouTube 4K 视频看了一半，进度条死死卡住无法继续。大部分人往往简单归咎于“今天网络不好”，但从计算机网络工程角度看，背后的技术根源主要集中在三点：</p>
+      <ul>
+        <li><strong>运营商跨网互联恶化（QoS 限速）：</strong>国内三大基础电信运营商（电信、联通、移动）之间的网间互联带宽极其有限。如果你使用的是移动宽带，而机场的入口部署在电信单线机房，跨网传输的流量在晚高峰期会被运营商的路由器执行严格的 QoS 限速和随机丢包。</li>
+        <li><strong>公共国际出口海缆拥塞：</strong>中国大陆所有通往海外的普通公网流量，最终都要汇聚到上海、广州、青岛等少数几个国际海缆登陆站。每到晚上 20:00~23:00 的家庭用网高峰，公网海缆带宽负载率常常突破 95%，导致 TCP 拥塞重传急剧增加，表现为梯子断流。</li>
+        <li><strong>GFW 深度包检测与主动重置（TCP RST）：</strong>普通代理协议在公网传输时，若被防火墙算法检测到可疑特征，防火墙会伪造 TCP RST 重置数据包，强制中断两端会话，导致客户端必须重新建立握手，体验极差。</li>
+      </ul>
+
+      <h2 id="section-bgp-explained">2. BGP 优质多线接入如何解决跨网互联壁垒</h2>
+      <p>为了从源头上解决跨网访问延迟高的问题，高水准的 <a href="../index.html">安全机场服务</a> 会在数据入口处采用 <strong>BGP (Border Gateway Protocol，边界网关协议)</strong> 多线机房：</p>
+      <p>BGP 协议允许单台入口服务器同时宣告电信、联通、移动以及教育网的自治系统（AS）路由。当一个中国移动的用户发起连接时，BGP 路由器会自动选择移动骨干内网将数据送达；当电信用户接入时，则通过电信专属骨干直达。通过消除了运营商之间的网间结算壁垒，入口延迟可以被极致压缩至 5ms~15ms 以内，彻底告别“移动连不上、电信卡成狗”的尴尬窘境。</p>
+
+      <h2 id="section-backbone-congestion">3. 跨国海缆切断与公网拥塞的防御手段</h2>
+      <p>太平洋与东亚海底经常因地震、渔船拖网作业等不可抗力发生海底光缆切断事故（如过去数年中多次发生的新加坡-香港海缆故障）。普通的便宜机场由于只租赁了单一 VPS 供应商，一旦海缆发生故障，整组节点可能连续几天处于瘫痪状态。</p>
+      <p>成熟的全球加速服务商必须具备<strong>多路由跨洋冗余网络</strong>。当主用海缆发生物理异常时，控制中心会在数秒内将路由智能导向备用的中日陆缆、亚太跨国光缆或经欧洲绕行备用线路，确保核心节点服务不发生单点中断。</p>
+
+      <h2 id="section-iplc-deepdive">4. 端到端专线网络为何能做到“零丢包”</h2>
+      <p>解决梯子掉线问题的终极解决方案，正是前面多次提及的 <strong>IPLC / IEPL 内网专线</strong>。它与公网代理有着天壤之别：</p>
+      <div class="article-img-wrap">
+        <img src="../assets/images/hero-illustration.svg" alt="IPLC 专线全球加速拓扑结构图" loading="lazy">
+        <div class="article-img-caption">端到端 IPLC 专线网络物理隔离拓扑图</div>
+      </div>
+      <p>IPLC 属于租用电信巨头铺设的点对点纯物理局域网通道。它不经过任何公共互联网的路由器跳转，中途没有任何防火墙审查机制，带宽受到严格的运营商服务等级协议（SLA）保护。专线链路的抖动通常小于 1ms，丢包率恒定在 0.01% 以下。无论公网多么拥堵，专线内部的数据流始终如同在专属高铁轨道上全速飞驰。</p>
+
+      <h2 id="section-wgetcloud-infra">5. wgetcloud 分布式网络与毫秒级故障自动漂移</h2>
+      <p><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer">wgetcloud官网</a> 自研了全自动化的<strong>分布式健康监测探针系统</strong>。每一条专线节点的两端，均以每秒数十次的频率互发心跳探测：</p>
+      <p>一旦某条线路发生任何偶发丢包率上升超过 2% 的微小异常，智能负载调度中枢会立即触发毫秒级平滑热迁移，将后续所有新建数据流引导至同集群的备用专线链路。对于正在进行 Zoom 视频会议或观看 4K 电影的用户而言，整个故障切换过程完全无感，真正实现了“全天候 365 天不间断在线”。</p>
+
+      <h2 id="section-user-tuning">6. 用户端调优：参数优化进一步降低网络抖动</h2>
+      <p>除了服务端底层基建之外，用户在本地客户端中微调几个核心参数，也能让连接稳定性更上一层楼：</p>
+      <ol>
+        <li><strong>开启 TCP 并发 (TCP Concurrent)：</strong>在 Clash 设置中启用此选项，当发起一个网络请求时，客户端会同时尝试多种连接路径并采用响应最快的那一条，显著减少首包延迟。</li>
+        <li><strong>调优 Tun 模式下的 MTU 数值：</strong>如果开启虚拟网卡后偶发某些网页打不开，通常是本地路由器 MTU 封装过长导致分片丢弃。可将 Clash 配置中的 MTU 值由默认的 9000 或 1500 微调为 <code>1400</code> 或 <code>1420</code>。</li>
+        <li><strong>选择就近的节点接入点：</strong>华南地区用户优先选择香港节点，华东地区（江浙沪）优先选择日本节点，北方地区优先选择日韩或美国节点，以获得物理几何距离上的最短传输时延。</li>
+      </ol>
+    
+
+      <!-- Bottom In-article CTA -->
+      <div class="article-cta-box" style="margin-top: 40px;">
+        <h4>体验专线极速体验 - 告别卡顿与断连</h4>
+        <p>wgetcloud 提供真正的 IPLC 内网专线与多平台 Clash / Clash Party 智能客户端，晚高峰 4K 视频秒开无压力。</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">一键注册体验高可用专线</a>
+          <a href="../tutorials.html" class="btn btn-secondary btn-lg">查看新手客户端教程</a>
+        </div>
+      </div>
+
+      <!-- Dedicated FAQ Section -->
+      <section class="article-faq-section" id="faq">
+        <h3>关于本篇主题的常见疑难问题（FAQ）</h3>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">针对上述教程与实际配置过程中高频出现的网络、规则、测速与订阅问题，我们为您整理了以下专业解答：</p>
+        <div class="faq-accordion faq-single-open">
+          
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>为什么有些节点平时测速很快，一到晚上 8 点就频繁断线？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>因为普通节点的公网出口在晚高峰面临严重的国际骨干网拥挤，丢包率激增触发 TCP 拥塞控制，导致带宽雪崩。而真正的内网专线（如 wgetcloud）完全避开了公网，全天保持相同的高速与稳定性。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>我的宽带是 1000M，为什么连接科学上网后测速只有 200M？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>跨国传输受到光速传播物理极限与 TCP 拥塞控制窗口算法的制约。单线程测速很难跑满千兆带宽；如果使用多线程并发下载工具，wgetcloud 专线可以轻松拉满数百兆乃至千兆的极速。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>玩外服网络游戏经常跳 ping 应该如何解决？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>网络游戏对 UDP 协议的抖动非常敏感。建议使用 wgetcloud 专门标注了游戏支持的 IPLC 游戏专用节点，并在客户端开启 Tun 模式代理，可将外服延迟锁定在平稳的 30ms 左右。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>节点名称里的“倍率”是什么含义？</span>
+        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="faq-answer">
+        <p>倍率是指消耗流量的计算系数。例如 1.0x 代表使用 1GB 实际扣除 1GB 流量；0.5x 代表使用 1GB 只扣除 0.5GB；而极高防或特殊原生 IP 节点可能会设定更高的倍率。wgetcloud 节点计费透明规范，性价比极高。</p>
+      </div>
+    </div>
+  
+        </div>
+      </section>
+
+      <!-- Related Recommendations -->
+      <section class="related-section">
+        <h3>相关精选教程与延伸阅读</h3>
+        <div class="card-grid-2">
+          
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="cheap-vs-secure-airport-comparison.html" style="color: #ffffff;">便宜机场与安全机场选购对比深度评测</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">为你全面拆解廉价翻墙梯子的断线风险与专线机场的核心差异。</p>
+    </div>
+  
+
+    <div class="feature-card" style="padding: 20px;">
+      <h4 style="font-size: 1.05rem; margin-bottom: 8px;">
+        <a href="best-clash-airport-recommendation.html" style="color: #ffffff;">2026 稳定高速 Clash 机场选购清单</a>
+      </h4>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">最新实测多款高性价比机场的晚高峰表现与测速数据。</p>
+    </div>
+  
+        </div>
+      </section>
+    </article>
+
+    <!-- Sidebar Sticky TOC -->
+    <aside class="article-sidebar">
+      <div class="sidebar-sticky">
+        <div class="sidebar-widget">
+          <h3 class="widget-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent-cyan)"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            目录导航 (TOC)
+          </h3>
+          <ul class="toc-list">
+            <li><a href="#section-root-causes">1. 梯子频繁掉线与卡顿的底层技术原因</a></li>
+<li><a href="#section-bgp-explained">2. BGP 优质多线接入如何解决跨网互联壁垒</a></li>
+<li><a href="#section-backbone-congestion">3. 跨国海缆切断与公网拥塞的防御手段</a></li>
+<li><a href="#section-iplc-deepdive">4. 端到端专线网络为何能做到“零丢包”</a></li>
+<li><a href="#section-wgetcloud-infra">5. wgetcloud 分布式网络与毫秒级故障自动漂移</a></li>
+<li><a href="#section-user-tuning">6. 用户端调优：参数优化进一步降低网络抖动</a></li>
+            <li><a href="#faq">常见问题答疑 (FAQ)</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget" style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12)); border-color: rgba(6, 182, 212, 0.3);">
+          <h3 class="widget-title" style="color: var(--accent-cyan);">⚡ 节点测速监控</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">当前 wgetcloud 全球 IPLC 专线骨干链路状态：</p>
+          <div style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1; font-family: var(--font-mono); margin-bottom: 16px;">
+            <div>● 香港 01 [IPLC] : <span style="color: #10b981;">16ms</span> / 0%丢包</div>
+            <div>● 日本 02 [IPLC] : <span style="color: #10b981;">32ms</span> / 0%丢包</div>
+            <div>● 新加坡 01 [IPLC] : <span style="color: #10b981;">38ms</span> / 0%丢包</div>
+            <div>● 美国 01 [优质BGP] : <span style="color: #10b981;">128ms</span> / 0%丢包</div>
+          </div>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan" style="width: 100%;">获取专线订阅节点</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span>wgetcloud官网</span>
+          </a>
+          <p>wgetcloud 致力于为全球华人提供稳定、极速、无感翻墙出海网络解决方案。企业级 IPLC 专线传输，保障跨境办公、学术科研与影音娱乐永不掉线。</p>
+          <div style="font-size: 0.85rem; color: var(--text-dark);">官方唯一镜像通道：wgetcloudvpn.my</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="../index.html">品牌首页</a></li>
+            <li><a href="../index.html#features">核心优势</a></li>
+            <li><a href="../index.html#pricing">套餐价格</a></li>
+            <li><a href="../tutorials.html">Clash教程</a></li>
+            <li><a href="../faq.html">常见疑问</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>站内教程指南</h4>
+          <ul>
+            <li><a href="clash-party-tutorial.html">Clash Party 新手教程</a></li>
+            <li><a href="best-clash-airport-recommendation.html">2026 高速机场推荐</a></li>
+            <li><a href="cheap-vs-secure-airport-comparison.html">便宜机场选购避坑</a></li>
+            <li><a href="scientific-surfing-beginner-guide.html">科学上网入门流程</a></li>
+            <li><a href="clash-verge-rev-setup-guide.html">Clash Verge 分流实战</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>服务条款与合规</h4>
+          <ul>
+            <li><a href="../privacy.html">隐私权保护政策</a></li>
+            <li><a href="../terms.html">用户服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+            <li><a href="../sitemap.xml">XML网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 wgetcloud官网 (wgetcloudvpn.my). 保留所有权利。</div>
+        <div class="footer-bottom-links">
+          <a href="../privacy.html">隐私政策</a>
+          <a href="../terms.html">服务协议</a>
+          <a href="../disclaimer.html">合规说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top -->
+  <div class="float-controls">
+    <button class="float-btn" id="backToTop" aria-label="返回顶部" style="opacity: 0; pointer-events: none;">
+      <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

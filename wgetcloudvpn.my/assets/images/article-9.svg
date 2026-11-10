@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a101f"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#grid)"/>
+
+  <!-- Ambient circles -->
+  <circle cx="100" cy="80" r="140" fill="#06b6d4" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="500" cy="320" r="160" fill="#3b82f6" opacity="0.1" filter="url(#glow)"/>
+
+  <!-- Graphic Icon -->
+  <g transform="translate(0, -20)">
+    <path d="M450 120 C420 180 390 220 370 240 C340 270 300 290 260 300 C270 260 290 220 320 190 C340 170 380 140 440 110 Z" fill="url(#grad)" filter="url(#glow)"/>
+    <circle cx="360" cy="200" r="14" fill="#ffffff" opacity="0.9"/>
+    <path d="M260 300 L230 330 L220 305 L245 280 Z" fill="#38bdf8"/>
+    <path d="M370 240 L395 265 L370 275 L345 250 Z" fill="#818cf8"/>
+    <path d="M230 330 C210 370 190 390 180 400 C190 390 210 370 250 350 Z" fill="#f43f5e"/>
+  </g>
+
+  <!-- Typography Card -->
+  <rect x="30" y="305" width="540" height="72" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="50" y="336" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, sans-serif" font-size="19" font-weight="bold">iOS 小火箭与多端同步配置</text>
+  <text x="50" y="360" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, sans-serif" font-size="13">Shadowrocket/Clash一键导入测速</text>
+</svg>

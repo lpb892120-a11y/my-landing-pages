@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a101f"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#grid)"/>
+
+  <!-- Ambient circles -->
+  <circle cx="100" cy="80" r="140" fill="#ec4899" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="500" cy="320" r="160" fill="#8b5cf6" opacity="0.1" filter="url(#glow)"/>
+
+  <!-- Graphic Icon -->
+  <g transform="translate(0, -20)">
+    <circle cx="300" cy="270" r="80" fill="url(#grad)" filter="url(#glow)"/>
+    <polygon points="280,230 335,270 280,310" fill="#ffffff"/>
+  </g>
+
+  <!-- Typography Card -->
+  <rect x="30" y="305" width="540" height="72" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="50" y="336" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, sans-serif" font-size="19" font-weight="bold">4K 流媒体与 AI 解锁技巧</text>
+  <text x="50" y="360" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, sans-serif" font-size="13">Netflix/Disney+与ChatGPT专用节点</text>
+</svg>
