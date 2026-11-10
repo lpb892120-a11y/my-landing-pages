@@ -1,0 +1,12 @@
+# robots.txt for https://xn--4gq62f52gdssq71dsob.com
+User-agent: *
+Allow: /
+Allow: /posts/
+Allow: /assets/
+
+# 搜索引擎抓取延时配置
+Crawl-delay: 1
+
+# 网站地图路径
+Sitemap: https://xn--4gq62f52gdssq71dsob.com/sitemap.xml
+
