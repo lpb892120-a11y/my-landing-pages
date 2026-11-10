@@ -1,6 +1,6 @@
 # Robots.txt for ssrdog机场官网
 # Brand: ssrdog机场官网
-# Official URL: https://jichang-go.org/go.php
+# Official URL: https://ssrdogjic.sbs/
 
 User-agent: *
 Allow: /
@@ -11,5 +11,5 @@ Allow: /assets/js/
 Allow: /assets/images/
 
 # Sitemap location
-Sitemap: https://jichang-go.org/sitemap.xml
+Sitemap: https://ssrdogjic.sbs/sitemap.xml
 
