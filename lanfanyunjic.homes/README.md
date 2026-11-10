@@ -47,3 +47,4 @@ lanfanyunjic.homes/
 ```bash
 node submit-indexnow.js
 ```
+

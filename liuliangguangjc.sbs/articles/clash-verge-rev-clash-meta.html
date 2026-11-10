@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Clash 停更后用什么？Clash Party与Verge Rev评测 - 流量光官网</title>
+  <meta name="description" content="深入评测 2026 年主流替代客户端：Clash Party、Clash Verge Rev、Flclash 与 Mihomo 内核。全方位对比内存占用、TUN 网卡兼容性与分流规则，助你平滑完成客户端迁移。">
+  <meta name="keywords" content="Clash, Clash Party, Clash Verge Rev, Mihomo, 科学上网, 稳定节点, Clash机场, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/articles/clash-verge-rev-clash-meta.html">
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liuliangguangjc.sbs/articles/clash-verge-rev-clash-meta.html">
+  <meta property="og:title" content="Clash 停止维护后用什么？Clash Party、Clash Verge Rev 与 Mihomo 内核深度评测">
+  <meta property="og:description" content="深入评测 2026 年主流替代客户端：Clash Party、Clash Verge Rev、Flclash 与 Mihomo 内核。全方位对比内存占用、TUN 网卡兼容性与分流规则，助你平滑完成客户端迁移。">
+  <meta property="og:image" content="https://liuliangguangjc.sbs/images/article-7.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://liuliangguangjc.sbs/articles/clash-verge-rev-clash-meta.html"
+  },
+  "headline": "Clash 停止维护后用什么？Clash Party、Clash Verge Rev 与 Mihomo 内核深度评测",
+  "description": "深入评测 2026 年主流替代客户端：Clash Party、Clash Verge Rev、Flclash 与 Mihomo 内核。全方位对比内存占用、TUN 网卡兼容性与分流规则，助你平滑完成客户端迁移。",
+  "image": "https://liuliangguangjc.sbs/images/article-7.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "流量光官方网络技术团队",
+    "url": "https://jichang-go.org/go.php"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "流量光官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://liuliangguangjc.sbs/images/logo.svg"
+    }
+  },
+  "datePublished": "2026-03-07T08:45:00+08:00",
+  "dateModified": "2026-03-10T15:00:00+08:00"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "官网首页",
+      "item": "https://liuliangguangjc.sbs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO文章库",
+      "item": "https://liuliangguangjc.sbs/articles/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Clash 停止维护后用什么？Clash Party、Clash Verge Rev 与 Mihomo 内核深度评测",
+      "item": "https://liuliangguangjc.sbs/articles/clash-verge-rev-clash-meta.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我现在还在用多年前下载的旧版 Clash for Windows，有必要换吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "强烈建议立即更换。原因有二：1. 安全隐患：CFW 已经三年未更新，其捆绑的 Electron 框架和 Go 运行时存在已公开的高危远程代码执行（RCE）漏洞；2. 兼容性掉队：CFW 不支持 Hysteria2、Vless-Reality 等抗封锁新协议，随着各大机场升级新架构，旧版客户端很快将面临节点全部报错无法连接的窘境。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Clash Party 与 Clash Verge Rev 哪一个更适合新手小白？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "新手用户强烈推荐 <strong>Clash Party</strong>。其界面更为直观现代化，将复杂的内核参数隐藏在智能预设后，只需导入订阅即可一键直连；而 Clash Verge Rev 则提供了更强大的 Script/Merge 配置覆写脚本支持，适合有代码基础、喜欢折腾规则的高级极客。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在 Windows 11 上开启 TUN 模式经常提示“系统找不到指定文件”或网卡启动失败？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是由于旧版虚拟网卡驱动未卸载干净或 Wintun.dll 权限不足导致的。可在 Clash Party 或 Verge Rev 的设置中点击“卸载核心驱动”，然后右键以“以管理员身份运行”重新启动软件，再次开启 TUN 模式即可自动完成修复。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有些订阅在客户端更新时提示“Parse error (解析错误)”？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "通常是因为复制订阅链接时误带了空格、或是机场后端正在热更新。此外，部分老旧订阅格式使用的是旧版单一节点语法，新内核无法兼容。在流量光官网后台直接选择“一键复制 Mihomo 聚合订阅”即可完美规避格式解析错误。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mihomo 内核在 Mac 上发热大吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全不大。现代的 Mihomo 内核针对 macOS 的 Apple Silicon (M1/M2/M3/M4 系列芯片) 提供了原生的 ARM64 编译版本，无需经过 Rosetta 2 转译，日常内存占用通常仅在 40MB-80MB 之间，待机功耗极低。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+
+  <!-- 动态粒子画布背景 -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 头部导航 -->
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">官网首页</a></li>
+        <li><a href="../tutorials.html" class="nav-link">使用教程</a></li>
+        <li><a href="../articles/index.html" class="nav-link active">SEO文章库</a></li>
+        <li><a href="../faq.html" class="nav-link">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html">官网首页</a>
+      <span class="separator">/</span>
+      <a href="../articles/index.html">SEO文章库</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">正文详情</span>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+      <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+        <span class="section-badge">客户端横评</span>
+        <span class="section-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">1800+ 字深度实测</span>
+      </div>
+      <h1>Clash 停止维护后用什么？Clash Party、Clash Verge Rev 与 Mihomo 内核深度评测</h1>
+      <div class="article-header-meta">
+        <span>👤 流量光网络实验室</span>
+        <span>📅 更新于 2026-03-10</span>
+        <span>⏱️ 预计阅读耗时：15 分钟</span>
+        <span>🌐 状态：已通过全网连通率验证</span>
+      </div>
+    </header>
+
+    <div class="article-layout">
+      <!-- 文章主要内容 -->
+      <article class="article-content">
+        <!-- 插图 -->
+        <div style="margin-bottom: 2rem; border-radius: 16px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.2);">
+          <img src="../images/article-7.svg" alt="Clash 停止维护后用什么？Clash Party、Clash Verge Rev 与 Mihomo 内核深度评测 - 封面插图" width="100%" height="auto" style="display: block;">
+        </div>
+
+        
+      <p class="lead">2023 年底的开源社区风波，让无数科学上网用户的日常工具瞬间陷入停更境地——大家所熟知的 <strong>Clash for Windows (CFW)、Clash for Android (CFA)、ClashX</strong> 相继归档删库。一时间，“以后翻墙用什么？”成为了全网热议的话题。幸运的是，开源世界的韧性超乎想象，以 <strong>Mihomo (原 Clash.Meta)</strong> 为核心动力源的一批现代化客户端迅速崛起，不仅彻底弥补了停更遗憾，更在协议支持、性能表现和使用体验上实现了全面超越。本文将为你带来 2026 年最新主流客户端的深度横向评测与迁移实战指南。</p>
+
+      <h2 id="part-1">一、Clash 停更事件回顾：旧时代落幕与新内核觉醒</h2>
+      <p>回顾历史，原版 Clash (Premium 内核) 曾是定义规则分流标准的里程碑产品。然而，闭源核心的停止维护，使其无法适配后续爆发的 QUIC、Reality 等全新加密通信技术。如果继续死守旧版本，无异于在现代网络安全攻防战中“手持木棍对抗激光武器”。</p>
+      <p>正是这种危机，催生了以 <strong>Mihomo (虚空之触)</strong> 为代表的开源新生态。它们彻底重构了路由分流引擎，让用户彻底摆脱了单一开发者的风险桎梏。</p>
+
+      <h2 id="part-2">二、核心支柱：什么是 Mihomo (原 Clash.Meta)？</h2>
+      <p>如果你在挑选客户端时经常看到“Meta 内核”或“Mihomo 内核”，请记住：<strong>它是目前科学上网领域的动力引擎心脏</strong>。相较于传统老核心，Mihomo 带来了质的飞跃：</p>
+      <ul>
+        <li><strong>全协议大一统：</strong>原生支持 Shadowsocks (包含 2022 规范)、ShadowsocksR、VMess、VLESS、Trojan、Socks5、HTTP、Snell、TUIC 以及 Hysteria2，彻底打破了以往不同协议需要下载不同客户端的割裂历史。</li>
+        <li><strong>自研 GeoSite / GeoIP 快速检索：</strong>引入全新的 <code>.mrs</code> / <code>.dat</code> 规则集合，匹配十万级国内外域名仅需数微秒，大幅降低长网页加载时的等待延迟。</li>
+        <li><strong>真正透明的虚拟网卡 (TUN) 堆栈：</strong>内置 <code>System / gVisor / Mixed</code> 三种网卡协议栈，彻底告别以往 Windows 易蓝屏、Mac 驱动签名的老旧历史。</li>
+      </ul>
+
+      <h2 id="part-3">三、三大热门继承者深度横评：Party、Verge Rev、Flclash</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>客户端名称</th>
+              <th>图形界面架构</th>
+              <th>主要目标人群</th>
+              <th>特色功能优势</th>
+              <th>综合推荐评级</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Clash Party</strong></td>
+              <td>现代原生极简 UI</td>
+              <td>新手小白 / 极简主义者</td>
+              <td>开箱即用、一键直连、UI 美观精致、自动诊断自愈</td>
+              <td>★★★★★ (全网力荐)</td>
+            </tr>
+            <tr>
+              <td><strong>Clash Verge Rev</strong></td>
+              <td>Tauri (Rust + React)</td>
+              <td>进阶极客 / 技术开发者</td>
+              <td>占用极低、支持复杂的 Merge/Script 配置扩展覆写</td>
+              <td>★★★★☆ (极客首选)</td>
+            </tr>
+            <tr>
+              <td><strong>Flclash</strong></td>
+              <td>Flutter 跨平台框架</td>
+              <td>多设备统一控 / 移动跨端</td>
+              <td>Windows/Mac/Linux/Android 全平台高度一致的 UI 体验</td>
+              <td>★★★★☆ (移动端好评)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="part-4">四、从 Clash for Windows (CFW) 平滑迁移全流程</h2>
+      <p>如果你电脑上仍旧安装着旧版 CFW，只需简单四步即可实现无痛换新：</p>
+      <ol>
+        <li><strong>清理旧版系统代理：</strong>在彻底退出 CFW 之前，先在 CFW 界面中将 <strong>“System Proxy (系统代理)”</strong> 与 <strong>“TUN Mode”</strong> 开关关闭，避免残留注册表代理造成换软件后突然上不了网。</li>
+        <li><strong>下载安装新一代工具：</strong>访问官方安全发布页，下载 <strong>Clash Party</strong> 或 <strong>Clash Verge Rev</strong> 并解压安装。</li>
+        <li><strong>导入流量光专属订阅：</strong>登录 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">流量光官网后台</a>，一键复制专属聚合订阅链接，直接粘贴到新客户端的配置窗口中完成拉取。</li>
+        <li><strong>开启自启动与系统代理：</strong>在新软件设置中勾选“开机自启动”和“系统代理”，至此迁移完美收官，享受新内核带来的秒开体验！</li>
+      </ol>
+
+      <h2 id="part-5">五、高阶玩家秘籍：Subconverter 与远程规则覆写</h2>
+      <p>对于动手能力较强的高阶用户，新一代客户端还提供了高度灵活的预处理配置功能（Pre-processing & Scripting）。例如，你可以编写简单的 JavaScript 脚本，在每次从流量光同步订阅时，自动剔除不常用的高倍率节点，或者为国内流媒体平台自动注入特定的分流策略组，实现全自动化的量身定制。</p>
+
+      <div class="cta-banner" style="margin-top: 3rem;">
+        <h2>拥抱新内核，享受流量光极致专线加速</h2>
+        <p>全线节点深度适配 Clash Party、Clash Verge Rev 与 Mihomo 内核，新一代 Hysteria2 协议极速加持。立即开启畅快体验！</p>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">立即进入流量光官网</a>
+      </div>
+    
+
+        <!-- 专属 FAQ 板块 -->
+        <section id="part-faq" class="article-faq-section" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+          <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+            <span class="section-badge">专属答疑</span>
+            <h2 style="font-size: 1.8rem; margin-top: 0.5rem;">本文专属常见问答 (FAQ)</h2>
+            <p style="color: #94a3b8; font-size: 0.95rem;">针对本篇主题整理的高频疑难解答，助你排查一切技术疑难。</p>
+          </div>
+          <div class="faq-list">
+            
+    <div class="faq-item active">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>我现在还在用多年前下载的旧版 Clash for Windows，有必要换吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="max-height: 250px;">
+        <p>强烈建议立即更换。原因有二：1. 安全隐患：CFW 已经三年未更新，其捆绑的 Electron 框架和 Go 运行时存在已公开的高危远程代码执行（RCE）漏洞；2. 兼容性掉队：CFW 不支持 Hysteria2、Vless-Reality 等抗封锁新协议，随着各大机场升级新架构，旧版客户端很快将面临节点全部报错无法连接的窘境。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>Clash Party 与 Clash Verge Rev 哪一个更适合新手小白？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>新手用户强烈推荐 <strong>Clash Party</strong>。其界面更为直观现代化，将复杂的内核参数隐藏在智能预设后，只需导入订阅即可一键直连；而 Clash Verge Rev 则提供了更强大的 Script/Merge 配置覆写脚本支持，适合有代码基础、喜欢折腾规则的高级极客。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>在 Windows 11 上开启 TUN 模式经常提示“系统找不到指定文件”或网卡启动失败？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>这是由于旧版虚拟网卡驱动未卸载干净或 Wintun.dll 权限不足导致的。可在 Clash Party 或 Verge Rev 的设置中点击“卸载核心驱动”，然后右键以“以管理员身份运行”重新启动软件，再次开启 TUN 模式即可自动完成修复。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么有些订阅在客户端更新时提示“Parse error (解析错误)”？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>通常是因为复制订阅链接时误带了空格、或是机场后端正在热更新。此外，部分老旧订阅格式使用的是旧版单一节点语法，新内核无法兼容。在流量光官网后台直接选择“一键复制 Mihomo 聚合订阅”即可完美规避格式解析错误。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>Mihomo 内核在 Mac 上发热大吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>完全不大。现代的 Mihomo 内核针对 macOS 的 Apple Silicon (M1/M2/M3/M4 系列芯片) 提供了原生的 ARM64 编译版本，无需经过 Rosetta 2 转译，日常内存占用通常仅在 40MB-80MB 之间，待机功耗极低。</p>
+      </div>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 底部相关推荐 -->
+        <section class="related-posts">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">相关阅读推荐</h2>
+          <p style="color: #94a3b8; font-size: 0.9rem;">继续深入探索更多科学上网、节点调优与客户端配置干货：</p>
+          <div class="related-posts-grid">
+            
+    <div class="related-card">
+      <span class="audience-tag">新手教程</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-party-tutorial.html">2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟...</p>
+      <a href="clash-party-tutorial.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+
+    <div class="related-card">
+      <span class="audience-tag">选购指南</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-nodes-best-practices.html">便宜机场与稳定节点怎么选？2026高性价比安全机场推荐及避坑实测指南</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">深度实测市面上各类便宜机场、月付梯子与专线节点的优缺点。教你识破超卖跑路陷阱，对比直连、中继与IEPL内网专线性能，挑选真正稳定、便宜且高性价比的安全...</p>
+      <a href="clash-nodes-best-practices.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+          </div>
+        </section>
+      </article>
+
+      <!-- 文章右侧边栏 -->
+      <aside class="article-sidebar">
+        <!-- 目录导览 -->
+        <div class="sidebar-widget">
+          <h3 class="sidebar-title">文章目录导览</h3>
+          <ul class="toc-list">
+            
+    <li><a href="#part-1">一、Clash 停更事件回顾：旧时代落幕与新内核觉醒</a></li>
+  
+
+    <li><a href="#part-2">二、核心支柱：什么是 Mihomo (原 Clash.Meta)？</a></li>
+  
+
+    <li><a href="#part-3">三、三大热门继承者深度横评：Party、Verge Rev、Flclash</a></li>
+  
+
+    <li><a href="#part-4">四、从 Clash for Windows (CFW) 平滑迁移全流程</a></li>
+  
+
+    <li><a href="#part-5">五、高阶玩家秘籍：Subconverter 与远程规则覆写</a></li>
+  
+
+    <li><a href="#part-faq">六、客户端迁移与维护常见问答 FAQ</a></li>
+  
+          </ul>
+        </div>
+
+        <!-- 官方推广挂件 -->
+        <div class="sidebar-widget sidebar-promo">
+          <img src="../images/logo.svg" alt="流量光" width="48" height="48" style="margin-bottom: 0.8rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #fff;">流量光官网节点</h3>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem; line-height: 1.6;">全节点全内网 IEPL 专线中继，4K 极速秒开，支持 Clash Party / 小火箭一键配置。</p>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">立即开通专属节点</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="../tutorials.html">新手配置全套教程</a></li>
+            <li><a href="clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="../faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="../sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="../articles/index.html">文章专栏总览</a></li>
+            <li><a href="../privacy.html">隐私政策</a></li>
+            <li><a href="../terms.html">服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="../privacy.html">隐私权协议</a>
+          <a href="../terms.html">用户协议</a>
+          <a href="../disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
+  <!-- 脚本 -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

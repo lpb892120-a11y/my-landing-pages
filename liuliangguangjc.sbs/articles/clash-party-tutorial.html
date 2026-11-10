@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Clash Party 客户端小白极速上手教程 (2026最新版) - 流量光官网</title>
+  <meta name="description" content="最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟网卡模式，轻松实现 4K 极速翻墙出海。">
+  <meta name="keywords" content="Clash Party, Clash Party教程, Clash机场, 稳定节点, 科学上网, 魔法梯子, 便宜机场, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/articles/clash-party-tutorial.html">
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liuliangguangjc.sbs/articles/clash-party-tutorial.html">
+  <meta property="og:title" content="2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析">
+  <meta property="og:description" content="最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟网卡模式，轻松实现 4K 极速翻墙出海。">
+  <meta property="og:image" content="https://liuliangguangjc.sbs/images/article-1.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://liuliangguangjc.sbs/articles/clash-party-tutorial.html"
+  },
+  "headline": "2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析",
+  "description": "最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟网卡模式，轻松实现 4K 极速翻墙出海。",
+  "image": "https://liuliangguangjc.sbs/images/article-1.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "流量光官方网络技术团队",
+    "url": "https://jichang-go.org/go.php"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "流量光官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://liuliangguangjc.sbs/images/logo.svg"
+    }
+  },
+  "datePublished": "2026-03-01T08:00:00+08:00",
+  "dateModified": "2026-03-10T11:30:00+08:00"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "官网首页",
+      "item": "https://liuliangguangjc.sbs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO文章库",
+      "item": "https://liuliangguangjc.sbs/articles/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析",
+      "item": "https://liuliangguangjc.sbs/articles/clash-party-tutorial.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Clash Party 与传统的 Clash for Windows (CFW) 有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "传统的 CFW 已经在 2023 年底停止维护，内核陈旧且不支持新协议。而 Clash Party 基于活跃维护的开源 Mihomo (Clash.Meta) 内核开发，拥有现代化的极简 UI，原生支持 Hysteria2、Vless-Reality 等全新高抗封锁协议，并深度优化了系统内存占用和 TUN 虚拟网卡功能。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "在 Clash Party 中导入流量光订阅后，为什么测速全红或提示 Timeout？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "常见原因有三点：1. 本地系统时间与标准北京时间不同步（相差超过60秒会导致TLS握手失败）；2. 防火墙或杀毒软件阻止了 Mihomo 核心通信；3. 网络运营商 DNS 污染，可在软件设置中启用流量光提供的自建 DoH/DoT 加密 DNS 即可瞬间恢复正常。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TUN 模式是什么？平时使用需要保持常开吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TUN 模式会在操作系统中创建一个虚拟网卡，将整机所有的 TCP/UDP 流量（包括不支持系统代理的命令行终端、外服联机游戏、安卓子系统以及某些办公软件）完全接管并交由 Clash Party 进行智能分流。对于普通网页浏览使用“系统代理”即可，如需玩外服游戏或跑 Python 终端脚本，强烈建议勾选 TUN 模式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Clash Party 的规则模式会消耗我国内访问的套餐流量吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "绝对不会。流量光配合 Clash Party 内置了中国大陆 IP 与域名的直连规则库（GeoIP 与 GeoSite）。当访问百度、哔哩哔哩、微信、淘宝等国内网络时，流量直接走本地家庭宽带，完全不耗费机场套餐流量，只有访问谷歌、YouTube、ChatGPT 等境外服务才会智能走专线节点。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有些节点标有 0.2x 或 2.0x 倍率？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "倍率代表流量计费比例。比如 0.2x 倍率的节点，下载 10GB 实际只扣除 2GB 流量，非常适合下载大文件或挂机下载；而 2.0x 或 3.0x 节点通常为高昂成本的 IPLC/IEPL 纯内网专线或企业商用独立 IP，专为追求毫秒级超低延迟或 ChatGPT/跨境电商防封设计。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+
+  <!-- 动态粒子画布背景 -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 头部导航 -->
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">官网首页</a></li>
+        <li><a href="../tutorials.html" class="nav-link">使用教程</a></li>
+        <li><a href="../articles/index.html" class="nav-link active">SEO文章库</a></li>
+        <li><a href="../faq.html" class="nav-link">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html">官网首页</a>
+      <span class="separator">/</span>
+      <a href="../articles/index.html">SEO文章库</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">正文详情</span>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+      <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+        <span class="section-badge">新手教程</span>
+        <span class="section-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">1800+ 字深度实测</span>
+      </div>
+      <h1>2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析</h1>
+      <div class="article-header-meta">
+        <span>👤 流量光网络实验室</span>
+        <span>📅 更新于 2026-03-10</span>
+        <span>⏱️ 预计阅读耗时：12 分钟</span>
+        <span>🌐 状态：已通过全网连通率验证</span>
+      </div>
+    </header>
+
+    <div class="article-layout">
+      <!-- 文章主要内容 -->
+      <article class="article-content">
+        <!-- 插图 -->
+        <div style="margin-bottom: 2rem; border-radius: 16px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.2);">
+          <img src="../images/article-1.svg" alt="2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析 - 封面插图" width="100%" height="auto" style="display: block;">
+        </div>
+
+        
+      <p class="lead">在当前科学上网与翻墙出海的环境中，选择一款界面简洁、内核稳定、抗封锁能力强大的客户端是保证流畅网络体验的前提。作为 2026 年备受推崇的新一代全平台网络代理工具，<strong>Clash Party</strong> 凭借对 Mihomo 内核的深度定制、清爽现代的 UI 设计以及零门槛的操作体验，正在迅速取代已经停止维护的老旧客户端。本文将依托<strong>流量光官网</strong>的高速节点环境，详细讲解从零安装到高效配置的完整流程。</p>
+
+      <div class="callout-box tip">
+        <strong>💡 核心提示：</strong>科学上网的核心不仅在于客户端，更取决于底层节点的线路质量与中继带宽。推荐搭配<a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">流量光官网</a>的 IEPL 纯内网专线节点使用，方能实现 4K 超清秒开、零丢包的丝滑体验。
+      </div>
+
+      <h2 id="part-1">一、什么是 Clash Party？为什么它是新一代首选</h2>
+      <p>对于许多刚接触魔法梯子和科学上网的新手朋友来说，传统的客户端往往存在界面复杂、参数晦涩难懂的问题。更有甚者，自 2023 年开源界风波后，诸如 Clash for Windows 等老牌软件均已停更，难以防御 GFW 日益复杂的深度包检测（DPI）。</p>
+      <p>Clash Party 应运而生，其核心优势主要体现在：</p>
+      <ul>
+        <li><strong>前沿内核支持：</strong>完全基于 <strong>Mihomo (Clash.Meta)</strong> 开源内核构建，原生兼容 Shadowsocks 2022、Vless-Reality、Trojan 以及新兴的高速 UDP 协议 Hysteria2 / Tuic。</li>
+        <li><strong>多平台无缝体验：</strong>支持 Windows 10/11、macOS (Intel 与 Apple Silicon 原生架构)、Linux 以及 Android 平台，统一的视觉交互语言让跨设备切换无学习成本。</li>
+        <li><strong>开箱即用的 TUN 虚拟网卡：</strong>彻底告别第三方 TAP 驱动安装冲突，只需一键点击即可接管整机流量，完美解决命令行终端、游戏平台不走代理的痼疾。</li>
+        <li><strong>智能节点探活机制：</strong>后台自动定时进行 URL 延迟检测，遇到节点维护或突发故障时秒级自动无感漂移到备用节点，保证工作与游戏永不中断。</li>
+      </ul>
+
+      <h2 id="part-2">二、准备工作：获取流量光高速订阅链接</h2>
+      <p>客户端只是一个承载流量的“外壳”，要真正实现高速稳定的翻墙出海，必须导入优质的机场节点订阅。在开始安装前，请按以下步骤准备好专属节点：</p>
+      <ol>
+        <li>首先点击进入 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">流量光官网注册登录后台</a>。</li>
+        <li>在仪表盘的“套餐购买”中，根据自身需求选择适合的周期套餐（支持按月或高性价比年付，入门版低至 12.8 元/月）。</li>
+        <li>支付成功后返回“我的订阅”界面，找到<strong>“一键导入 / 复制订阅”</strong>按钮。</li>
+        <li>点击复制“Clash / Mihomo 聚合订阅链接”，妥善保存在剪贴板中备用。</li>
+      </ol>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>节点类型</th>
+              <th>骨干传输线路</th>
+              <th>平均出口延迟</th>
+              <th>主要应用场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>香港 HKG-01/02</td>
+              <td>IEPL 陆港深港内网专线</td>
+              <td>15ms - 25ms</td>
+              <td>日常极速浏览、4K/8K 视频、Steam 联机</td>
+            </tr>
+            <tr>
+              <td>日本 TYO-01/03</td>
+              <td>沪日 BGP 商务双向加速</td>
+              <td>35ms - 45ms</td>
+              <td>DMM 游戏、Netflix/Hulu 解锁、学术科研</td>
+            </tr>
+            <tr>
+              <td>新加坡 SIN-01</td>
+              <td>广新海底光缆专线</td>
+              <td>38ms - 50ms</td>
+              <td>TikTok 运营、东南亚跨境电商、Telegram 语音</td>
+            </tr>
+            <tr>
+              <td>美国 SJC/LAX</td>
+              <td>中美直连 CN2 GIA / 9929</td>
+              <td>120ms - 135ms</td>
+              <td>ChatGPT 官方 Plus 认证、Claude、Midjourney 算力</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="part-3">三、下载与安装 Clash Party (Windows/macOS/Android)</h2>
+      <p>请认准官方安全下载渠道，切忌在来历不明的第三方网盘或贴吧论坛下载被植入后门木马的“修改版”。</p>
+      <p>安装步骤极其简便：</p>
+      <ul>
+        <li><strong>Windows 用户：</strong>下载 <code>.exe</code> 安装包，双击启动安装向导，勾选“为所有用户安装”并授权 UAC 管理员权限，安装完成后桌面将生成精致的客户端图标。</li>
+        <li><strong>macOS 用户：</strong>下载 <code>.dmg</code> 镜像，将 Clash Party 图标拖入 <code>Applications</code> 文件夹。首次运行时如提示“未受信任的开发者”，请前往系统设置 - 隐私与安全性中点击“仍要打开”。</li>
+        <li><strong>Android 用户：</strong>直接下载官方 <code>.apk</code> 并信任安装，授予“创建 VPN 连接”权限即可。</li>
+      </ul>
+
+      <h2 id="part-4">四、订阅链接导入与节点自动测速</h2>
+      <p>启动 Clash Party 客户端后，进入初始配置环节：</p>
+      <ol>
+        <li>在左侧导航栏中点击<strong>“Profiles (配置管理)”</strong>。</li>
+        <li>在顶部的输入框中粘贴您在<strong>流量光官网</strong>复制的专属订阅 URL。</li>
+        <li>点击右侧的 <strong>“Download (下载/导入)”</strong> 按钮。软件将自动解析服务端的最新节点池，耗时通常只需 1-3 秒。</li>
+        <li>导入成功后，配置卡片会显示订阅名称、节点总数（例如 68 个优质节点）以及到期时间和剩余流量信息。</li>
+        <li>切换到左侧<strong>“Proxies (代理/节点)”</strong>页面，点击右上角的“⚡ 雷电测速”图标，所有节点的实时毫秒延迟将直观显示。优先选择延迟在 20ms-50ms 之间的香港或日本节点。</li>
+      </ol>
+
+      <h2 id="part-5">五、四大核心分流模式详解：规则与全局怎么选</h2>
+      <p>Clash Party 继承了规则引擎的精髓，提供了四种工作模式。搞清楚它们的工作原理，能让你上网快人一步且省流量：</p>
+      <ul>
+        <li><strong>Rule (规则分流 - 强烈推荐 99% 的用户日常开启)：</strong>核心优势在于“内外分流、按需代理”。访问国内的百度、知乎、腾讯视频直接走本地宽带直连，速度最快且不耗费机场流量；只有访问 Google、YouTube、Twitter、GitHub 等境外受阻站点时，才自动通过流量光专线中转。</li>
+        <li><strong>Global (全局代理)：</strong>无论访问国内还是国外网站，全部强制通过所选的代理节点转发。此模式通常用于排查网站区域限制、测试海外特定 IP 归属地，但会导致国内微信或网易云音乐变慢，平时不建议常开。</li>
+        <li><strong>Direct (完全直连)：</strong>相当于关闭代理加速，所有流量直接走本地网络，等同于未开启梯子。</li>
+        <li><strong>Script / Merge (高级脚本模式)：</strong>面向高阶技术极客，支持使用 YAML 或 JavaScript 动态编写根据请求头、端口、协议匹配复杂网关的策略。</li>
+      </ul>
+
+      <h2 id="part-6">六、进阶技巧：开启 TUN 模式与防止 DNS 泄漏</h2>
+      <p>为了达到真正的“隐身出海”和“全量加速”，推荐配置以下两项高级设置：</p>
+      <h3>1. 开启 TUN 模式（虚拟网卡全局捕获）</h3>
+      <p>进入客户端的“Settings (设置)”页面，找到 <strong>“TUN Mode (虚拟网卡模式)”</strong> 选项，点击开启。如果是 Windows 系统，首次开启时系统会弹窗提示安装虚拟网卡适配器驱动，点击“允许”。开启后，即便是在 CMD 终端运行 <code>curl</code>、<code>git clone</code> 或是玩外服 Steam 战地联机，都不需要单独配置 1080 端口代理，整个操作系统全自动被透明加速。</p>
+      <h3>2. 启用严格 DNS 防泄漏</h3>
+      <p>在高级 DNS 设置中，确保将 Fallback DNS 设置为 <code>https://1.1.1.1/dns-query</code> 与 <code>https://8.8.8.8/dns-query</code>。流量光在订阅中内置了干净的加密解析，杜绝运营商 DNS 劫持和 SNI 嗅探阻断。</p>
+
+      <h2 id="part-7">七、常见报错排查与新手避坑要点</h2>
+      <p>在实际使用过程中，如果遇到突发断网或打不开网页，请按以下四步自检：</p>
+      <ul>
+        <li><strong>排查一：系统时间不同步。</strong>这是 80% 新手“所有节点全红”的罪魁祸首。Windows 系统请按 <code>Win + I</code> 打开设置，搜索“日期和时间”，点击“立即同步”。</li>
+        <li><strong>排查二：与其他 VPN 软件冲突。</strong>同时开启电脑管家加速器、迅游加速器或其他旧版代理软件会导致系统网络栈端口（如 7890）冲突。请退出其他多余网络工具。</li>
+        <li><strong>排查三：订阅长时间未更新。</strong>由于国际海缆故障或运营商 IP 轮换，流量光后端会动态剔除劣质节点并补充新节点。建议在配置管理中右键点击订阅，选择“定时更新”设置为 12 小时自动同步。</li>
+      </ul>
+
+      <div class="cta-banner" style="margin-top: 3rem;">
+        <h2>体验极致丝滑的 Clash Party 专线节点</h2>
+        <p>告别卡顿与频繁掉线，流量光官网提供最高 10Gbps 冗余带宽、4K 秒开、独享超低延迟。现在加入即可领取专属新手福利！</p>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">立即前往流量光官网选购</a>
+      </div>
+    
+
+        <!-- 专属 FAQ 板块 -->
+        <section id="part-faq" class="article-faq-section" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+          <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+            <span class="section-badge">专属答疑</span>
+            <h2 style="font-size: 1.8rem; margin-top: 0.5rem;">本文专属常见问答 (FAQ)</h2>
+            <p style="color: #94a3b8; font-size: 0.95rem;">针对本篇主题整理的高频疑难解答，助你排查一切技术疑难。</p>
+          </div>
+          <div class="faq-list">
+            
+    <div class="faq-item active">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>Clash Party 与传统的 Clash for Windows (CFW) 有什么区别？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="max-height: 250px;">
+        <p>传统的 CFW 已经在 2023 年底停止维护，内核陈旧且不支持新协议。而 Clash Party 基于活跃维护的开源 Mihomo (Clash.Meta) 内核开发，拥有现代化的极简 UI，原生支持 Hysteria2、Vless-Reality 等全新高抗封锁协议，并深度优化了系统内存占用和 TUN 虚拟网卡功能。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>在 Clash Party 中导入流量光订阅后，为什么测速全红或提示 Timeout？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>常见原因有三点：1. 本地系统时间与标准北京时间不同步（相差超过60秒会导致TLS握手失败）；2. 防火墙或杀毒软件阻止了 Mihomo 核心通信；3. 网络运营商 DNS 污染，可在软件设置中启用流量光提供的自建 DoH/DoT 加密 DNS 即可瞬间恢复正常。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>TUN 模式是什么？平时使用需要保持常开吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>TUN 模式会在操作系统中创建一个虚拟网卡，将整机所有的 TCP/UDP 流量（包括不支持系统代理的命令行终端、外服联机游戏、安卓子系统以及某些办公软件）完全接管并交由 Clash Party 进行智能分流。对于普通网页浏览使用“系统代理”即可，如需玩外服游戏或跑 Python 终端脚本，强烈建议勾选 TUN 模式。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>Clash Party 的规则模式会消耗我国内访问的套餐流量吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>绝对不会。流量光配合 Clash Party 内置了中国大陆 IP 与域名的直连规则库（GeoIP 与 GeoSite）。当访问百度、哔哩哔哩、微信、淘宝等国内网络时，流量直接走本地家庭宽带，完全不耗费机场套餐流量，只有访问谷歌、YouTube、ChatGPT 等境外服务才会智能走专线节点。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么有些节点标有 0.2x 或 2.0x 倍率？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>倍率代表流量计费比例。比如 0.2x 倍率的节点，下载 10GB 实际只扣除 2GB 流量，非常适合下载大文件或挂机下载；而 2.0x 或 3.0x 节点通常为高昂成本的 IPLC/IEPL 纯内网专线或企业商用独立 IP，专为追求毫秒级超低延迟或 ChatGPT/跨境电商防封设计。</p>
+      </div>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 底部相关推荐 -->
+        <section class="related-posts">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">相关阅读推荐</h2>
+          <p style="color: #94a3b8; font-size: 0.9rem;">继续深入探索更多科学上网、节点调优与客户端配置干货：</p>
+          <div class="related-posts-grid">
+            
+    <div class="related-card">
+      <span class="audience-tag">选购指南</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-nodes-best-practices.html">便宜机场与稳定节点怎么选？2026高性价比安全机场推荐及避坑实测指南</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">深度实测市面上各类便宜机场、月付梯子与专线节点的优缺点。教你识破超卖跑路陷阱，对比直连、中继与IEPL内网专线性能，挑选真正稳定、便宜且高性价比的安全...</p>
+      <a href="clash-nodes-best-practices.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+
+    <div class="related-card">
+      <span class="audience-tag">性能调优</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="gaming-streaming-speedup.html">翻墙出海与全球加速指南：4K/8K超清流媒体与外服低延迟游戏节点深度调优</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">专业级流媒体与外服游戏网络调优指南。深入解析如何利用流量光 IEPL 专线实现 Netflix/YouTube 4K/8K 满速不卡顿，优化 Full...</p>
+      <a href="gaming-streaming-speedup.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+          </div>
+        </section>
+      </article>
+
+      <!-- 文章右侧边栏 -->
+      <aside class="article-sidebar">
+        <!-- 目录导览 -->
+        <div class="sidebar-widget">
+          <h3 class="sidebar-title">文章目录导览</h3>
+          <ul class="toc-list">
+            
+    <li><a href="#part-1">一、什么是 Clash Party？为什么它是新一代首选</a></li>
+  
+
+    <li><a href="#part-2">二、准备工作：获取流量光高速订阅链接</a></li>
+  
+
+    <li><a href="#part-3">三、下载与安装 Clash Party (Windows/macOS/Android)</a></li>
+  
+
+    <li><a href="#part-4">四、订阅链接导入与节点自动测速</a></li>
+  
+
+    <li><a href="#part-5">五、四大核心分流模式详解：规则与全局怎么选</a></li>
+  
+
+    <li><a href="#part-6">六、进阶技巧：开启 TUN 模式与防止 DNS 泄漏</a></li>
+  
+
+    <li><a href="#part-7">七、常见报错排查与新手避坑要点</a></li>
+  
+
+    <li><a href="#part-faq">八、Clash Party 常见问题深度解答 (FAQ)</a></li>
+  
+          </ul>
+        </div>
+
+        <!-- 官方推广挂件 -->
+        <div class="sidebar-widget sidebar-promo">
+          <img src="../images/logo.svg" alt="流量光" width="48" height="48" style="margin-bottom: 0.8rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #fff;">流量光官网节点</h3>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem; line-height: 1.6;">全节点全内网 IEPL 专线中继，4K 极速秒开，支持 Clash Party / 小火箭一键配置。</p>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">立即开通专属节点</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="../tutorials.html">新手配置全套教程</a></li>
+            <li><a href="clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="../faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="../sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="../articles/index.html">文章专栏总览</a></li>
+            <li><a href="../privacy.html">隐私政策</a></li>
+            <li><a href="../terms.html">服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="../privacy.html">隐私权协议</a>
+          <a href="../terms.html">用户协议</a>
+          <a href="../disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
+  <!-- 脚本 -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

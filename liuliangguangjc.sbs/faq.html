@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>常见问题知识库 (FAQ) - 流量光官网全方位技术解答</title>
+  <meta name="description" content="流量光官网权威 FAQ 知识库。全面汇集关于 Clash 节点、Clash Party 教程、便宜机场避坑、流媒体与 ChatGPT 原生解锁以及网络隐私安全的高频疑问与技术解答。">
+  <meta name="keywords" content="常见问题, FAQ, 机场常见问题, Clash报错排查, 科学上网, 稳定节点, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/faq.html">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "什么是“机场”？为什么它比普通免费 VPN 更好用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在科学上网语境中，“机场”是指基于专用中继协议（如 Shadowsocks、Vless、Hysteria2）架构的分布式网络服务商。相比传统单点 VPN，机场拥有全球多入口 BGP 智能调度、海量专线中继节点和规则分流能力，不仅速度快数倍，而且不会影响国内本土软件的正常访问。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么说流量光官网是性价比最高的便宜安全机场？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "流量光打破了传统老牌专线机场动辄三四十元的高昂门槛，入门版低至 12.8 元/月即可享受全内网 IEPL 陆港专线与 4K 秒开。全线节点零超卖、零日志存储，兼顾极速与安全。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Clash Party 导入订阅后显示“Network Error”怎么排查？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "首先检查复制的订阅链接前后是否有误带的空格；其次检查本地网络 DNS 是否遭到运营商劫持，可尝试将电脑 DNS 改为 119.29.29.29 或 223.5.5.5；最后检查是否开启了其他第三方代理杀毒软件占用了 7890 端口。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TUN 模式和普通系统代理有什么区别？我平时应该开哪个？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "系统代理仅对遵循系统环境变量的浏览器和大部分普通软件生效；而 TUN 模式创建了虚拟网卡，会强制捕获整机全部 TCP/UDP 流量（包括 CMD 命令行、Python 终端、Steam 游戏、安卓模拟器等）。平时仅浏览网页只需开启系统代理，有代码开发或游戏需求时勾选 TUN 模式。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "流量光节点能解锁哪些流媒体平台与 AI 服务？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "全节点标配解锁 YouTube 4K/8K、Netflix 全球片库、Disney+、HBO Max、Spotify、TikTok 等主流流媒体；同时专项节点原生解锁 ChatGPT-4o、Claude 3.5 Sonnet、Midjourney、Copilot 等 AI 生产力工具。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "做外贸跨境电商（Amazon/TikTok/PayPal）如何防止店铺封号？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多店铺运营切记“一店一独立环境一固定 IP”。推荐使用 AdsPower 等指纹浏览器，搭配流量光分配的纯净商用住宅 Socks5 专线节点，并强制关闭 WebRTC 探测，杜绝任何关联风险。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "购买后可以退款吗？流量用完后能单独加油吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "支持在用户中心随时补差价升杯更高规格套餐，或按需订购流量重置加油包，秒级实时到账无需变更客户端节点。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "使用流量光官网会记录我的上网历史或下载记录吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "绝对不会。流量光全线边缘节点均运行在无盘纯内存（RAM）系统中，坚决奉行零日志承诺（No-Logs Policy），绝不记录用户的通信内容、目标网站或个人隐私。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link ">官网首页</a></li>
+        <li><a href="tutorials.html" class="nav-link ">使用教程</a></li>
+        <li><a href="articles/index.html" class="nav-link ">SEO文章库</a></li>
+        <li><a href="faq.html" class="nav-link active">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">官网首页</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">常见问题知识库</span>
+    </nav>
+
+    <div class="section-header" style="margin-bottom: 3.5rem;">
+      <span class="section-badge">KNOWLEDGE BASE</span>
+      <h1 class="section-title">常见问题与全方位解答 (FAQ)</h1>
+      <p class="section-subtitle">整理自数万用户的真实使用反馈，涵盖网络原理、客户端报错、流媒体与隐私安全的方方面面。</p>
+    </div>
+
+    <div class="faq-list">
+      
+  <div class="faq-item active">
+    <button class="faq-question" type="button" aria-expanded="true">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">基础入门</span> 什么是“机场”？为什么它比普通免费 VPN 更好用？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="max-height: 250px;">
+      <p>在科学上网语境中，“机场”是指基于专用中继协议（如 Shadowsocks、Vless、Hysteria2）架构的分布式网络服务商。相比传统单点 VPN，机场拥有全球多入口 BGP 智能调度、海量专线中继节点和规则分流能力，不仅速度快数倍，而且不会影响国内本土软件的正常访问。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">基础入门</span> 为什么说流量光官网是性价比最高的便宜安全机场？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>流量光打破了传统老牌专线机场动辄三四十元的高昂门槛，入门版低至 12.8 元/月即可享受全内网 IEPL 陆港专线与 4K 秒开。全线节点零超卖、零日志存储，兼顾极速与安全。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">客户端配置</span> Clash Party 导入订阅后显示“Network Error”怎么排查？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>首先检查复制的订阅链接前后是否有误带的空格；其次检查本地网络 DNS 是否遭到运营商劫持，可尝试将电脑 DNS 改为 119.29.29.29 或 223.5.5.5；最后检查是否开启了其他第三方代理杀毒软件占用了 7890 端口。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">客户端配置</span> TUN 模式和普通系统代理有什么区别？我平时应该开哪个？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>系统代理仅对遵循系统环境变量的浏览器和大部分普通软件生效；而 TUN 模式创建了虚拟网卡，会强制捕获整机全部 TCP/UDP 流量（包括 CMD 命令行、Python 终端、Steam 游戏、安卓模拟器等）。平时仅浏览网页只需开启系统代理，有代码开发或游戏需求时勾选 TUN 模式。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">业务应用</span> 流量光节点能解锁哪些流媒体平台与 AI 服务？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>全节点标配解锁 YouTube 4K/8K、Netflix 全球片库、Disney+、HBO Max、Spotify、TikTok 等主流流媒体；同时专项节点原生解锁 ChatGPT-4o、Claude 3.5 Sonnet、Midjourney、Copilot 等 AI 生产力工具。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">业务应用</span> 做外贸跨境电商（Amazon/TikTok/PayPal）如何防止店铺封号？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>多店铺运营切记“一店一独立环境一固定 IP”。推荐使用 AdsPower 等指纹浏览器，搭配流量光分配的纯净商用住宅 Socks5 专线节点，并强制关闭 WebRTC 探测，杜绝任何关联风险。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">账号与计费</span> 购买后可以退款吗？流量用完后能单独加油吗？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>支持在用户中心随时补差价升杯更高规格套餐，或按需订购流量重置加油包，秒级实时到账无需变更客户端节点。</p>
+    </div>
+  </div>
+
+
+  <div class="faq-item ">
+    <button class="faq-question" type="button" aria-expanded="false">
+      <span><span class="audience-tag" style="margin-right: 8px; margin-bottom: 0;">安全合规</span> 使用流量光官网会记录我的上网历史或下载记录吗？</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="faq-answer" style="">
+      <p>绝对不会。流量光全线边缘节点均运行在无盘纯内存（RAM）系统中，坚决奉行零日志承诺（No-Logs Policy），绝不记录用户的通信内容、目标网站或个人隐私。</p>
+    </div>
+  </div>
+
+    </div>
+
+    <div class="cta-banner" style="margin-top: 4.5rem;">
+      <h2>没有找到你想要的答案？</h2>
+      <p>流量光官网技术支持团队随时为你守候。登录用户中心提交工单，5 分钟内获取专属排查指导！</p>
+      <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">联系流量光在线客服</a>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="tutorials.html">新手配置全套教程</a></li>
+            <li><a href="articles/clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="articles/mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="articles/index.html">文章专栏总览</a></li>
+            <li><a href="privacy.html">隐私政策</a></li>
+            <li><a href="terms.html">服务条款</a></li>
+            <li><a href="disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">隐私权协议</a>
+          <a href="terms.html">用户协议</a>
+          <a href="disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>

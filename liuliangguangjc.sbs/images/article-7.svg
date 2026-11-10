@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="100%" height="auto" fill="none">
+    <defs>
+      <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8b5cf6" />
+        <stop offset="100%" stop-color="#c084fc" />
+      </linearGradient>
+      <pattern id="gridPattern7" width="30" height="30" patternUnits="userSpaceOnUse">
+        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="640" height="360" fill="#090d16"/>
+    <rect width="640" height="360" fill="url(#gridPattern7)"/>
+    <circle cx="530" cy="100" r="140" fill="#8b5cf6" fill-opacity="0.12" filter="blur(40px)"/>
+    <circle cx="100" cy="280" r="100" fill="#c084fc" fill-opacity="0.1" filter="blur(40px)"/>
+    
+    <!-- Badge -->
+    <rect x="40" y="40" width="120" height="30" rx="15" fill="rgba(255,255,255,0.06)" stroke="#8b5cf6" stroke-width="1.2"/>
+    <text x="100" y="60" fill="#c084fc" font-size="12" font-weight="bold" font-family="sans-serif" text-anchor="middle">内核进阶</text>
+
+    <!-- Main Title -->
+    <text x="40" y="160" fill="#ffffff" font-size="28" font-weight="bold" font-family="sans-serif">Clash 停更替代品横评</text>
+    <text x="40" y="200" fill="#94a3b8" font-size="15" font-family="sans-serif">流量光官网 · 权威极速实测与高品质节点专栏</text>
+
+    <!-- Graphic element -->
+    <g transform="translate(480, 200)">
+      <circle cx="0" cy="0" r="50" fill="url(#grad7)" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="0" y="14" font-size="38" text-anchor="middle">💻</text>
+    </g>
+
+    <!-- Footer meta -->
+    <line x1="40" y1="290" x2="600" y2="290" stroke="#1e293b" stroke-width="1"/>
+    <text x="40" y="325" fill="#64748b" font-size="13" font-family="sans-serif">Liuliangguang Official Blog · 1800+ 字全攻略</text>
+    <text x="590" y="325" fill="#c084fc" font-size="13" font-weight="bold" font-family="sans-serif" text-anchor="end">阅读文章 →</text>
+  </svg>

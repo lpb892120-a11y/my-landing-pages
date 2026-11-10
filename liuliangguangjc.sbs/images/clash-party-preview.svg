@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="auto" fill="none">
+  <defs>
+    <linearGradient id="partyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" rx="16" fill="#0b0f19" stroke="#1e293b" stroke-width="2"/>
+  <rect x="20" y="20" width="560" height="40" rx="8" fill="#1e293b"/>
+  <text x="40" y="45" fill="#38bdf8" font-weight="bold" font-size="14" font-family="sans-serif">Clash Party 新一代全平台客户端</text>
+  
+  <rect x="30" y="80" width="540" height="100" rx="12" fill="#111827" stroke="#374151"/>
+  <text x="50" y="115" fill="#9ca3af" font-size="13" font-family="sans-serif">当前订阅源配置状态</text>
+  <text x="50" y="145" fill="#34d399" font-size="18" font-weight="bold" font-family="sans-serif">● 流量光官网 VIP 订阅 [已同步更新]</text>
+  <text x="430" y="145" fill="#94a3b8" font-size="12" font-family="sans-serif">剩余流量: 480G / 500G</text>
+
+  <rect x="30" y="200" width="255" height="130" rx="12" fill="#111827" stroke="#374151"/>
+  <text x="50" y="235" fill="#f8fafc" font-size="15" font-weight="bold" font-family="sans-serif">极简一键直连</text>
+  <rect x="50" y="255" width="215" height="48" rx="8" fill="url(#partyGrad)"/>
+  <text x="157" y="285" fill="#fff" font-size="15" font-weight="bold" font-family="sans-serif" text-anchor="middle">已开启代理守护</text>
+
+  <rect x="315" y="200" width="255" height="130" rx="12" fill="#111827" stroke="#374151"/>
+  <text x="335" y="235" fill="#f8fafc" font-size="15" font-weight="bold" font-family="sans-serif">实时测速与健康检查</text>
+  <text x="335" y="265" fill="#38bdf8" font-size="13" font-family="sans-serif">延迟测试: 全部节点正常 (平均 26ms)</text>
+  <text x="335" y="295" fill="#a78bfa" font-size="13" font-family="sans-serif">协议: Hysteria2 / Shadowsocks / Vless</text>
+</svg>

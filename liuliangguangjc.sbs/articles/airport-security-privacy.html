@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>科学上网安全防踩雷：防中间人攻击与日志泄露 - 流量光官网</title>
+  <meta name="description" content="专业安全视角下的翻墙隐私防护全指南。教你如何识破钓鱼梯子与蜜罐节点，防止根证书欺诈与 DNS 泄露，全面守护个人隐私与资金账号安全。">
+  <meta name="keywords" content="安全机场, 科学上网, 稳定节点, 隐私保护, 翻墙出海, 便宜机场, 魔法梯子, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/articles/airport-security-privacy.html">
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liuliangguangjc.sbs/articles/airport-security-privacy.html">
+  <meta property="og:title" content="科学上网安全防踩雷：如何辨识日志记录、中间人攻击与钓鱼翻墙梯子">
+  <meta property="og:description" content="专业安全视角下的翻墙隐私防护全指南。教你如何识破钓鱼梯子与蜜罐节点，防止根证书欺诈与 DNS 泄露，全面守护个人隐私与资金账号安全。">
+  <meta property="og:image" content="https://liuliangguangjc.sbs/images/article-9.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://liuliangguangjc.sbs/articles/airport-security-privacy.html"
+  },
+  "headline": "科学上网安全防踩雷：如何辨识日志记录、中间人攻击与钓鱼翻墙梯子",
+  "description": "专业安全视角下的翻墙隐私防护全指南。教你如何识破钓鱼梯子与蜜罐节点，防止根证书欺诈与 DNS 泄露，全面守护个人隐私与资金账号安全。",
+  "image": "https://liuliangguangjc.sbs/images/article-9.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "流量光官方网络技术团队",
+    "url": "https://jichang-go.org/go.php"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "流量光官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://liuliangguangjc.sbs/images/logo.svg"
+    }
+  },
+  "datePublished": "2026-03-09T08:20:00+08:00",
+  "dateModified": "2026-03-10T16:00:00+08:00"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "官网首页",
+      "item": "https://liuliangguangjc.sbs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO文章库",
+      "item": "https://liuliangguangjc.sbs/articles/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "科学上网安全防踩雷：如何辨识日志记录、中间人攻击与钓鱼翻墙梯子",
+      "item": "https://liuliangguangjc.sbs/articles/airport-security-privacy.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "如果我只是用机场翻墙看视频或查资料，机场主能看到我的账号密码吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "如果访问的是正规支持 HTTPS 加密的现代网站（目前 99% 的网站均为 HTTPS），你的账号密码、聊天记录在离开你的电脑前就已经被高强度的 TLS 1.3 对称秘钥加密。机场节点中间人只能看到你访问了哪个域名（如 youtube.com），而绝对无法解密你具体的浏览内容、视频详情或明文密码。但必须警惕某些不良客户端要求你安装“自定义根证书”的危险行为！"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有些所谓的“免费翻墙 VPN”要求安装他们自己的根证书？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是一级高危警报！一旦你在操作系统中信任了第三方提供的根证书（Root CA），该软件就拥有了对你所有 HTTPS 加密流量进行“中间人解密（MITM）”的最高特权。他们可以随意窃听你的银行账单、社交聊天记录甚至植入恶意广告弹窗。任何正规科学上网工具（如 Clash、Shadowrocket）绝不需要安装任何根证书！"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "什么是 WebRTC 泄露？为什么开着梯子去查 IP 依然能看到国内真实地址？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebRTC 是浏览器内置用于点对点视频通话的技术，但它有一个严重漏洞：会绕过系统代理直接向 STUN 服务器发起 UDP 广播，从而暴露你的真实局域网 IP 甚至运营商公网 IP。可以在浏览器安装 WebRTC Control 插件或在指纹浏览器中强制禁用 WebRTC 以彻底消除泄露风险。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "流量光官网会记录用户的上网浏览历史和下载日志吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "流量光坚决践行行业最高级别的“零日志（No-Logs）”准则。全线节点服务器采用内存临时缓存运行，不挂载任何持久化访问数据库，绝不记录用户的目标访问 URL、搜索关键词、真实 IP 或通信内容，从物理架构层面保障用户的绝对隐私。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "公共免费 Wi-Fi（如商场、机场）搭配流量光使用安全吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "非常安全，甚至比直接连接更安全。连接未加密的公共 Wi-Fi 极易遭受局域网 ARP 欺骗和嗅探。而一旦启动流量光客户端，你的整机数据在进入公共路由器之前就已经被高强度加密封装，公共网络管理员只能看到乱码，无法窃听你的任何网络活动。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+
+  <!-- 动态粒子画布背景 -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 头部导航 -->
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">官网首页</a></li>
+        <li><a href="../tutorials.html" class="nav-link">使用教程</a></li>
+        <li><a href="../articles/index.html" class="nav-link active">SEO文章库</a></li>
+        <li><a href="../faq.html" class="nav-link">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html">官网首页</a>
+      <span class="separator">/</span>
+      <a href="../articles/index.html">SEO文章库</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">正文详情</span>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+      <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+        <span class="section-badge">安全合规</span>
+        <span class="section-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">1800+ 字深度实测</span>
+      </div>
+      <h1>科学上网安全防踩雷：如何辨识日志记录、中间人攻击与钓鱼翻墙梯子</h1>
+      <div class="article-header-meta">
+        <span>👤 流量光网络实验室</span>
+        <span>📅 更新于 2026-03-10</span>
+        <span>⏱️ 预计阅读耗时：15 分钟</span>
+        <span>🌐 状态：已通过全网连通率验证</span>
+      </div>
+    </header>
+
+    <div class="article-layout">
+      <!-- 文章主要内容 -->
+      <article class="article-content">
+        <!-- 插图 -->
+        <div style="margin-bottom: 2rem; border-radius: 16px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.2);">
+          <img src="../images/article-9.svg" alt="科学上网安全防踩雷：如何辨识日志记录、中间人攻击与钓鱼翻墙梯子 - 封面插图" width="100%" height="auto" style="display: block;">
+        </div>
+
+        
+      <p class="lead">在网络安全领域，有一句著名准则：“<strong>安全并非产品的附加属性，而是地基</strong>”。许多用户在寻找科学上网梯子时，往往只关注“速度快不快”、“价格低不低”，却严重忽视了更为致命的<strong>网络隐私与通信安全</strong>。一旦不幸连接了被恶意操纵的钓鱼节点、蜜罐服务器，或者在不明来源的客户端中误装了伪造根证书，你的社交账号凭据、公司商业机密、甚至加密货币钱包资产都可能面临被全盘窃取的覆灭风险。本文将站在白帽网络安全的专业视角，全面拆解翻墙生态中的安全陷阱与防护措施。</p>
+
+      <h2 id="part-1">一、你以为的安全真的安全吗？翻墙环境下的隐形黑手</h2>
+      <p>很多人误以为，只要开了梯子，自己的一切痕迹就“遁入虚空、绝对隐身”了。事实恰恰相反——你的所有进出网络数据，都无一例外地汇聚在代理服务商的出口服务器上。如果服务商心怀不轨，或者该节点本身就是由黑客组织搭建的“钓鱼蜜罐”，他们能够利用以下手段实施侵害：</p>
+      <ul>
+        <li><strong>DNS 劫持与诱导钓鱼：</strong>当你输入 <code>mycrypto-wallet.com</code> 时，黑心代理节点的恶意 DNS 会将你解析到一个外观一模一样的钓鱼虚假镜像站，诱导你输入助记词或转账密码。</li>
+        <li><strong>明文 HTTP 内容注入：</strong>对于少数未采用 HTTPS 加密的传统网页，在传输链路中恶意注入挖矿脚本、博彩轮播广告或木马下载链接。</li>
+        <li><strong>全量元数据收集与售卖：</strong>将所有用户的访问时间、偏好域名、流量规模打包成精准用户画像库，转手卖给地下数据中介。</li>
+      </ul>
+
+      <h2 id="part-2">二、钓鱼梯子与蜜罐节点的常见伪装手段</h2>
+      <p>识别恶意与劣质梯子，务必擦亮眼睛认清以下三种伪装形态：</p>
+      <ol>
+        <li><strong>“完全免费且无限流量”的神秘梯子：</strong>服务器硬件、国际带宽、电力机房每一样都是真金白银的昂贵开支。“免费的往往是最贵的”——这些免费软件通常依靠在后台静默收集用户敏感数据、或者将你的电脑悄悄变成黑客用来发起 DDoS 攻击的肉鸡僵尸网络来变现。</li>
+        <li><strong>捆绑私有闭源客户端并强制静默安装：</strong>不提供标准开源的 Clash/Shadowrocket 订阅链接，强迫用户必须运行其自制的 <code>.exe</code> 或 <code>.apk</code>，且该安装包没有知名杀毒软件认证签名。</li>
+        <li><strong>社交媒体私信赠送的“绝密免流节点”：</strong>在 Telegram、QQ 群中私下分发的单节点链接，往往背后挂着专门嗅探账号密码的网络抓包中间件。</li>
+      </ol>
+
+      <h2 id="part-3">三、中间人攻击 (MITM) 深度剖析：警惕“自定义根证书”</h2>
+      <div class="callout-box warning">
+        <strong>⚠️ 绝对红线法则：</strong>
+        任何声称为了“加速”或“免广告”而要求你在电脑“受信任的根证书颁发机构”或手机“通用 - 关于本机 - 证书信任设置”中安装自定义 <code>.crt / .p12</code> 证书的翻墙服务商，<strong>100% 具有极高风险，请立即彻底卸载并格式化自检！</strong>
+      </div>
+      <p>因为一旦信任了他们的私有 CA，浏览器原有的 HTTPS 安全小绿锁将被彻底架空。他们可以用自己的私钥，针对任何大厂网站动态签发伪造证书，并在中间透明解密你的所有加密通信流量，包括你的银行流水账单与登录凭证！正规的代理技术如 Shadowsocks、Vless，完全工作在传输层与会话层，根本不需要触碰应用层证书。</p>
+
+      <h2 id="part-4">四、DNS 污染、WebRTC 泄露与真实 IP 暴露自查</h2>
+      <p>为了确保你的设备处于完全安全匿名的状态，建议定期进行以下自检测试：</p>
+      <h3>1. WebRTC 泄露自查</h3>
+      <p>打开专业检测站 <code>browserleaks.com/webrtc</code>。查看检测结果中的 "Public IP Address"。如果此处显示了你的本地真实宽带或 5G IP，说明你的真实行踪已然通过 WebRTC 暴露。解决方法是在客户端开启 Fake-IP 虚拟解析，或在 Chrome 浏览器中安装 WebRTC 屏蔽插件。</p>
+      <h3>2. DNS 泄漏自查</h3>
+      <p>访问 <code>dnsleaktest.com</code>，点击 "Extended Test"。如果测试返回的 DNS 服务器列表中出现了中国电信、中国联通或中国移动的标志，说明你的域名解析请求被本地网络劫持了。必须在客户端的 DNS 设置中，启用 DoH（如 Cloudflare 或 Google 的安全加密 DNS）。</p>
+
+      <h2 id="part-5">五、流量光官网严格践行的“零日志隐私安全守则”</h2>
+      <p>作为深耕网络中继技术多年的专业品牌，<strong>流量光官网</strong>始终将用户的数据安全视作立身之本：</p>
+      <ul>
+        <li><strong>无盘运行与 RAM 内存临时加载：</strong>所有核心边缘加速节点均运行在无盘纯内存操作系统之上，系统重启后所有运行时数据瞬间灰飞烟灭，杜绝任何物理日志存盘可能。</li>
+        <li><strong>标准化开源协议对接：</strong>完全开放对 Clash、Clash Party、Shadowrocket 等全球公认、代码经受过全球白帽黑客严苛安全审计的开源客户端支持，绝不搞闭源黑箱操作。</li>
+        <li><strong>端到端 TLS 1.3 强加密隧道：</strong>全链路采用最新前沿密码学套件（AES-256-GCM、ChaCha20-Poly1305），在骨干网传输过程中坚如磐石，彻底杜绝任何中间人劫持与嗅探篡改。</li>
+      </ul>
+
+      <div class="cta-banner" style="margin-top: 3rem;">
+        <h2>选择正规、透明、无日志的专业安全机场</h2>
+        <p>流量光严格遵守零日志隐私规范，绝不侵犯用户数据。享受极致高速的同时，为您的个人隐私筑牢坚实防火墙！</p>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">立即进入流量光官网</a>
+      </div>
+    
+
+        <!-- 专属 FAQ 板块 -->
+        <section id="part-faq" class="article-faq-section" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+          <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+            <span class="section-badge">专属答疑</span>
+            <h2 style="font-size: 1.8rem; margin-top: 0.5rem;">本文专属常见问答 (FAQ)</h2>
+            <p style="color: #94a3b8; font-size: 0.95rem;">针对本篇主题整理的高频疑难解答，助你排查一切技术疑难。</p>
+          </div>
+          <div class="faq-list">
+            
+    <div class="faq-item active">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>如果我只是用机场翻墙看视频或查资料，机场主能看到我的账号密码吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="max-height: 250px;">
+        <p>如果访问的是正规支持 HTTPS 加密的现代网站（目前 99% 的网站均为 HTTPS），你的账号密码、聊天记录在离开你的电脑前就已经被高强度的 TLS 1.3 对称秘钥加密。机场节点中间人只能看到你访问了哪个域名（如 youtube.com），而绝对无法解密你具体的浏览内容、视频详情或明文密码。但必须警惕某些不良客户端要求你安装“自定义根证书”的危险行为！</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么有些所谓的“免费翻墙 VPN”要求安装他们自己的根证书？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>这是一级高危警报！一旦你在操作系统中信任了第三方提供的根证书（Root CA），该软件就拥有了对你所有 HTTPS 加密流量进行“中间人解密（MITM）”的最高特权。他们可以随意窃听你的银行账单、社交聊天记录甚至植入恶意广告弹窗。任何正规科学上网工具（如 Clash、Shadowrocket）绝不需要安装任何根证书！</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>什么是 WebRTC 泄露？为什么开着梯子去查 IP 依然能看到国内真实地址？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>WebRTC 是浏览器内置用于点对点视频通话的技术，但它有一个严重漏洞：会绕过系统代理直接向 STUN 服务器发起 UDP 广播，从而暴露你的真实局域网 IP 甚至运营商公网 IP。可以在浏览器安装 WebRTC Control 插件或在指纹浏览器中强制禁用 WebRTC 以彻底消除泄露风险。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>流量光官网会记录用户的上网浏览历史和下载日志吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>流量光坚决践行行业最高级别的“零日志（No-Logs）”准则。全线节点服务器采用内存临时缓存运行，不挂载任何持久化访问数据库，绝不记录用户的目标访问 URL、搜索关键词、真实 IP 或通信内容，从物理架构层面保障用户的绝对隐私。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>公共免费 Wi-Fi（如商场、机场）搭配流量光使用安全吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>非常安全，甚至比直接连接更安全。连接未加密的公共 Wi-Fi 极易遭受局域网 ARP 欺骗和嗅探。而一旦启动流量光客户端，你的整机数据在进入公共路由器之前就已经被高强度加密封装，公共网络管理员只能看到乱码，无法窃听你的任何网络活动。</p>
+      </div>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 底部相关推荐 -->
+        <section class="related-posts">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">相关阅读推荐</h2>
+          <p style="color: #94a3b8; font-size: 0.9rem;">继续深入探索更多科学上网、节点调优与客户端配置干货：</p>
+          <div class="related-posts-grid">
+            
+    <div class="related-card">
+      <span class="audience-tag">新手教程</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-party-tutorial.html">2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟...</p>
+      <a href="clash-party-tutorial.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+
+    <div class="related-card">
+      <span class="audience-tag">选购指南</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-nodes-best-practices.html">便宜机场与稳定节点怎么选？2026高性价比安全机场推荐及避坑实测指南</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">深度实测市面上各类便宜机场、月付梯子与专线节点的优缺点。教你识破超卖跑路陷阱，对比直连、中继与IEPL内网专线性能，挑选真正稳定、便宜且高性价比的安全...</p>
+      <a href="clash-nodes-best-practices.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+          </div>
+        </section>
+      </article>
+
+      <!-- 文章右侧边栏 -->
+      <aside class="article-sidebar">
+        <!-- 目录导览 -->
+        <div class="sidebar-widget">
+          <h3 class="sidebar-title">文章目录导览</h3>
+          <ul class="toc-list">
+            
+    <li><a href="#part-1">一、你以为的安全真的安全吗？翻墙环境下的隐形黑手</a></li>
+  
+
+    <li><a href="#part-2">二、钓鱼梯子与蜜罐节点的常见伪装手段</a></li>
+  
+
+    <li><a href="#part-3">三、中间人攻击 (MITM) 深度剖析：警惕“自定义根证书”</a></li>
+  
+
+    <li><a href="#part-4">四、DNS 污染、WebRTC 泄露与真实 IP 暴露自查</a></li>
+  
+
+    <li><a href="#part-5">五、流量光官网严格践行的“零日志隐私安全守则”</a></li>
+  
+
+    <li><a href="#part-faq">六、科学上网安全与隐私保护 FAQ</a></li>
+  
+          </ul>
+        </div>
+
+        <!-- 官方推广挂件 -->
+        <div class="sidebar-widget sidebar-promo">
+          <img src="../images/logo.svg" alt="流量光" width="48" height="48" style="margin-bottom: 0.8rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #fff;">流量光官网节点</h3>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem; line-height: 1.6;">全节点全内网 IEPL 专线中继，4K 极速秒开，支持 Clash Party / 小火箭一键配置。</p>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">立即开通专属节点</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="../tutorials.html">新手配置全套教程</a></li>
+            <li><a href="clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="../faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="../sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="../articles/index.html">文章专栏总览</a></li>
+            <li><a href="../privacy.html">隐私政策</a></li>
+            <li><a href="../terms.html">服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="../privacy.html">隐私权协议</a>
+          <a href="../terms.html">用户协议</a>
+          <a href="../disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
+  <!-- 脚本 -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="auto" fill="none">
+  <rect width="600" height="360" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+  <rect x="20" y="20" width="560" height="40" rx="8" fill="#1e293b"/>
+  <circle cx="45" cy="40" r="6" fill="#ef4444"/>
+  <circle cx="65" cy="40" r="6" fill="#f59e0b"/>
+  <circle cx="85" cy="40" r="6" fill="#10b981"/>
+  <text x="300" y="45" fill="#94a3b8" font-size="13" font-family="sans-serif" text-anchor="middle">Clash Verge Rev / Clash 控制面板</text>
+
+  <rect x="30" y="80" width="160" height="250" rx="10" fill="#141e33" stroke="#334155"/>
+  <text x="50" y="115" fill="#38bdf8" font-size="14" font-weight="bold" font-family="sans-serif">节点选择</text>
+  <rect x="45" y="135" width="130" height="32" rx="6" fill="#0ea5e9" fill-opacity="0.2" stroke="#38bdf8"/>
+  <text x="60" y="156" fill="#fff" font-size="12" font-family="sans-serif">🇭🇰 香港 IEPL 专线 01</text>
+  <rect x="45" y="177" width="130" height="32" rx="6" fill="#1e293b"/>
+  <text x="60" y="198" fill="#94a3b8" font-size="12" font-family="sans-serif">🇯🇵 日本 02 [流媒体解锁]</text>
+  <rect x="45" y="219" width="130" height="32" rx="6" fill="#1e293b"/>
+  <text x="60" y="240" fill="#94a3b8" font-size="12" font-family="sans-serif">🇺🇸 美国 01 [ChatGPT/Claude]</text>
+
+  <rect x="210" y="80" width="360" height="250" rx="10" fill="#141e33" stroke="#334155"/>
+  <text x="230" y="115" fill="#f8fafc" font-size="15" font-weight="bold" font-family="sans-serif">流量光 智能分流规则 (Rule Mode)</text>
+  <rect x="230" y="135" width="320" height="42" rx="6" fill="#1e293b"/>
+  <text x="245" y="161" fill="#e2e8f0" font-size="13" font-family="sans-serif">国内域名 (Bilibili / 百度 / 微信) ➔ 直连 (Direct)</text>
+  <rect x="230" y="190" width="320" height="42" rx="6" fill="#1e293b"/>
+  <text x="245" y="216" fill="#38bdf8" font-size="13" font-family="sans-serif">海外站点 (Google / YouTube / GitHub) ➔ 专线节点</text>
+  <rect x="230" y="245" width="320" height="42" rx="6" fill="#1e293b"/>
+  <text x="245" y="271" fill="#a78bfa" font-size="13" font-family="sans-serif">AI 工具 (OpenAI / Claude / Copilot) ➔ 原生专线</text>
+</svg>

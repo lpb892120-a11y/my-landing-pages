@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>移动端科学上网指南：iOS与Android多端协同配置 - 流量光官网</title>
+  <meta name="description" content="手机移动端科学上网完整实战配置教程。涵盖 iPhone/iPad 上 Shadowrocket (小火箭)、Loon 的购买与节点导入，以及安卓端 Clash Party 的后台保活与省电优化策略。">
+  <meta name="keywords" content="Shadowrocket, 小火箭, Clash Party安卓, iOS科学上网, 稳定节点, 翻墙出海, 魔法梯子, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/articles/mobile-clash-ios-android.html">
+  
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liuliangguangjc.sbs/articles/mobile-clash-ios-android.html">
+  <meta property="og:title" content="移动端科学上网完全指南：iOS Shadowrocket/Loon 与 Android Clash Party 无缝协同">
+  <meta property="og:description" content="手机移动端科学上网完整实战配置教程。涵盖 iPhone/iPad 上 Shadowrocket (小火箭)、Loon 的购买与节点导入，以及安卓端 Clash Party 的后台保活与省电优化策略。">
+  <meta property="og:image" content="https://liuliangguangjc.sbs/images/article-8.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://liuliangguangjc.sbs/articles/mobile-clash-ios-android.html"
+  },
+  "headline": "移动端科学上网完全指南：iOS Shadowrocket/Loon 与 Android Clash Party 无缝协同",
+  "description": "手机移动端科学上网完整实战配置教程。涵盖 iPhone/iPad 上 Shadowrocket (小火箭)、Loon 的购买与节点导入，以及安卓端 Clash Party 的后台保活与省电优化策略。",
+  "image": "https://liuliangguangjc.sbs/images/article-8.svg",
+  "author": {
+    "@type": "Organization",
+    "name": "流量光官方网络技术团队",
+    "url": "https://jichang-go.org/go.php"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "流量光官网",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://liuliangguangjc.sbs/images/logo.svg"
+    }
+  },
+  "datePublished": "2026-03-08T09:10:00+08:00",
+  "dateModified": "2026-03-10T15:30:00+08:00"
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "官网首页",
+      "item": "https://liuliangguangjc.sbs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SEO文章库",
+      "item": "https://liuliangguangjc.sbs/articles/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "移动端科学上网完全指南：iOS Shadowrocket/Loon 与 Android Clash Party 无缝协同",
+      "item": "https://liuliangguangjc.sbs/articles/mobile-clash-ios-android.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "中国大陆地区的 Apple ID 在 App Store 搜不到 Shadowrocket (小火箭) 怎么办？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "由于大陆地区政策监管，所有科学上网类工具均已在大陆区 App Store 下架。解决办法是：注册或在合规平台获取一个海外地区（如美区、日区、港区）的 Apple ID，登录 App Store 即可正常购买并下载官方正版 Shadowrocket 或 Loon。千万不要在“设置 - iCloud”中登录陌生海外账号，仅在 App Store 登录即可保障手机隐私安全。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么安卓手机锁屏一段时间后，微信能收消息，但外网梯子就自动断开了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这是国产安卓手机（如小米 MIUI/澎湃OS、华为鸿蒙、vivo OriginOS、OPPO ColorOS）的激进内存省电机制把后台常驻的代理客户端进程杀掉了。必须在系统设置中完成三步：1. 在多任务后台将客户端卡片加锁；2. 将应用的省电策略从“智能限制”改为“无限制”；3. 在系统“应用权限”中开启“自启动”和“关联启动”。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "开启小火箭或 Clash Party 会严重消耗手机电池电量吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iOS 系统的电池健康统计中，由于代理软件承担了整机所有网络出入流量的路由计算，系统会把原本属于微信、Safari、YouTube 的网络耗电量统一算在 Shadowrocket 名下，造成看似耗电很高的假象。实际上，客户端纯计算耗电极低，正常使用一整天实际额外耗电通常不超过 5%。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "手机使用流量光节点，能否当做随身热点给旁边的电脑或 iPad 共享翻墙网络？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全可以！在 Shadowrocket 设置中开启“代理共享”，或者在 Clash Party 安卓端勾选“允许局域网连接”，此时其他连接该手机热点的设备，只需在 Wi-Fi 设置中将 HTTP 代理指向手机的热点 IP（如 192.168.43.1）和指定端口，即可无需安装客户端全员享受专线加速。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "流量光套餐支持一个订阅在手机和电脑同时使用吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "完全支持。流量光所有套餐均支持多设备并发连接。你在办公室电脑、随身 iPhone 和家中平板上导入同一个订阅链接，各设备独立分流、互不干扰。"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- 阅读进度条 -->
+  <div id="reading-progress"></div>
+
+  <!-- 动态粒子画布背景 -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 头部导航 -->
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-logo">
+        <img src="../images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="../index.html" class="nav-link">官网首页</a></li>
+        <li><a href="../tutorials.html" class="nav-link">使用教程</a></li>
+        <li><a href="../articles/index.html" class="nav-link active">SEO文章库</a></li>
+        <li><a href="../faq.html" class="nav-link">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../index.html">官网首页</a>
+      <span class="separator">/</span>
+      <a href="../articles/index.html">SEO文章库</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">正文详情</span>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+      <div style="display: flex; gap: 8px; margin-bottom: 1rem;">
+        <span class="section-badge">移动端指南</span>
+        <span class="section-badge" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">1800+ 字深度实测</span>
+      </div>
+      <h1>移动端科学上网完全指南：iOS Shadowrocket/Loon 与 Android Clash Party 无缝协同</h1>
+      <div class="article-header-meta">
+        <span>👤 流量光网络实验室</span>
+        <span>📅 更新于 2026-03-10</span>
+        <span>⏱️ 预计阅读耗时：13 分钟</span>
+        <span>🌐 状态：已通过全网连通率验证</span>
+      </div>
+    </header>
+
+    <div class="article-layout">
+      <!-- 文章主要内容 -->
+      <article class="article-content">
+        <!-- 插图 -->
+        <div style="margin-bottom: 2rem; border-radius: 16px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.2);">
+          <img src="../images/article-8.svg" alt="移动端科学上网完全指南：iOS Shadowrocket/Loon 与 Android Clash Party 无缝协同 - 封面插图" width="100%" height="auto" style="display: block;">
+        </div>
+
+        
+      <p class="lead">随着智能手机与平板电脑成为现代人最核心的随身数字化终端，超过 70% 的科学上网使用场景发生在移动端。无论是在通勤路上用手机刷 Twitter/X、在星巴克用 iPad 查阅海外文献，还是在旅途中使用 Telegram 和海外朋友即时沟通，一套<strong>随身、稳定、低功耗且不断流</strong>的移动网络方案都是刚需。然而，移动端面临着基站切换、频繁切网以及系统杀后台等独特挑战。本文将针对 <strong>iOS (iPhone/iPad) 与 Android (安卓)</strong> 两大生态，手把手教你打造最优雅的移动出海体验。</p>
+
+      <h2 id="part-1">一、移动端科学上网的核心痛点：续航、切网与保活</h2>
+      <p>相比于插电且走有线宽带的台式电脑，手机端科学上网存在三大天然痛点：</p>
+      <ul>
+        <li><strong>蜂窝与 Wi-Fi 瞬时切换：</strong>当你从家门走入电梯，Wi-Fi 信号衰减断开，手机切换到 5G 移动蜂窝网络，代理隧道如果无法在毫秒级内完成重连，就会导致正在进行的通话或视频中断。</li>
+        <li><strong>后台进程杀手：</strong>安卓厂商为了保障续航，有着极其严苛的后台冻结与清理策略；iOS 系统对 Network Extension 同样有着严格的 15MB/50MB 内存阈值限制，一旦超标直接闪退。</li>
+        <li><strong>DNS 缓存污染与毒化：</strong>国内基站经常下发带有本地污染的运营商 DNS，一旦代理处理不慎，就会导致断开代理后手机甚至无法正常使用国内 App。</li>
+      </ul>
+
+      <h2 id="part-2">二、iOS 生态全解析：Shadowrocket、Loon 与 Stash 该怎么选</h2>
+      <p>在 iOS 平台上，受限于系统架构，用户需要借助第三方优秀客户端：</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>软件名称</th>
+              <th>上手难易度</th>
+              <th>协议支持广度</th>
+              <th>价格与口碑</th>
+              <th>核心适用人群</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Shadowrocket (小火箭)</strong></td>
+              <td>★☆☆☆☆ (极简)</td>
+              <td>极全 (SS/Vless/Trojan/Hy2)</td>
+              <td>$2.99 / 用户量最大</td>
+              <td><strong>90% 普通新手首选，性价比极高</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Loon</strong></td>
+              <td>★★★☆☆ (中等)</td>
+              <td>全面且支持丰富脚本</td>
+              <td>$5.99 / 界面精美高级</td>
+              <td>颜值党、喜欢去广告与脚本插件的用户</td>
+            </tr>
+            <tr>
+              <td><strong>Stash</strong></td>
+              <td>★★★★☆ (专业)</td>
+              <td>完全契合 Clash 规则语法</td>
+              <td>$3.99 / Clash 核心分支</td>
+              <td>重度 Clash 规则依赖者、全家桶用户</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="part-3">三、iPhone 小火箭 (Shadowrocket) 零门槛配置与分流导入</h2>
+      <p>使用小火箭配合流量光官网，整个配置过程仅需 30 秒：</p>
+      <ol>
+        <li>使用美区 Apple ID 登录 App Store 下载正版 <strong>Shadowrocket</strong>。</li>
+        <li>手机 Safari 浏览器打开 <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">流量光官网后台</a>，点击“一键导入 Shadowrocket”或复制专属订阅链接。</li>
+        <li>回到小火箭主界面，点击右上角 <strong>“+”</strong> 号，在类型中选择 <strong>“Subscribe (订阅)”</strong>，在 URL 一栏粘贴刚才复制的链接，点击右上角保存。</li>
+        <li>软件将自动拉取所有节点列表。点击主界面的“延迟测试”测出最低延迟节点。</li>
+        <li>将全局路由设置为 <strong>“配置 (Config)”</strong> 模式（千万不要选“代理”，配置模式即智能分流），拨动顶部的连接开关，在系统弹窗中点击“允许”并录入面容 ID，即刻大功告成！</li>
+      </ol>
+
+      <h2 id="part-4">四、Android 平台最佳实践：Clash Party 后台常驻与防杀</h2>
+      <p>安卓用户推荐使用基于现代 Mihomo 内核的 <strong>Clash Party Android 版</strong>：</p>
+      <ul>
+        <li><strong>开启常驻通知栏：</strong>在软件设置中打开“常驻状态栏通知”，这样系统会将该应用识别为前台活跃服务，大大降低被杀概率。</li>
+        <li><strong>电池无限制优化：</strong>进入系统设置 ➔ 应用管理 ➔ Clash Party ➔ 省电策略，坚决选择<strong>“无限制”</strong>。</li>
+        <li><strong>开启多任务锁定：</strong>呼出多任务管理后台，长按 Clash Party 卡片，点击“小锁头”图标锁定进程。</li>
+      </ul>
+
+      <h2 id="part-5">五、4G/5G 蜂窝数据与 Wi-Fi 漫游自动漂移调优</h2>
+      <p>为了保证进出家门时不断网，建议在客户端高级设置中勾选以下两项：</p>
+      <p>1. <strong>启用 TCP 并发探测（tcp-concurrent）：</strong>在网络环境发生突变时，客户端会同时向目标服务器发送多组握手包，谁先返回就绑定谁，实现零感知漫游切换。</p>
+      <p>2. <strong>智能健康检查周期设为 300 秒：</strong>后台每隔 5 分钟静默检测当前节点健康度，若发现当前所连节点异常，自动顺移至同策略组内的第二备用节点，保障工作不掉线。</p>
+
+      <div class="cta-banner" style="margin-top: 3rem;">
+        <h2>多端协同，随时随地畅联全球</h2>
+        <p>流量光专线节点完美适配 iOS、Android、Windows 与 Mac，一个账号全家多设备同时在线。现在加入，立享高速！</p>
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">立即进入流量光官网</a>
+      </div>
+    
+
+        <!-- 专属 FAQ 板块 -->
+        <section id="part-faq" class="article-faq-section" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle);">
+          <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+            <span class="section-badge">专属答疑</span>
+            <h2 style="font-size: 1.8rem; margin-top: 0.5rem;">本文专属常见问答 (FAQ)</h2>
+            <p style="color: #94a3b8; font-size: 0.95rem;">针对本篇主题整理的高频疑难解答，助你排查一切技术疑难。</p>
+          </div>
+          <div class="faq-list">
+            
+    <div class="faq-item active">
+      <button class="faq-question" type="button" aria-expanded="true">
+        <span>中国大陆地区的 Apple ID 在 App Store 搜不到 Shadowrocket (小火箭) 怎么办？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="max-height: 250px;">
+        <p>由于大陆地区政策监管，所有科学上网类工具均已在大陆区 App Store 下架。解决办法是：注册或在合规平台获取一个海外地区（如美区、日区、港区）的 Apple ID，登录 App Store 即可正常购买并下载官方正版 Shadowrocket 或 Loon。千万不要在“设置 - iCloud”中登录陌生海外账号，仅在 App Store 登录即可保障手机隐私安全。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>为什么安卓手机锁屏一段时间后，微信能收消息，但外网梯子就自动断开了？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>这是国产安卓手机（如小米 MIUI/澎湃OS、华为鸿蒙、vivo OriginOS、OPPO ColorOS）的激进内存省电机制把后台常驻的代理客户端进程杀掉了。必须在系统设置中完成三步：1. 在多任务后台将客户端卡片加锁；2. 将应用的省电策略从“智能限制”改为“无限制”；3. 在系统“应用权限”中开启“自启动”和“关联启动”。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>开启小火箭或 Clash Party 会严重消耗手机电池电量吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>iOS 系统的电池健康统计中，由于代理软件承担了整机所有网络出入流量的路由计算，系统会把原本属于微信、Safari、YouTube 的网络耗电量统一算在 Shadowrocket 名下，造成看似耗电很高的假象。实际上，客户端纯计算耗电极低，正常使用一整天实际额外耗电通常不超过 5%。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>手机使用流量光节点，能否当做随身热点给旁边的电脑或 iPad 共享翻墙网络？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>完全可以！在 Shadowrocket 设置中开启“代理共享”，或者在 Clash Party 安卓端勾选“允许局域网连接”，此时其他连接该手机热点的设备，只需在 Wi-Fi 设置中将 HTTP 代理指向手机的热点 IP（如 192.168.43.1）和指定端口，即可无需安装客户端全员享受专线加速。</p>
+      </div>
+    </div>
+  
+
+    <div class="faq-item ">
+      <button class="faq-question" type="button" aria-expanded="false">
+        <span>流量光套餐支持一个订阅在手机和电脑同时使用吗？</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer" style="">
+        <p>完全支持。流量光所有套餐均支持多设备并发连接。你在办公室电脑、随身 iPhone 和家中平板上导入同一个订阅链接，各设备独立分流、互不干扰。</p>
+      </div>
+    </div>
+  
+          </div>
+        </section>
+
+        <!-- 底部相关推荐 -->
+        <section class="related-posts">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">相关阅读推荐</h2>
+          <p style="color: #94a3b8; font-size: 0.9rem;">继续深入探索更多科学上网、节点调优与客户端配置干货：</p>
+          <div class="related-posts-grid">
+            
+    <div class="related-card">
+      <span class="audience-tag">新手教程</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-party-tutorial.html">2026最新 Clash Party 客户端小白极速上手教程：从节点导入到分流规则配置全解析</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">最新全平台代理神器 Clash Party 客户端新手完整上手教程。手把手教你如何从流量光官网获取订阅、一键导入节点、配置智能分流与开启 TUN 虚拟...</p>
+      <a href="clash-party-tutorial.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+
+    <div class="related-card">
+      <span class="audience-tag">选购指南</span>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;"><a href="clash-nodes-best-practices.html">便宜机场与稳定节点怎么选？2026高性价比安全机场推荐及避坑实测指南</a></h3>
+      <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 0.8rem;">深度实测市面上各类便宜机场、月付梯子与专线节点的优缺点。教你识破超卖跑路陷阱，对比直连、中继与IEPL内网专线性能，挑选真正稳定、便宜且高性价比的安全...</p>
+      <a href="clash-nodes-best-practices.html" class="read-more" style="font-size: 0.85rem;">阅读深度解析 →</a>
+    </div>
+  
+          </div>
+        </section>
+      </article>
+
+      <!-- 文章右侧边栏 -->
+      <aside class="article-sidebar">
+        <!-- 目录导览 -->
+        <div class="sidebar-widget">
+          <h3 class="sidebar-title">文章目录导览</h3>
+          <ul class="toc-list">
+            
+    <li><a href="#part-1">一、移动端科学上网的核心痛点：续航、切网与保活</a></li>
+  
+
+    <li><a href="#part-2">二、iOS 生态全解析：Shadowrocket、Loon 与 Stash 该怎么选</a></li>
+  
+
+    <li><a href="#part-3">三、iPhone 小火箭 (Shadowrocket) 零门槛配置与分流导入</a></li>
+  
+
+    <li><a href="#part-4">四、Android 平台最佳实践：Clash Party 后台常驻与防杀</a></li>
+  
+
+    <li><a href="#part-5">五、4G/5G 蜂窝数据与 Wi-Fi 漫游自动漂移调优</a></li>
+  
+
+    <li><a href="#part-faq">六、手机移动端使用常见问题 FAQ</a></li>
+  
+          </ul>
+        </div>
+
+        <!-- 官方推广挂件 -->
+        <div class="sidebar-widget sidebar-promo">
+          <img src="../images/logo.svg" alt="流量光" width="48" height="48" style="margin-bottom: 0.8rem;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem; color: #fff;">流量光官网节点</h3>
+          <p style="font-size: 0.85rem; color: #cbd5e1; margin-bottom: 1.2rem; line-height: 1.6;">全节点全内网 IEPL 专线中继，4K 极速秒开，支持 Clash Party / 小火箭一键配置。</p>
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">立即开通专属节点</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="brand-logo">
+            <img src="../images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="../tutorials.html">新手配置全套教程</a></li>
+            <li><a href="clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="../faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="../sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="../articles/index.html">文章专栏总览</a></li>
+            <li><a href="../privacy.html">隐私政策</a></li>
+            <li><a href="../terms.html">服务条款</a></li>
+            <li><a href="../disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="../privacy.html">隐私权协议</a>
+          <a href="../terms.html">用户协议</a>
+          <a href="../disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
+  <!-- 脚本 -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

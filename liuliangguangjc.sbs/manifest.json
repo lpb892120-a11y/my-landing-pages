@@ -1,0 +1,17 @@
+{
+  "name": "流量光官网 - 全球高速专线网络加速枢纽",
+  "short_name": "流量光官网",
+  "description": "流量光（Liuliangguang）专注于提供企业级 IEPL 陆港纯内网专线网络加速中继服务，支持 Clash、Clash Party、Shadowrocket 等主流客户端。",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "48x48 72x72 96x96 144x144 192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>流量光官网使用教程中心 - Windows/Mac/iOS/Android/软路由全平台配置指南</title>
+  <meta name="description" content="流量光官网官方客户端配置与使用教程中心。详细提供 Clash Party、Clash Verge Rev、Shadowrocket (小火箭)、Loon、v2rayN 及 OpenWrt 路由器上一键导入订阅与智能分流的图文流程。">
+  <meta name="keywords" content="Clash教程, Clash Party教程, 小火箭教程, Shadowrocket, 科学上网教程, 魔法梯子, 稳定节点, 流量光官网">
+  <link rel="canonical" href="https://liuliangguangjc.sbs/tutorials.html">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "官网首页", "item": "https://liuliangguangjc.sbs/" },
+      { "@type": "ListItem", "position": 2, "name": "使用教程中心", "item": "https://liuliangguangjc.sbs/tutorials.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="reading-progress"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.svg" alt="流量光官网Logo" width="36" height="36" />
+        <span>流量光官网</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link ">官网首页</a></li>
+        <li><a href="tutorials.html" class="nav-link active">使用教程</a></li>
+        <li><a href="articles/index.html" class="nav-link ">SEO文章库</a></li>
+        <li><a href="faq.html" class="nav-link ">常见问题</a></li>
+        <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="nav-link" style="color: #38bdf8;">用户中心</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary">
+          <span>进入流量光官网</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="index.html">官网首页</a>
+      <span class="separator">/</span>
+      <span style="color: #cbd5e1;">使用教程中心</span>
+    </nav>
+
+    <div class="section-header" style="margin-bottom: 3.5rem;">
+      <span class="section-badge">TUTORIAL CENTER</span>
+      <h1 class="section-title">全平台客户端极速上手指南</h1>
+      <p class="section-subtitle">涵盖 Windows、macOS、iOS、Android 以及家用路由器，跟随教程 60 秒内畅享全球高速专线。</p>
+    </div>
+
+    <!-- 教程卡片流 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 2rem;">
+      <!-- Windows / Mac: Clash Party -->
+      <div class="feature-card" style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <div class="feature-icon" style="margin-bottom: 0;">💻</div>
+          <div>
+            <h2 style="font-size: 1.35rem; margin-bottom: 2px;">Clash Party (首选推荐)</h2>
+            <span style="font-size: 0.8rem; color: #38bdf8;">Windows 10/11 · macOS · Android</span>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
+          2026 年最新开源 Mihomo 内核全平台神器。内置现代美观 UI，原生支持 Hysteria2 与 Vless 协议，支持开箱即用的 TUN 虚拟网卡与自动测速自愈。
+        </p>
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.88rem;">获取订阅链接</a>
+          <a href="articles/clash-party-tutorial.html" class="read-more">图文详细步骤 →</a>
+        </div>
+      </div>
+
+      <!-- iOS: Shadowrocket -->
+      <div class="feature-card" style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <div class="feature-icon" style="margin-bottom: 0; background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3); color: #818cf8;">🚀</div>
+          <div>
+            <h2 style="font-size: 1.35rem; margin-bottom: 2px;">Shadowrocket (小火箭)</h2>
+            <span style="font-size: 0.8rem; color: #818cf8;">iOS (iPhone / iPad)</span>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
+          苹果生态最经典强大的轻量级代理工具。支持美区 App Store 一键下载，一键导入流量光聚合订阅，自动按规则分流，省电无感常驻后台。
+        </p>
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.88rem;">一键导入小火箭</a>
+          <a href="articles/mobile-clash-ios-android.html" class="read-more">iOS 配置详解 →</a>
+        </div>
+      </div>
+
+      <!-- 开发者极客: Clash Verge Rev -->
+      <div class="feature-card" style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <div class="feature-icon" style="margin-bottom: 0; background: rgba(236, 72, 153, 0.15); border-color: rgba(236, 72, 153, 0.3); color: #f472b6;">⚙️</div>
+          <div>
+            <h2 style="font-size: 1.35rem; margin-bottom: 2px;">Clash Verge Rev</h2>
+            <span style="font-size: 0.8rem; color: #f472b6;">Windows · macOS (ARM/Intel) · Linux</span>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
+          采用 Rust + Tauri 构建的高性能极客客户端。内存开销极小，具备强大的 Script / Merge 配置预处理能力，完美支持命令行终端代理转发。
+        </p>
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.88rem;">获取订阅</a>
+          <a href="articles/clash-verge-rev-clash-meta.html" class="read-more">极客进阶指南 →</a>
+        </div>
+      </div>
+
+      <!-- 软路由 / 全屋加速: OpenWrt -->
+      <div class="feature-card" style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+          <div class="feature-icon" style="margin-bottom: 0; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">📡</div>
+          <div>
+            <h2 style="font-size: 1.35rem; margin-bottom: 2px;">OpenClash / PassWall</h2>
+            <span style="font-size: 0.8rem; color: #34d399;">OpenWrt · iStoreOS · 软路由</span>
+          </div>
+        </div>
+        <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1;">
+          为客厅 Apple TV、PS5、Xbox 与全屋智能家居提供物理级透明网关加速。全屋设备连入 Wi-Fi 即可秒开 4K，彻底告别单机重复配置。
+        </p>
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.88rem;">获取通用订阅</a>
+          <a href="articles/gaming-streaming-speedup.html" class="read-more">软路由与主机加速 →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 进阶使用建议 Callout -->
+    <div class="callout-box tip" style="margin-top: 4rem;">
+      <h3 style="font-size: 1.25rem; margin-bottom: 0.8rem;">💡 新手配置的三条铁律</h3>
+      <ol style="margin-left: 1.2rem; line-height: 1.8; color: #cbd5e1;">
+        <li><strong>务必选择“Rule (规则)”模式：</strong>千万不要误点“Global (全局)”，规则模式下访问国内微信、百度、B站完全不走节点、不扣流量，只有境外服务才走专线。</li>
+        <li><strong>所有节点显示 Timeout 检查时间：</strong>Windows 用户请务必按 Win+I 确认系统时钟已与北京时间完全同步。</li>
+        <li><strong>每隔一周更新一次订阅：</strong>服务商会定期对网络线路进行动态优化与测速扩容，定期更新订阅可确保始终享受最优路由。</li>
+      </ol>
+    </div>
+
+    <div class="cta-banner" style="margin-top: 4rem;">
+      <h2>遇到配置疑难？专业客服随时协助</h2>
+      <p>流量光官网配备 7x24 小时技术工单服务，任何客户端使用与订阅导入问题，均有专业工程师协助排查！</p>
+      <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-glow-gold btn-lg">进入流量光官网获取支持</a>
+    </div>
+  </main>
+
+  
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.svg" alt="流量光Logo" width="32" height="32" />
+            <span>流量光官网</span>
+          </a>
+          <p>流量光（Liuliangguang）专注于提供高速稳定、抗封锁且隐私安全的全球网络加速中继服务。全节点支持 Clash、Clash Party、Shadowrocket 等主流客户端，智能分流秒开 4K，助力跨境出海与科研办公。</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.88rem;">获取专属高速节点</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品与服务</h4>
+          <ul class="footer-links">
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">高速节点套餐</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">企业跨境专线定制</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">ChatGPT/AI 原生节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">4K/8K 流媒体解锁节点</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">最新节点状态监测</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>教程与支持</h4>
+          <ul class="footer-links">
+            <li><a href="tutorials.html">新手配置全套教程</a></li>
+            <li><a href="articles/clash-party-tutorial.html">Clash Party 客户端教程</a></li>
+            <li><a href="articles/mobile-clash-ios-android.html">iOS / 安卓配置指南</a></li>
+            <li><a href="faq.html">常见问题知识库</a></li>
+            <li><a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow">在线工单客服</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>网站导航与法规</h4>
+          <ul class="footer-links">
+            <li><a href="sitemap.xml">网站地图 (XML)</a></li>
+            <li><a href="articles/index.html">文章专栏总览</a></li>
+            <li><a href="privacy.html">隐私政策</a></li>
+            <li><a href="terms.html">服务条款</a></li>
+            <li><a href="disclaimer.html">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 流量光官网 (Liuliangguang). 保留所有权利。全球分布式专线加速网络。</div>
+        <div class="footer-legal-links">
+          <a href="privacy.html">隐私权协议</a>
+          <a href="terms.html">用户协议</a>
+          <a href="disclaimer.html">合规免责声明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <a href="https://jichang-go.org/go.php" target="_blank" rel="noopener nofollow" class="floating-cta" aria-label="立即前往流量光官网">
+    <span>⚡ 立即获取高速稳定节点</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>
