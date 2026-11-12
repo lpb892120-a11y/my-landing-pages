@@ -1,0 +1,34 @@
+# ===================================================================
+# Robots.txt for https://yiyuanjic.mom/
+# 允许所有主流搜索引擎抓取并索引全站内容与网站地图
+# ===================================================================
+
+User-agent: *
+Allow: /
+Allow: /articles/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# 搜索引擎专属指引
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+# 显式声明网站地图地址以加速搜索引擎爬虫发现
+Sitemap: https://yiyuanjic.mom/sitemap.xml
+

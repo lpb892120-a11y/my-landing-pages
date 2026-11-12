@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#eff6ff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+    <linearGradient id="accentGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="accentGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.03" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.75" stroke-opacity="0.5"/>
+      <circle cx="40" cy="40" r="1.5" fill="#94a3b8" fill-opacity="0.4" />
+    </pattern>
+  </defs>
+
+  <!-- 浅色背景层 -->
+  <rect width="1440" height="900" fill="url(#bgGrad)" />
+
+  <!-- 科技网格层 -->
+  <rect width="1440" height="900" fill="url(#grid)" />
+
+  <!-- 动态流线与网络拓扑光斑 -->
+  <g filter="blur(40px)">
+    <circle cx="200" cy="200" r="300" fill="url(#accentGrad1)" />
+    <circle cx="1200" cy="300" r="350" fill="url(#accentGrad2)" />
+    <circle cx="700" cy="700" r="280" fill="url(#accentGrad1)" />
+  </g>
+
+  <!-- 全球网络光纤轨迹线 (抽象科技点缀) -->
+  <g stroke="#3b82f6" stroke-opacity="0.25" stroke-width="1.5" fill="none">
+    <path d="M -100,200 Q 400,50 800,280 T 1600,150" />
+    <path d="M -100,450 Q 500,250 1000,550 T 1600,400" stroke-dasharray="6,6" />
+    <path d="M 100,850 Q 600,600 1100,750 T 1600,650" />
+  </g>
+
+  <!-- 浮动节点光环 -->
+  <circle cx="450" cy="180" r="6" fill="#2563eb" fill-opacity="0.6" />
+  <circle cx="450" cy="180" r="14" stroke="#2563eb" stroke-opacity="0.3" stroke-width="1.5" fill="none" />
+
+  <circle cx="850" cy="320" r="8" fill="#6366f1" fill-opacity="0.6" />
+  <circle cx="850" cy="320" r="20" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1.5" fill="none" />
+
+  <circle cx="1150" cy="220" r="5" fill="#06b6d4" fill-opacity="0.7" />
+  <circle cx="1150" cy="220" r="12" stroke="#06b6d4" stroke-opacity="0.3" stroke-width="1.5" fill="none" />
+</svg>
+

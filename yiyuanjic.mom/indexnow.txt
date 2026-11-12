@@ -1,0 +1,6 @@
+# IndexNow 配置信息 (https://www.indexnow.org/)
+Host: yiyuanjic.mom
+Key: e7b952a17df34a2e8c614b102283fcde
+KeyLocation: https://yiyuanjic.mom/e7b952a17df34a2e8c614b102283fcde.txt
+API Endpoint: https://api.indexnow.org/indexnow
+
