@@ -1,0 +1,8 @@
+# Robots.txt for 一元机场官网 (https://yiyuanjichang.top)
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /articles/
+
+# 爬虫抓取优先级与网站地图
+Sitemap: https://yiyuanjichang.top/sitemap.xml
